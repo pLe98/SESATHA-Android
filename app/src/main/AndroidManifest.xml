@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SesathaP">
-        <activity android:name=".paymentActivity"></activity>
+        <activity android:name=".sellerProfileActivity"></activity>
+        <activity android:name=".buyerProfileActivity" />
+        <activity android:name=".addPaymentActivity" />
+        <activity android:name=".paymentActivity" />
         <activity android:name=".loginActivity" />
         <activity android:name=".userTypeSelActivity" />
         <activity android:name=".sellerRegisterActivity" />

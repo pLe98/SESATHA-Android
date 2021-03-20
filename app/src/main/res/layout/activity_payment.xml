@@ -4,13 +4,138 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".paymentActivity">
+    tools:context=".paymentActivity"
+    android:background="@drawable/bgStyle2">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.073">
 
-        
-    </RelativeLayout>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:background="#6e7c7c"
+            android:paddingLeft="30dp"
+            android:paddingTop="110dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="40dp"
+            android:text="XXXX XXXX XXXX 1234"
+            android:textSize="25dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="+"
+            android:textSize="30dp"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundedcorner"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/TVtransaction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp"
+                android:textStyle="bold"
+                android:text="Transaction History"
+                android:textSize="30dp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/TVtrans1_date"
+                android:layout_below="@+id/TVtransaction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="30dp"
+                android:textSize="20dp"
+                android:text="Date : 12-02-2020"/>
+
+            <TextView
+                android:id="@+id/TVtrans1_amount"
+                android:layout_below="@+id/TVtrans1_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textSize="25dp"
+                android:text="LKR 2000.00"/>
+
+            <TextView
+                android:id="@+id/TVtrans2_date"
+                android:layout_below="@+id/TVtrans1_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="30dp"
+                android:textSize="20dp"
+                android:text="Date : 12-02-2020"/>
+
+            <TextView
+                android:id="@+id/TVtrans2_amount"
+                android:layout_below="@+id/TVtrans2_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textSize="25dp"
+                android:text="LKR 2000.00"/>
+
+            <TextView
+                android:id="@+id/TVtrans3_date"
+                android:layout_below="@+id/TVtrans2_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="30dp"
+                android:textSize="20dp"
+                android:text="Date : 12-02-2020"/>
+
+            <TextView
+                android:id="@+id/TVtrans3_amount"
+                android:layout_below="@+id/TVtrans3_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textSize="25dp"
+                android:text="LKR 2000.00"/>
+
+            <TextView
+                android:id="@+id/TVtrans4_date"
+                android:layout_below="@+id/TVtrans3_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="30dp"
+                android:textSize="20dp"
+                android:text="Date : 12-02-2020"/>
+
+            <TextView
+                android:id="@+id/TVtrans4_amount"
+                android:layout_below="@+id/TVtrans4_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:paddingBottom="20dp"
+                android:textSize="25dp"
+                android:text="LKR 2000.00"/>
+
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
