@@ -10,38 +10,53 @@
     android:background="@drawable/bgStyle">
 
     <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.855"
+        app:layout_constraintHorizontal_bias="0.782"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.06" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical"
+        android:background="@drawable/roundedcornerform"
+        android:paddingRight="60dp"
+        android:paddingLeft="60dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.759"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintVertical_bias="0.759">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
         <EditText
-            style="@style/editTxtST"
             android:id="@+id/ETusername"
+            style="@style/editTxtST"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:gravity="right"
+            android:paddingTop="35dp"
             android:paddingRight="30dp"
-            android:text="Username"/>
+            android:text="Username" />
 
         <EditText
-            style="@style/editTxtST"
             android:id="@+id/ETemail"
+            style="@style/editTxtST"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ETusername"
@@ -51,37 +66,37 @@
             android:text="Email" />
 
         <EditText
-            style="@style/editTxtST"
             android:id="@+id/ETpassword"
+            style="@style/editTxtST"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ETemail"
             android:layout_marginTop="10dp"
             android:gravity="right"
             android:paddingRight="30dp"
-            android:text="Password"/>
+            android:text="Password" />
 
         <EditText
-            style="@style/editTxtST"
             android:id="@+id/ETcontact"
+            style="@style/editTxtST"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ETpassword"
             android:layout_marginTop="10dp"
             android:gravity="right"
             android:paddingRight="30dp"
-            android:text="Contact Number"/>
+            android:text="Contact Number" />
 
         <EditText
-            style="@style/editTxtST"
             android:id="@+id/ETaddress"
+            style="@style/editTxtST"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ETcontact"
             android:layout_marginTop="10dp"
             android:gravity="right"
             android:paddingRight="30dp"
-            android:text="Address"/>
+            android:text="Address" />
 
         <Button
             android:id="@+id/BTregister"
