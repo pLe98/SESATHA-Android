@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".product_request_bid_edit_user">
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="191dp"
+        android:layout_height="45dp"
+        android:background="#77DCDCDC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.159"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.059" />
+
+    <Button
+        android:id="@+id/button17"
+        android:layout_width="101dp"
+        android:layout_height="23dp"
+        android:backgroundTint="#A82626"
+        android:includeFontPadding="false"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Deete Bid"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="82dp"
+        android:layout_height="22dp"
+        android:backgroundTint="#A82626"
+        android:includeFontPadding="false"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Edit Bid"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.382"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.599" />
+
+    <EditText
+        android:id="@+id/editTextNumber4"
+        android:layout_width="66dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="2300"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.518" />
+
+    <TextView
+        android:id="@+id/textView71"
+        android:layout_width="186dp"
+        android:layout_height="38dp"
+        android:text="Remaining 28 Hrs 23 Mints"
+        android:textColor="#D12A2A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.544" />
+
+    <TextView
+        android:id="@+id/textView70"
+        android:layout_width="159dp"
+        android:layout_height="23dp"
+        android:text="Wooden Elephant"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button15"
+        android:layout_width="101dp"
+        android:layout_height="23dp"
+        android:backgroundTint="#A82626"
+        android:includeFontPadding="false"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Deete Bid"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.658"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.432" />
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="82dp"
+        android:layout_height="22dp"
+        android:backgroundTint="#A82626"
+        android:includeFontPadding="false"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Edit Bid"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.361"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.431" />
+
+    <TextView
+        android:id="@+id/textView67"
+        android:layout_width="186dp"
+        android:layout_height="38dp"
+        android:text="Remaining 28 Hrs 23 Mints"
+        android:textColor="#D12A2A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.388" />
+
+    <EditText
+        android:id="@+id/editTextNumber3"
+        android:layout_width="66dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="3500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.356" />
+
+    <TextView
+        android:id="@+id/textView66"
+        android:layout_width="136dp"
+        android:layout_height="23dp"
+        android:text="Wooden ship"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.347" />
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="101dp"
+        android:layout_height="23dp"
+        android:backgroundTint="#A82626"
+        android:includeFontPadding="false"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/btn_Delete_BID"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.657"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.28" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="82dp"
+        android:layout_height="22dp"
+        android:backgroundTint="#A82626"
+        android:includeFontPadding="false"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/btn_Edit_BID"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.361"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.279" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="94dp"
+        android:layout_height="89dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.204"
+        app:srcCompat="@drawable/_0746182588_114960206_large" />
+
+    <TextView
+        android:id="@+id/textView62"
+        android:layout_width="136dp"
+        android:layout_height="23dp"
+        android:text="Wooden Owl"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.186" />
+
+    <EditText
+        android:id="@+id/editTextNumber2"
+        android:layout_width="66dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="2300"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.191" />
+
+    <TextView
+        android:id="@+id/textView65"
+        android:layout_width="186dp"
+        android:layout_height="38dp"
+        android:text="Remaining 28 Hrs 23 Mints"
+        android:textColor="#D12A2A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.223" />
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="97dp"
+        android:layout_height="132dp"
+        app:srcCompat="@drawable/imagesship"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="226dp" />
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="112dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/wooden_handicrafts_250x250"
+        tools:layout_editor_absoluteX="14dp"
+        tools:layout_editor_absoluteY="354dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

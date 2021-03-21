@@ -9,7 +9,62 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SesathaP">
-        <activity android:name=".paymentActivity"></activity>
+        <activity android:name=".product_request_selller_BID_orderview"></activity>
+        <activity
+            android:name=".NavAct"
+            android:label="@string/title_activity_nav"
+            android:theme="@style/Theme.SesathaP.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".NavActivity"
+            android:label="@string/title_activity_nav"
+            android:theme="@style/Theme.SesathaP.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Nav"
+            android:label="@string/title_activity_nav"
+            android:theme="@style/Theme.SesathaP.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".nav"
+            android:label="@string/title_activity_nav"
+            android:theme="@style/Theme.SesathaP.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".NavigationActivity"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/Theme.SesathaP.NoActionBar"></activity>
+        <activity
+            android:name=".navigation"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/Theme.SesathaP.NoActionBar"></activity>
+        <activity android:name=".product_request_bid_edit_user" />
+        <activity android:name=".product_request_bid" />
+        <activity android:name=".product_request_seller_orderview" />
+        <activity android:name=".product_request_seller" />
+        <activity android:name=".product_request_buy" />
+        <activity android:name=".product_request" />
+        <activity android:name=".paymentActivity" />
         <activity android:name=".loginActivity" />
         <activity android:name=".userTypeSelActivity" />
         <activity android:name=".sellerRegisterActivity" />
