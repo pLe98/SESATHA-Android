@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">sesathaP</string>
+    <string name="Name1">Name</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="Owner_name">S.K.Samantha</string>
+    <string name="Store_name">YK Shoping</string>
+    <string name="Product_Elephant">Kandy Elephant</string>
+    <string name="Distric">Matara</string>
+    <string name="Description"> Samall elephant made from mehogani wood</string>
+    <string name="Price1">2500LKR</string>
+    <string name="Price2">500LKR</string>
+    <string name="Price3">1500LKR</string>
+    <string name="Edit_btn">Edit</string>
+    <string name="Remove_btn">Remove</string>
+    <string name="Product_Bio">Bio Cup</string>
+    <string name="Product_Cane">Cane Basket</string>
+    <string name="Add_btn">Add Item</string>
+    <string name="">Add Item</string>
+    <string name="Edit_profile_btn">Edit Store Details</string>
+    <string name="action_settings">Settings</string>
+
+
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
 </resources>

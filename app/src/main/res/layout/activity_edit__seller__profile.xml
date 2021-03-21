@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Edit_Seller_Profile"
+    android:background="@drawable/_205081">
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="91dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="148dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/images__3_" />
+
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="140dp"
+        android:layout_height="32dp"
+        android:text="Contact No."
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.129"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.725" />
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.633" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Store Email"
+        android:textColor="#FAEDED"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.547" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Store Name"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.462" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="177dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="316dp"
+        android:backgroundTint="#FFEEEE"
+        android:drawableTint="#FFFFFF"
+        android:ems="10"
+        android:foregroundTint="#FFFFFF"
+        android:inputType="textPersonName"
+        android:text="    samantha11@gmail.com"
+        android:textColor="#8A8585"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.722"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName7"
+        android:layout_width="177dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="256dp"
+        android:backgroundTint="#FFEEEE"
+        android:drawableTint="#FFFFFF"
+        android:ems="10"
+        android:foregroundTint="#FFFFFF"
+        android:inputType="textPersonName"
+        android:text="No 11, Kadubedda, Moratuwa"
+        android:textColor="#8A8585"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.722"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName9"
+        android:layout_width="177dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="192dp"
+        android:backgroundTint="#FFEEEE"
+        android:drawableTint="#FFFFFF"
+        android:ems="10"
+        android:foregroundTint="#FFFFFF"
+        android:inputType="textPersonName"
+        android:textColor="#8A8585"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.722"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="               071-5272863" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName5"
+        android:layout_width="177dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="376dp"
+        android:backgroundTint="#FFEEEE"
+        android:drawableTint="#FFFFFF"
+        android:ems="10"
+        android:foregroundTint="#FFFFFF"
+        android:inputType="textPersonName"
+        android:text="               AK Shoping"
+        android:textColor="#8A8585"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.722"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="175dp"
+        android:layout_height="137dp"
+        app:srcCompat="@drawable/logo"
+        tools:layout_editor_absoluteX="268dp"
+        tools:layout_editor_absoluteY="11dp" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="93dp"
+        android:layout_height="41dp"
+        android:text="Save"
+        tools:layout_editor_absoluteX="182dp"
+        tools:layout_editor_absoluteY="572dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="150dp"
+        android:layout_height="36dp"
+        android:text="Update Image"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="245dp" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="93dp"
+        android:layout_height="41dp"
+        android:text="cancel"
+        tools:layout_editor_absoluteX="294dp"
+        tools:layout_editor_absoluteY="572dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
