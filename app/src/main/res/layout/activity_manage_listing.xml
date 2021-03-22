@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgStyle2"
+    tools:context=".manageListingActivity">
+
+
+
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="50dp"
+        android:layout_gravity="bottom">
+
+
+
+        <TextView
+            android:id="@+id/TVtransaction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="80dp"
+            android:layout_marginBottom="50dp"
+            android:textStyle="bold"
+            android:text="Manage Listings"
+            android:textSize="30dp"
+            android:textColor="#000000"
+            android:gravity="center_horizontal"/>
+
+        <!-- s1 -->
+
+        <ImageView
+            android:id="@+id/IVadboost1"
+            android:layout_width="70dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/TVtransaction"
+            android:src="@drawable/adboostpng"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:id="@+id/TVsubs1"
+            style="@style/transhistry_subtype"
+            android:layout_below="@+id/TVtransaction"
+            android:layout_toRightOf="@+id/IVadboost1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="10dp"
+            android:textColor= "#000000"
+            android:textSize="23dp"
+            android:text="Traditional oil Lamp"/>
+
+        <TextView
+            android:id="@+id/TVtrans1_date"
+            android:layout_below="@+id/TVtransaction"
+            android:layout_toRightOf="@+id/TVsubs1"
+            style="@style/transhistry_date"
+            android:text="        Active"/>
+
+        <TextView
+            android:id="@+id/TVtrans1_amount"
+            android:layout_below="@+id/TVtrans1_date"
+            android:layout_toRightOf="@+id/IVadboost1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:text="LKR 2000.00"/>
+
+        <TextView
+            android:id="@+id/TVtrans1_month"
+            android:layout_below="@+id/TVtrans1_date"
+            android:layout_alignParentRight="true"
+            style="@style/transhistry_month"
+            android:text="QTY: 20"/>
+
+
+
+
+        <!-- s2 -->
+
+        <ImageView
+            android:id="@+id/IVadboost2"
+            android:layout_width="70dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/IVadboost1"
+            android:src="@drawable/subscription"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:id="@+id/TVsubs2"
+            style="@style/transhistry_subtype"
+            android:layout_below="@+id/IVadboost1"
+            android:layout_toRightOf="@+id/IVadboost1"
+            android:text="Wooden Elephant"/>
+
+        <TextView
+            android:id="@+id/TVtrans2_date"
+            android:layout_below="@+id/TVtrans1_amount"
+            style="@style/transhistry_date"
+            android:text="Avtive"/>
+
+        <TextView
+            android:id="@+id/TVtrans2_amount"
+            android:layout_below="@+id/TVsubs2"
+            android:layout_toRightOf="@+id/IVadboost2"
+            style="@style/transhistry_amount"
+            android:text="LKR 2000.00"/>
+
+        <TextView
+            android:id="@+id/TVtrans2_month"
+            android:layout_below="@+id/TVtrans2_date"
+            android:layout_alignParentRight="true"
+            style="@style/transhistry_month"
+            android:text="QTY: 100"/>
+
+
+        <!-- s3 -->
+
+        <ImageView
+            android:id="@+id/IVadboost3"
+            android:layout_width="70dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/IVadboost2"
+            android:src="@drawable/subscription"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:id="@+id/TVsubs3"
+            style="@style/transhistry_subtype"
+            android:layout_below="@+id/IVadboost2"
+            android:layout_toRightOf="@+id/IVadboost1"
+            android:text="Wallet"/>
+
+        <TextView
+            android:id="@+id/TVtrans3_date"
+            android:layout_below="@+id/TVtrans2_amount"
+            style="@style/transhistry_date"
+            android:text="Inactive"/>
+
+        <TextView
+            android:id="@+id/TVtrans3_amount"
+            android:layout_below="@+id/TVsubs3"
+            style="@style/transhistry_amount"
+            android:layout_toRightOf="@+id/IVadboost3"
+            android:text="LKR 2000.00"/>
+
+        <TextView
+            android:id="@+id/TVtrans3_month"
+            android:layout_below="@+id/TVtrans3_date"
+            android:layout_alignParentRight="true"
+            style="@style/transhistry_month"
+            android:text="QTY:0"/>
+
+        <!-- s4 -->
+
+        <ImageView
+            android:id="@+id/IVadboost4"
+            android:layout_width="70dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/IVadboost3"
+            android:src="@drawable/adboostpng"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:id="@+id/TVsubs4"
+            style="@style/transhistry_subtype"
+            android:layout_below="@+id/IVadboost3"
+            android:layout_toRightOf="@+id/IVadboost1"
+            android:text="Batik Hand Bag"/>
+
+        <TextView
+            android:id="@+id/TVtrans4_date"
+            android:layout_below="@+id/TVtrans3_amount"
+            style="@style/transhistry_date"
+            android:text="Active"/>
+
+        <TextView
+            android:id="@+id/TVtrans4_amount"
+            android:layout_below="@+id/TVsubs4"
+            style="@style/transhistry_amount"
+            android:layout_toRightOf="@+id/IVadboost4"
+            android:text="LKR 3000.00"/>
+
+        <TextView
+            android:id="@+id/TVtrans4_month"
+            android:layout_below="@+id/TVtrans4_date"
+            android:layout_alignParentRight="true"
+            style="@style/transhistry_month"
+            android:text="QTY : 10"/>
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

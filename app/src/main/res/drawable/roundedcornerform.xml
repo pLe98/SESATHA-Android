@@ -5,8 +5,8 @@
     <stroke android:width="0dp" />
 
     <corners
-        android:bottomRightRadius="45dp"
-        android:bottomLeftRadius="45dp"
-        android:topLeftRadius="45dp"
-        android:topRightRadius="45dp"/>
+        android:bottomRightRadius="40dp"
+        android:bottomLeftRadius="40dp"
+        android:topLeftRadius="40dp"
+        android:topRightRadius="40dp"/>
 </shape>

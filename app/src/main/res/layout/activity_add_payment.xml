@@ -7,125 +7,154 @@
     android:background="@drawable/bgStyle2"
     tools:context=".addPaymentActivity">
 
-    <EditText
-        style="@style/editTxtST"
-        android:id="@+id/ETno"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Card Number"
-        android:gravity="right"
-        android:textSize="23dp"
-        android:textStyle="bold"
-        android:paddingRight="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.396"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.323" />
-
-
-    <EditText
-        style="@style/editTxtST"
-        android:id="@+id/ETmonth"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:text="MM"
-        android:textSize="23dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.199"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.454" />
-
-    <EditText
-        style="@style/editTxtST"
-        android:id="@+id/ETyear"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:paddingLeft="10dp"
-        android:text="YY"
-        android:textSize="23dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.401"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.454" />
-
-    <EditText
-        style="@style/editTxtST"
-        android:id="@+id/ETccv"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:text="CCV"
-        android:textSize="23dp"
-        android:textStyle="bold"
-        android:gravity="right"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.792"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.454" />
-
-    <TextView
-        style="@style/editTxtST"
-        android:id="@+id/textView"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="/"
-        android:textSize="23dp"
-        android:paddingLeft="10dp"
-        android:textStyle="bold"
+        android:orientation="vertical"
+        android:paddingTop="50dp"
+        android:paddingBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.304"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.455" />
+        android:background="@drawable/roundedcornerform">
 
-    <EditText
-        style="@style/editTxtST"
-        android:id="@+id/ETcardholder"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Cardholder's Name"
-        android:gravity="right"
-        android:textSize="23dp"
-        android:textStyle="bold"
-        android:paddingRight="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.568" />
+        <TextView
+            android:id="@+id/ETno1"
+            style="@style/editTxtST"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:layout_marginLeft="35dp"
+            android:paddingRight="30dp"
+            android:text="Card Details"
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
-    <Button
-        style="@style/buttonst"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.713" />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RadioButton android:id="@+id/radio_pirates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginLeft="35dp"
+                android:textSize="23dp"
+                android:textStyle="bold"
+                android:text="Visa" />
+            <RadioButton android:id="@+id/radio_pirates2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginLeft="35dp"
+                android:textSize="23dp"
+                android:textStyle="bold"
+                android:text="Master" />
+            <RadioButton android:id="@+id/radio_pirates3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginLeft="35dp"
+                android:textSize="23dp"
+                android:textStyle="bold"
+                android:text="Amex" />
+        </RadioGroup>
 
+        <EditText
+            android:id="@+id/ETno"
+            style="@style/editTxtST"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="right"
+            android:inputType="textPersonName"
+            android:layout_marginLeft="35dp"
+            android:paddingRight="30dp"
+            android:text="Card Number"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="35dp">
+        <EditText
+            android:id="@+id/ETmonth"
+            style="@style/editTxtST"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:text="MM"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/ETyear"
+            style="@style/editTxtST"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/textView"
+            android:ems="10"
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            android:text="YY"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/ETccv"
+            style="@style/editTxtST"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="35dp"
+            android:ems="10"
+            android:gravity="right"
+            android:inputType="number"
+            android:text="CCV"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/editTxtST"
+            android:layout_toRightOf="@+id/ETmonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="/"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/ETcardholder"
+            style="@style/editTxtST"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:ems="10"
+            android:gravity="right"
+            android:inputType="textPersonName"
+            android:paddingRight="30dp"
+            android:text="Cardholder's Name"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
+        <Button
+            style="@style/buttonst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="20dp"
+            android:text="Submit" />
+
+
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

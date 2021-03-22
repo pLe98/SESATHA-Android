@@ -8,7 +8,7 @@
         <item name="android:paddingRight">25dp</item>
         <item name="android:paddingTop">15dp</item>
         <item name="android:paddingBottom">15dp</item>
-        <item name="backgroundTint">@color/white</item>
+        <item name="backgroundTint">#dce2e6</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">20dp</item>
         <item name="android:textStyle">bold</item>
@@ -21,6 +21,44 @@
         <item name="android:color">#f2e9ea</item>
     </style>
 
+
+    <style name="transhistry_subtype">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">25dp</item>
+    </style>
+
+
+    <style name="transhistry_date">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">18dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="transhistry_amount">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="transhistry_month">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">16dp</item>
+    </style>
 
     
 </resources>

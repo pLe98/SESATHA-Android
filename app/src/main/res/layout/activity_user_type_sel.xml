@@ -37,7 +37,7 @@
             android:layout_marginLeft="45dp"
             android:layout_marginTop="50dp"
             android:padding="30dp"
-            android:background="#6e7c7c">
+            android:background="#8c6498a1">
 
             <ImageButton
                 android:id="@+id/BTsellerimg"
@@ -81,7 +81,7 @@
             android:layout_marginLeft="45dp"
             android:layout_marginTop="50dp"
             android:padding="30dp"
-            android:background="#CC936D">
+            android:background="#8c6498a1">
 
             <ImageButton
                 android:id="@+id/BTbuyerimg"
