@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.requests.sesathap">
+    package="com.requests.sesatha_mad_android">
 
     <application
         android:allowBackup="true"
@@ -8,17 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SesathaP">
-        <activity android:name=".manageListingActivity"></activity>
-        <activity android:name=".subscriptionActivity" />
-        <activity android:name=".sellerProfileActivity" />
-        <activity android:name=".buyerProfileActivity" />
-        <activity android:name=".addPaymentActivity" />
-        <activity android:name=".paymentActivity" />
-        <activity android:name=".loginActivity" />
-        <activity android:name=".userTypeSelActivity" />
-        <activity android:name=".sellerRegisterActivity" />
-        <activity android:name=".userTypeActivity" />
+        android:theme="@style/Theme.SESATHA_MADAndroid">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
