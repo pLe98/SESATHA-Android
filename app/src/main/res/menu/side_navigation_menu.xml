@@ -1,26 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/side_profile"
-        android:icon="@mipmap/outline_account_circle_black_18"
-        android:title="My Prfile"/>
-    <item android:id="@+id/side_orders"
-        android:icon="@mipmap/outline_shopping_bag_black_18"
-        android:title="My Orders"/>
-    <item android:id="@+id/side_bids"
-        android:icon="@mipmap/outline_fact_check_black_18"
-        android:title="My Bids"/>
-    <item android:id="@+id/side_payment"
-        android:icon="@mipmap/outline_account_balance_wallet_black_18"
-        android:title="Payment"/>
-    <item android:id="@+id/side_settings"
-        android:icon="@mipmap/outline_settings_black_18"
-        android:title="Settings"/>
-    <item android:id="@+id/side_help"
-        android:icon="@mipmap/outline_help_outline_black_18"
-        android:title="Help"/>
-    <item android:id="@+id/side_logout"
-        android:icon="@mipmap/outline_logout_black_18"
-        android:title="Logout"/>
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/nav_home"
+            android:title="Home"
+            android:icon="@drawable/ic_baseline_home_24"/>
+
+        <item android:id="@+id/nav_orders"
+            android:title="My Orders"
+            android:icon="@mipmap/outline_shopping_bag_black_18"/>
+
+        <item android:id="@+id/nav_bids"
+            android:title="My Bids"
+            android:icon="@mipmap/outline_fact_check_black_18"/>
+
+        <item android:id="@+id/nav_payment"
+            android:title="Payments"
+            android:icon="@mipmap/outline_account_balance_wallet_black_18"/>
+
+        <item android:id="@+id/nav_help"
+            android:title="Help"
+            android:icon="@mipmap/outline_help_outline_black_18"/>
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/nav_profile"
+            android:title="Settings"
+            android:icon="@mipmap/outline_settings_black_18"/>
+
+
+        <item android:id="@+id/nav_logout"
+            android:title="Logout"
+            android:icon="@mipmap/outline_logout_black_18"/>
+    </group>
 
 </menu>

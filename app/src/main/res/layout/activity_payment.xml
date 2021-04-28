@@ -22,20 +22,14 @@
                 android:id="@+id/mytoolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="?attr/colorPrimary"
+                android:background="#F7CC39"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:elevation="0dp"/>
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:id="@+id/button"
-            android:text="Next"
-            android:textColor="@color/white"/>
+
 
 
 

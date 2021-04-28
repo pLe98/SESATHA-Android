@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:background="#3F51B5"
-    android:backgroundTint="#3F51B5">
+    android:layout_height="200dp"
+    android:orientation="vertical"
+    android:gravity="bottom"
+    android:background="@drawable/header">
 
     <TextView
+        android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Menu"
-        android:textSize="30dp"
-        android:paddingTop="23dp"
+        android:text="Sesatha"
+        android:textSize="60dp"
+        android:textColor="@color/white"/>
+    <TextView
+        android:paddingTop="40dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="www.sesatha.com"
         android:textColor="@color/white"
-        android:layout_centerHorizontal="true"/>
-</RelativeLayout>
+        android:textSize="20dp"/>
+
+</LinearLayout>
