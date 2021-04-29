@@ -6,27 +6,32 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
-public class PaymentActivity extends MainActivity {
+public class Payment_Edit_acvtivity extends AppCompatActivity {
 
     DrawerLayout mdrawerLayout;
     ActionBarDrawerToggle mToggle;
     Toolbar mytoolbar;
+    private Button submitButton;
 
     //payment activity
-    Button editbt;
+    private RadioGroup radioGroup;
+    private RadioButton radioButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_payment);
+        setContentView(R.layout.activity_payment__edit_acvtivity);
 
         //navigation bar
+
         mytoolbar = (Toolbar) findViewById(R.id.mytoolbar);
         setSupportActionBar(mytoolbar);
         mdrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
@@ -35,21 +40,17 @@ public class PaymentActivity extends MainActivity {
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        //navigation bar
 
-        //payment activity
-        editbt = (Button) findViewById(R.id.card_edit);
 
-        editbt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openEditPayment();
-
-            }
-        });
+        //radio button lister call
+        addListenerOnButton();
 
 
 
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -58,11 +59,32 @@ public class PaymentActivity extends MainActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    };
+
+    public void addListenerOnButton() {
+
+        radioGroup = (RadioGroup) findViewById(R.id.rd_cardtype);
+        submitButton = (Button) findViewById(R.id.payment_edit);
+
+        submitButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                // get selected radio button from radioGroup
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+
+                // find the radiobutton by returned id
+                radioButton = (RadioButton) findViewById(selectedId);
+
+                Toast.makeText(Payment_Edit_acvtivity.this,
+                        radioButton.getText(), Toast.LENGTH_SHORT).show();
+
+            }
+
+        });
+
     }
 
-    public void openEditPayment(){
-        Intent intent = new Intent(this, Payment_Edit_acvtivity.class);
-        startActivity(intent);
 
-    }
 }

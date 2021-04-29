@@ -22,7 +22,7 @@
                 android:id="@+id/mytoolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#F7CC39"
+                android:background="@color/mainclr"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:elevation="0dp"/>
@@ -39,7 +39,7 @@
             android:layout_width="325dp"
             android:layout_height="200dp"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/card_basic">
+            android:background="@drawable/cardimg">
 
             <Button
                 android:id="@+id/card_edit"
@@ -87,7 +87,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/roundedcorner"
+            android:background="@drawable/roundedcorner_top"
             android:layout_marginTop="10dp">
 
             <TextView
