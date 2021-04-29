@@ -29,7 +29,157 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            />
 
+        <RelativeLayout
+            android:layout_width="325dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/card_basic">
+
+            <Button
+                android:id="@+id/card_edit"
+                android:layout_toLeftOf="@+id/card_delete"
+                android:layout_marginTop="20dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/ic_edit"
+                android:tint="@color/white"
+                android:textColor="@color/white"
+                android:shadowColor="@color/white"
+                />
+            <Button
+                android:layout_alignParentEnd="true"
+                android:id="@+id/card_delete"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/ic_delete"
+                android:tint="@color/white"
+                android:textColor="@color/white"
+                android:shadowColor="@color/white"
+                />
+
+            <TextView
+                android:id="@+id/card_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="55dp"
+                android:layout_below="@+id/card_delete"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="XXXX XXXXXX 12345"
+                android:textSize="27dp"/>
+
+
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundedcorner"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/TVtransaction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp"
+                android:textStyle="bold"
+                android:text="Transaction History"
+                android:textSize="30dp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/TVtrans1_date"
+                android:layout_below="@+id/TVtransaction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="30dp"
+                android:textSize="20dp"
+                android:text="Date : 12-02-2020"/>
+
+            <TextView
+                android:id="@+id/TVtrans1_amount"
+                android:layout_below="@+id/TVtrans1_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textSize="25dp"
+                android:text="LKR 2000.00"/>
+
+            <TextView
+                android:id="@+id/TVtrans2_date"
+                android:layout_below="@+id/TVtrans1_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="30dp"
+                android:textSize="20dp"
+                android:text="Date : 12-02-2020"/>
+
+            <TextView
+                android:id="@+id/TVtrans2_amount"
+                android:layout_below="@+id/TVtrans2_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textSize="25dp"
+                android:text="LKR 2000.00"/>
+
+            <TextView
+                android:id="@+id/TVtrans3_date"
+                android:layout_below="@+id/TVtrans2_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="30dp"
+                android:textSize="20dp"
+                android:text="Date : 12-02-2020"/>
+
+            <TextView
+                android:id="@+id/TVtrans3_amount"
+                android:layout_below="@+id/TVtrans3_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textSize="25dp"
+                android:text="LKR 2000.00"/>
+
+            <TextView
+                android:id="@+id/TVtrans4_date"
+                android:layout_below="@+id/TVtrans3_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="30dp"
+                android:textSize="20dp"
+                android:text="Date : 12-02-2020"/>
+
+            <TextView
+                android:id="@+id/TVtrans4_amount"
+                android:layout_below="@+id/TVtrans4_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:paddingBottom="20dp"
+                android:textSize="25dp"
+                android:text="LKR 2000.00"/>
+
+
+
+        </RelativeLayout>
 
 
 

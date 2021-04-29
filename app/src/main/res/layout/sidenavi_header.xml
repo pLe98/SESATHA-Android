@@ -5,7 +5,7 @@
     android:layout_height="200dp"
     android:orientation="vertical"
     android:gravity="bottom"
-    android:background="@drawable/header">
+    android:background="@drawable/header1">
 
     <TextView
         android:layout_gravity="center_horizontal"
