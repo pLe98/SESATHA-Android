@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -22,6 +23,11 @@ public class Payment_Edit_acvtivity extends AppCompatActivity {
     private Button submitButton;
 
     //payment activity
+    private EditText cardNo;
+    private EditText cardHolder;
+    private EditText cardYr;
+    private EditText cardMonth;
+    private EditText cardCCV;
     private RadioGroup radioGroup;
     private RadioButton radioButton;
 
@@ -39,8 +45,15 @@ public class Payment_Edit_acvtivity extends AppCompatActivity {
         mdrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         //navigation bar
+
+
+        //payment edit assign variables
+        cardNo = (EditText) findViewById(R.id.ETno);
+        cardHolder = (EditText) findViewById(R.id.ETcardholder);
+        cardYr = (EditText) findViewById(R.id.ETyear);
+        cardMonth = (EditText) findViewById(R.id.ETmonth);
+        cardCCV = (EditText) findViewById(R.id.ETccv);
 
 
         //radio button lister call
