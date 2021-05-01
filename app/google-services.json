@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "260488868161",
-    "project_id": "sesathap-dce44",
-    "storage_bucket": "sesathap-dce44.appspot.com"
+    "project_number": "964802719568",
+    "project_id": "sesathaandroid",
+    "storage_bucket": "sesathaandroid.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:260488868161:android:6531e546f90f7714fb71c0",
+        "mobilesdk_app_id": "1:964802719568:android:bea205f895ee9e91488655",
         "android_client_info": {
-          "package_name": "com.requests.sesathap"
+          "package_name": "com.requests.sesatha_mad_android"
         }
       },
       "oauth_client": [
         {
-          "client_id": "260488868161-hjb6is55encpb7b8ie3jkr1g6giie7m8.apps.googleusercontent.com",
+          "client_id": "964802719568-r0ilvanelmep0ch2ub2hhfl1q6l2ucde.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBn_ovtJkxgYFJ8bNs-GNPJTsHykEU3fL8"
+          "current_key": "AIzaSyDUj68_YdalpBbO14MJgQ6cei78lZtaq4M"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "260488868161-hjb6is55encpb7b8ie3jkr1g6giie7m8.apps.googleusercontent.com",
+              "client_id": "964802719568-r0ilvanelmep0ch2ub2hhfl1q6l2ucde.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -1,5 +1,6 @@
 package com.requests.sesatha_mad_android;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -9,8 +10,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class RegisterActivity extends AppCompatActivity {
@@ -18,6 +22,7 @@ public class RegisterActivity extends AppCompatActivity {
     //declaring variables
     TextInputLayout userName, email, phone, address, password;
     Button registerSubmit;
+    long userId;
 
     FirebaseDatabase rootNode;
     DatabaseReference reff;
@@ -41,23 +46,37 @@ public class RegisterActivity extends AppCompatActivity {
         registerSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //rootNode = FirebaseDatabase.getInstance();
-                //reff = rootNode.getReference("Users");
 
-                //reff.setValue("test");
+                String dUsername = userName.getEditText().getText().toString().trim();
+                String dEmail = email.getEditText().getText().toString().trim();
+                int dPhone = Integer.parseInt(phone.getEditText().getText().toString().trim());
+                String dAddress = address.getEditText().getText().toString().trim();
+                String dPassword = password.getEditText().getText().toString().trim();
 
-                mDatabase = FirebaseDatabase.getInstance().getReference("Users");
-                //User user = new User(userName, email, phone, address, password);
-                mDatabase.child("Users").setValue("test");
+                User user = new User(dUsername, dEmail, dPhone, dAddress, dPassword);
 
-                /*
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+                FirebaseDatabase database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
                 DatabaseReference myRef = database.getReference("Users");
-                myRef.setValue("aaa");
-                 */
+
+                myRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(snapshot.exists()){
+                            userId = snapshot.getChildrenCount();
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+                myRef.child(String.valueOf(userId+1)).setValue(user);
 
                 Toast.makeText(RegisterActivity.this,
-                        "Card Details Saved Successfully", Toast.LENGTH_SHORT).show();
+                        "Registration Successful", Toast.LENGTH_SHORT).show();
             }
         });
     }
