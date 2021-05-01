@@ -2,7 +2,7 @@ package com.requests.sesatha_mad_android;
 
 public class User {
 
-    private int uId;
+    //private int uId;
     private String username;
     private String uEmail;
     private int uPhone;
@@ -20,9 +20,6 @@ public class User {
         this.uPassword = uPassword;
     }
 
-    public int getuId() {
-        return uId;
-    }
 
     public String getUsername() {
         return username;
