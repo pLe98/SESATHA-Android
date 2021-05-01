@@ -15,21 +15,25 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class Payment_Edit_acvtivity extends AppCompatActivity {
 
     DrawerLayout mdrawerLayout;
     ActionBarDrawerToggle mToggle;
     Toolbar mytoolbar;
-    private Button submitButton;
 
     //payment activity
-    private EditText cardNo;
-    private EditText cardHolder;
-    private EditText cardYr;
-    private EditText cardMonth;
-    private EditText cardCCV;
-    private RadioGroup radioGroup;
-    private RadioButton radioButton;
+    private EditText cardNoET;
+    private EditText cardHolderET;
+    private EditText cardYrET;
+    private EditText cardMonthET;
+    private EditText cardCCVET;
+    //private RadioGroup radioGroup;
+    //private RadioButton radioButton;
+    private Button submitButton;
+    DatabaseReference refs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,16 +53,49 @@ public class Payment_Edit_acvtivity extends AppCompatActivity {
 
 
         //payment edit assign variables
-        cardNo = (EditText) findViewById(R.id.ETno);
-        cardHolder = (EditText) findViewById(R.id.ETcardholder);
-        cardYr = (EditText) findViewById(R.id.ETyear);
-        cardMonth = (EditText) findViewById(R.id.ETmonth);
-        cardCCV = (EditText) findViewById(R.id.ETccv);
+        cardNoET = (EditText) findViewById(R.id.ETno);
+        cardHolderET = (EditText) findViewById(R.id.ETcardholder);
+        cardYrET = (EditText) findViewById(R.id.ETyear);
+        cardMonthET = (EditText) findViewById(R.id.ETmonth);
+        cardCCVET = (EditText) findViewById(R.id.ETccv);
+        submitButton = (Button) findViewById(R.id.payment_editbt);
+
+        CardDetails cardDetails = new CardDetails();
+
+        //FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        //refs = Firebase.database.getReference("CardDetails");
 
 
-        //radio button lister call
-        addListenerOnButton();
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // get selected radio button from radioGroup
+                //int selectedId = radioGroup.getCheckedRadioButtonId();
+                // find the radiobutton by returned id
+                //radioButton = (RadioButton) findViewById(selectedId);
 
+                int cardNo = Integer.parseInt(cardNoET.getText().toString().trim());
+                int year = Integer.parseInt(cardYrET.getText().toString().trim());
+                int month = Integer.parseInt(cardMonthET.getText().toString().trim());
+                int ccv = Integer.parseInt(cardCCVET.getText().toString().trim());
+
+                //calling setter
+                cardDetails.setCardHolder(cardHolderET.getText().toString().trim());
+                //cardDetails.setCardType(radioButton.getText().toString().trim());
+                cardDetails.setCardNo(cardNo);
+                cardDetails.setYear(year);
+                cardDetails.setMonth(month);
+                cardDetails.setCcv(ccv);
+
+                //refs.push().setValue(cardDetails);
+                mDatabase.child("cardDetails").child(String.valueOf(cardNo)).setValue(cardDetails);
+
+                Toast.makeText(Payment_Edit_acvtivity.this,
+                        "Card Details Saved Successfully", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
     }
@@ -73,31 +110,6 @@ public class Payment_Edit_acvtivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     };
-
-    public void addListenerOnButton() {
-
-        radioGroup = (RadioGroup) findViewById(R.id.rd_cardtype);
-        submitButton = (Button) findViewById(R.id.payment_edit);
-
-        submitButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                // get selected radio button from radioGroup
-                int selectedId = radioGroup.getCheckedRadioButtonId();
-
-                // find the radiobutton by returned id
-                radioButton = (RadioButton) findViewById(selectedId);
-
-                Toast.makeText(Payment_Edit_acvtivity.this,
-                        radioButton.getText(), Toast.LENGTH_SHORT).show();
-
-            }
-
-        });
-
-    }
 
 
 }

@@ -62,8 +62,8 @@
                 android:paddingRight="30dp"
                 android:paddingTop="20dp"
                 android:layout_below="@id/ETcardholder"
-                 />
-
+                />
+            <!--
             <RadioGroup
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="20dp"
@@ -80,7 +80,8 @@
                     android:text="Visa"
                     android:textSize="23dp"
                     android:textStyle="bold"
-                     />
+                    android:checked="true"
+                    />
                 <RadioButton
                     android:id="@+id/radio_master"
                     android:layout_width="wrap_content"
@@ -88,7 +89,7 @@
                     android:text="Master"
                     android:textSize="23dp"
                     android:textStyle="bold"
-                />
+                    />
                 <RadioButton
                     android:id="@+id/radio_amex"
                     android:layout_width="wrap_content"
@@ -99,7 +100,7 @@
                     />
             </RadioGroup>
 
-
+            -->
 
             <EditText
 
@@ -113,8 +114,8 @@
                 android:textStyle="bold"
                 android:layout_marginLeft="40dp"
                 android:paddingTop="20dp"
-                android:layout_below="@+id/rd_cardtype"
-                 />
+                android:layout_below="@+id/ETno"
+                />
 
             <EditText
                 android:id="@+id/ETyear"
@@ -128,9 +129,9 @@
                 android:layout_marginLeft="15dp"
                 android:paddingTop="20dp"
                 android:textStyle="bold"
-                android:layout_below="@+id/rd_cardtype"
+                android:layout_below="@+id/ETno"
                 android:layout_toRightOf="@+id/ETmonth"
-                 />
+                />
 
             <EditText
                 android:id="@+id/ETccv"
@@ -144,9 +145,9 @@
                 android:textStyle="bold"
                 android:gravity="right"
                 android:layout_alignParentEnd="true"
-                android:layout_below="@+id/rd_cardtype"
+                android:layout_below="@+id/ETno"
                 android:layout_marginRight="40dp"
-                 />
+                />
 
 
             <EditText
@@ -163,10 +164,10 @@
                 android:paddingRight="30dp"
                 android:paddingTop="20dp"
                 android:layout_marginTop="110dp"
-                 />
+                />
 
             <Button
-                android:id="@+id/payment_edit"
+                android:id="@+id/payment_editbt"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/ETccv"
                 android:layout_width="wrap_content"
@@ -176,7 +177,7 @@
                 android:backgroundTint="@color/black"
                 android:textSize="22dp"
                 android:text="Submit"
-                 />
+                />
         </RelativeLayout>
 
 

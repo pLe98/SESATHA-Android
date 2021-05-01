@@ -39,10 +39,20 @@ public class MainActivity extends AppCompatActivity {
 
         button = (Button) findViewById(R.id.button);
 
+        Button buttonReg = (Button) findViewById(R.id.buttonreg);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openPayment();
+
+            }
+        });
+
+        buttonReg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openRegister();
 
             }
         });
@@ -52,6 +62,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void openPayment(){
         Intent intent = new Intent(this, PaymentActivity.class);
+        startActivity(intent);
+
+    }
+
+    public void openRegister(){
+        Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
 
     }

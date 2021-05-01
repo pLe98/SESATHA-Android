@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    android:orientation="vertical"
+    android:background="@drawable/bg22">
+
+    <RelativeLayout
+        android:layout_marginTop="100dp"
+        android:paddingTop="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedcorderall"
+        android:elevation="20dp"
+        android:layout_gravity="center_horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/regUsername"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            app:boxBackgroundColor="@color/white"
+            android:hint="Username">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/regEmail"
+            android:layout_width="300dp"
+            android:paddingTop="15dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/regUsername"
+            app:boxBackgroundColor="@color/white"
+            android:hint="Email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/regPhone"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:layout_below="@+id/regEmail"
+            app:boxBackgroundColor="@color/white"
+            android:hint="Contact Number">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/regAddress"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:layout_below="@id/regPhone"
+            app:boxBackgroundColor="@color/white"
+            android:hint="Address">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/regPassword"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:layout_below="@+id/regAddress"
+            app:boxBackgroundColor="@color/white"
+            app:endIconMode="password_toggle"
+            android:hint="Password">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:layout_centerInParent="true"
+            android:id="@+id/regSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:layout_below="@+id/regPassword"
+
+            android:text="Register"
+            android:backgroundTint="@color/mainclr"/>
+    </RelativeLayout>
+
+</LinearLayout>
