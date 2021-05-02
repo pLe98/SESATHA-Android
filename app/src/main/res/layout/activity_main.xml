@@ -8,58 +8,107 @@
     android:background="@drawable/bg30"
     android:id="@+id/drawerLayout">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:elevation="0dp">
+            app:elevation="0dp"
+            tools:layout_conversion_absoluteHeight="50dp"
+            tools:layout_conversion_absoluteWidth="411dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/mytoolbar"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="@color/bgdark"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
-                app:elevation="0dp"/>
+                app:elevation="0dp"
+                tools:layout_conversion_absoluteHeight="50dp"
+                tools:layout_conversion_absoluteWidth="411dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
             android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="224dp"
+            android:backgroundTint="@color/black"
             android:text="Payment"
-            android:backgroundTint="@color/black"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_conversion_absoluteHeight="48dp"
+            tools:layout_conversion_absoluteWidth="103dp" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
             android:id="@+id/buttonreg"
-            android:text="Register"
-            android:backgroundTint="@color/black"
-            android:textColor="@color/white"/>
-
-        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:id="@+id/buttoncheckout"
-            android:text="Checkout"
+            android:layout_marginTop="24dp"
             android:backgroundTint="@color/black"
-            android:textColor="@color/white"/>
+            android:text="Register"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/button"
+            app:layout_constraintTop_toBottomOf="@+id/button"
+            tools:layout_conversion_absoluteHeight="48dp"
+            tools:layout_conversion_absoluteWidth="105dp" />
+
+        <Button
+            android:id="@+id/buttoncheckout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/black"
+            android:text="Checkout"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/button"
+            app:layout_constraintTop_toBottomOf="@+id/buttonreg"
+            tools:layout_conversion_absoluteHeight="48dp"
+            tools:layout_conversion_absoluteWidth="113dp" />
+
+        <Button
+            android:id="@+id/btnPostItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:backgroundTint="@color/black"
+            android:text="Add Item"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/buttonreg"
+            app:layout_constraintTop_toBottomOf="@+id/buttoncheckout"
+            tools:layout_conversion_absoluteHeight="48dp"
+            tools:layout_conversion_absoluteWidth="411dp" />
+
+        <Button
+            android:id="@+id/btnViewItems"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:text="All Items"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/btnPostItem"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.396"
+            app:layout_constraintStart_toEndOf="@+id/btnPostItem"
+            app:layout_constraintTop_toTopOf="@+id/btnPostItem"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_conversion_absoluteHeight="48dp"
+            tools:layout_conversion_absoluteWidth="411dp" />
 
 
-
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"

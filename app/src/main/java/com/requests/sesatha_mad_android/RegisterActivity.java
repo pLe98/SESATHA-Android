@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
@@ -44,7 +43,7 @@ public class RegisterActivity extends AppCompatActivity {
         phone = findViewById(R.id.regPhone);
         address = findViewById(R.id.regAddress);
         password = findViewById(R.id.regPassword);
-        registerSubmit = (Button) findViewById(R.id.regSubmit);
+        registerSubmit = (Button) findViewById(R.id.btnPost);
 
         registerSubmit.setOnClickListener(new View.OnClickListener() {
             @Override

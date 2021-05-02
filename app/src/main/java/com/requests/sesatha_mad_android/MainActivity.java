@@ -68,7 +68,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        ((Button) findViewById(R.id.btnPostItem)).setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, PostItem.class);
+                        startActivity(intent);
+                    }
+                }
+        );
     }
 
     public void openPayment(){

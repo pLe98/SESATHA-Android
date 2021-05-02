@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/bg30"
+    android:id="@+id/drawerLayout">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:elevation="0dp">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/mytoolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/bgdark"
+                    android:minHeight="?attr/actionBarSize"
+                    android:theme="?attr/actionBarTheme"
+                    app:elevation="0dp"/>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="387dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="18dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp"
+                app:cardMaxElevation="12dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Title"
+                        android:textColor="@color/teal_200"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toTopOf="@+id/editTextTitle"
+                        app:layout_constraintEnd_toEndOf="@+id/editTextTitle"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/editTextTitle" />
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Category"
+                        android:textColor="@color/teal_200"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@+id/spinner"
+                        app:layout_constraintTop_toBottomOf="@+id/editTextTitle" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Description"
+                        android:textColor="@color/teal_200"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toTopOf="@+id/editTextDesc"
+                        app:layout_constraintStart_toStartOf="@+id/editTextDesc" />
+
+                    <EditText
+                        android:id="@+id/editTextPrice"
+                        android:layout_width="267dp"
+                        android:layout_height="47dp"
+                        android:layout_marginTop="384dp"
+                        android:ems="10"
+                        android:hint="Pick a reasonable price"
+                        android:inputType="number|numberDecimal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/editTextTitle"
+                        android:layout_width="267dp"
+                        android:layout_height="47dp"
+                        android:layout_marginTop="88dp"
+                        android:ems="10"
+                        android:hint="Keep it short"
+                        android:inputType="textPersonName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.476"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Price (Rs)"
+                        android:textColor="@color/teal_200"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toTopOf="@+id/editTextPrice"
+                        app:layout_constraintStart_toStartOf="@+id/editTextPrice" />
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Select an image"
+                        android:textColor="@color/teal_200"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toTopOf="@+id/btnPost"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.203"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/editTextPrice"
+                        app:layout_constraintVertical_bias="0.343" />
+
+                    <EditText
+                        android:id="@+id/editTextDesc"
+                        android:layout_width="269dp"
+                        android:layout_height="71dp"
+                        android:layout_marginBottom="52dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Detailed description may bring more sales"
+                        android:inputType="textMultiLine"
+                        app:layout_constraintBottom_toTopOf="@+id/editTextPrice"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.487"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <Button
+                        android:id="@+id/btnPost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/regPassword"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="92dp"
+                        android:backgroundTint="@color/mainclr"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="Submit"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/editTextPrice" />
+
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="266dp"
+                        android:layout_height="23dp"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="4dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:menu="@menu/side_navigation_menu"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/sidenavi_header"
+        >
+
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>
