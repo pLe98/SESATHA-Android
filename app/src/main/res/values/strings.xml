@@ -2,4 +2,10 @@
     <string name="app_name">SESATHA</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+
+
+
+    <!-- toolbar title -->
+    <string name="payment">Payment</string>
+    <string name="checkout">Order Confirmation</string>
 </resources>

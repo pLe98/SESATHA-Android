@@ -26,9 +26,12 @@ public class PaymentActivity extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
 
-        //navigation bar
+        //toolbar
         mytoolbar = (Toolbar) findViewById(R.id.mytoolbar);
         setSupportActionBar(mytoolbar);
+        getSupportActionBar().setTitle("Payment");
+
+        //navigation bar//navigation bar
         mdrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mdrawerLayout, R.string.open, R.string.close);
         mdrawerLayout.addDrawerListener(mToggle);

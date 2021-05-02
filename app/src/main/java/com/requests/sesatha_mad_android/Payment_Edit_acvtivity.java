@@ -60,10 +60,10 @@ public class Payment_Edit_acvtivity extends AppCompatActivity {
         cardCCVET = (EditText) findViewById(R.id.ETccv);
         submitButton = (Button) findViewById(R.id.payment_editbt);
 
-        CardDetails cardDetails = new CardDetails();
+
 
         //FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+
 
         //refs = Firebase.database.getReference("CardDetails");
 
@@ -76,21 +76,19 @@ public class Payment_Edit_acvtivity extends AppCompatActivity {
                 // find the radiobutton by returned id
                 //radioButton = (RadioButton) findViewById(selectedId);
 
+                String cardHolder = cardHolderET.getText().toString().trim();
                 int cardNo = Integer.parseInt(cardNoET.getText().toString().trim());
                 int year = Integer.parseInt(cardYrET.getText().toString().trim());
                 int month = Integer.parseInt(cardMonthET.getText().toString().trim());
                 int ccv = Integer.parseInt(cardCCVET.getText().toString().trim());
 
-                //calling setter
-                cardDetails.setCardHolder(cardHolderET.getText().toString().trim());
-                //cardDetails.setCardType(radioButton.getText().toString().trim());
-                cardDetails.setCardNo(cardNo);
-                cardDetails.setYear(year);
-                cardDetails.setMonth(month);
-                cardDetails.setCcv(ccv);
+
+                CardDetails cardDetails = new CardDetails( cardNo, cardHolder, year, month, ccv);
 
                 //refs.push().setValue(cardDetails);
-                mDatabase.child("cardDetails").child(String.valueOf(cardNo)).setValue(cardDetails);
+                FirebaseDatabase database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
+                DatabaseReference myRef = database.getReference("Card");
+                myRef.child(String.valueOf(cardNo)).setValue(cardDetails);
 
                 Toast.makeText(Payment_Edit_acvtivity.this,
                         "Card Details Saved Successfully", Toast.LENGTH_SHORT).show();

@@ -8,5 +8,11 @@
     <color name="black">#001730</color>
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#476A6F</color>
-    <color name="mainclr">#4AD7D1</color>
+    <color name="mainclr">#e23161</color>
+
+
+    <color name="bgdark">#2e3449</color>
+    <color name="bgpink">#e23161</color>
+    <color name="bglight">#e8eefa</color>
+
 </resources>

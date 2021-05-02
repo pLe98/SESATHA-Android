@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         button = (Button) findViewById(R.id.button);
 
         Button buttonReg = (Button) findViewById(R.id.buttonreg);
+        Button buttonCheckout = (Button) findViewById(R.id.buttoncheckout);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +58,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        buttonCheckout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openCheckout();
+
+            }
+        });
+
 
     }
 
@@ -68,6 +77,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void openRegister(){
         Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+
+    }
+
+    public void openCheckout(){
+        Intent intent = new Intent(this, CheckoutActivity.class);
         startActivity(intent);
 
     }

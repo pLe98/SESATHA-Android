@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/bg21"
+    android:background="@drawable/back"
     android:id="@+id/drawerLayout">
 
     <LinearLayout
@@ -22,7 +22,7 @@
                 android:id="@+id/mytoolbar"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@drawable/bg21"
+                android:background="@color/bgdark"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:elevation="0dp"/>
@@ -44,6 +44,15 @@
             android:layout_marginTop="100dp"
             android:id="@+id/buttonreg"
             android:text="Register"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:id="@+id/buttoncheckout"
+            android:text="Checkout"
             android:backgroundTint="@color/black"
             android:textColor="@color/white"/>
 

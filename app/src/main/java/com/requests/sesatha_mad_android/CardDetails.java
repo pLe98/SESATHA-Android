@@ -12,6 +12,14 @@ public class CardDetails {
 
     }
 
+    public CardDetails(int cardNo, String cardHolder, int year, int month, int ccv) {
+        this.cardNo = cardNo;
+        this.cardHolder = cardHolder;
+        this.year = year;
+        this.month = month;
+        this.ccv = ccv;
+    }
+
     public void setCardNo(int cardNo) {
         this.cardNo = cardNo;
     }
