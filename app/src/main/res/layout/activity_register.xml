@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity"
     android:orientation="vertical"
-    android:background="@drawable/bg22">
+    android:background="@drawable/bg30">
 
     <RelativeLayout
         android:layout_marginTop="100dp"

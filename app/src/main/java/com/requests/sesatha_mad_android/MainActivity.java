@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         buttonReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openRegister();
+                openLogin();
 
             }
         });
@@ -75,8 +75,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void openRegister(){
-        Intent intent = new Intent(this, RegisterActivity.class);
+    public void openLogin(){
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
 
     }

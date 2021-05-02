@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".LoginActivity"
+android:orientation="vertical"
+android:background="@drawable/bg33">
+
+<RelativeLayout
+    android:layout_marginTop="150dp"
+    android:paddingTop="30dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="30dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/roundedcorderall"
+    android:elevation="20dp"
+    android:layout_gravity="center_horizontal">
+
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:textStyle="bold"
+        android:textSize="40dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/loginEmail"
+        android:layout_width="300dp"
+        android:paddingTop="130dp"
+        android:layout_height="wrap_content"
+        app:boxBackgroundColor="@color/white"
+        android:hint="Email">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/loginPassword"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="35dp"
+        android:layout_below="@+id/loginEmail"
+        app:boxBackgroundColor="@color/white"
+        app:endIconMode="password_toggle"
+        android:hint="Password">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_centerInParent="true"
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:layout_below="@+id/loginPassword"
+        android:text="Login"
+        android:backgroundTint="@color/mainclr"/>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/forgotPw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgot Password"
+            android:textAllCaps="false"
+            android:textColor="@color/bgpink"
+            android:layout_weight="0"
+            android:layout_marginLeft="20dp"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            />
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:textAllCaps="false"
+            android:textColor="@color/bgpink"
+            android:layout_weight="0"
+            android:layout_marginLeft="30dp"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            />
+
+    </LinearLayout>
+</RelativeLayout>
+
+</LinearLayout>
