@@ -101,9 +101,10 @@
             android:id="@+id/regSubmit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:layout_below="@+id/regPassword"
-
+            android:layout_marginTop="20dp"
             android:text="Register"
             android:backgroundTint="@color/mainclr"/>
     </RelativeLayout>

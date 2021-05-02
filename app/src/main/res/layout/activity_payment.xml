@@ -22,7 +22,7 @@
                 android:id="@+id/mytoolbar"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@drawable/bg21"
+                android:background="@color/bgdark"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:elevation="0dp"/>

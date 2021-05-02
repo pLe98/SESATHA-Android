@@ -3,6 +3,7 @@ package com.requests.sesatha_mad_android;
 public class User {
 
     //private int uId;
+    private String userType;
     private String username;
     private String uEmail;
     private int uPhone;
@@ -12,7 +13,8 @@ public class User {
     public User() {
     }
 
-    public User(String username, String uEmail, int uPhone, String uAddress, String uPassword) {
+    public User(String userType, String username, String uEmail, int uPhone, String uAddress, String uPassword) {
+        this.userType = userType;
         this.username = username;
         this.uEmail = uEmail;
         this.uPhone = uPhone;
@@ -20,6 +22,13 @@ public class User {
         this.uPassword = uPassword;
     }
 
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
 
     public String getUsername() {
         return username;

@@ -35,6 +35,9 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        Bundle extras = getIntent().getExtras();
+        String userType = extras.getSerializable("userType").toString().trim();
+
         //getting values from user
         userName =  findViewById(R.id.regUsername);
         email =  findViewById(R.id.regEmail);
@@ -53,7 +56,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String dAddress = address.getEditText().getText().toString().trim();
                 String dPassword = password.getEditText().getText().toString().trim();
 
-                User user = new User(dUsername, dEmail, dPhone, dAddress, dPassword);
+                User user = new User(userType, dUsername, dEmail, dPhone, dAddress, dPassword);
 
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
