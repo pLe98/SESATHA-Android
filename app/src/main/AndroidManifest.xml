@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SESATHA_MADAndroid">
         <activity android:name=".DemoActivity"></activity>
+        <activity android:name=".FirebaseDemoActivity" />
         <activity android:name=".AddPaymentActivity" />
         <activity android:name=".PostItem" />
         <activity android:name=".RegisterTypeActivity" />

@@ -1,9 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AddPaymentActivity">
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/bg30"
+android:id="@+id/drawerLayout"
+tools:context=".AddPaymentActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/mytoolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/bgdark"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:elevation="0dp"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="150dp"
+        android:paddingTop="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedcorderall"
+        android:elevation="20dp"
+        android:layout_gravity="center_horizontal">
+
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Card Details"
+            android:textStyle="bold"
+            android:textSize="40dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_cardholder"
+            android:layout_width="300dp"
+            android:paddingTop="130dp"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/white"
+            android:hint="Card Holder's Name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_cardno"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="35dp"
+            android:layout_below="@+id/et_cardholder"
+            app:boxBackgroundColor="@color/white"
+            android:hint="Card Number">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_month"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="35dp"
+            android:layout_below="@+id/et_cardno"
+            app:boxBackgroundColor="@color/white"
+            android:hint="MM">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_year"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="35dp"
+            android:layout_below="@+id/et_cardno"
+            android:layout_toRightOf="@+id/et_month"
+            app:boxBackgroundColor="@color/white"
+            android:hint="YY">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_ccv"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="35dp"
+            android:layout_below="@+id/et_cardno"
+            android:layout_alignParentEnd="true"
+            app:boxBackgroundColor="@color/white"
+            android:hint="CCV">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:layout_centerInParent="true"
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_below="@+id/et_month"
+            android:text="Login"
+            android:backgroundTint="@color/mainclr"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+<com.google.android.material.navigation.NavigationView
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    app:menu="@menu/side_navigation_menu"
+    android:layout_gravity="start"
+    app:headerLayout="@layout/sidenavi_header"
+    >
+
+</com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>

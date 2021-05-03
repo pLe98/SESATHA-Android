@@ -43,6 +43,15 @@ public class MainActivity extends AppCompatActivity {
 
         Button buttonReg = (Button) findViewById(R.id.buttonreg);
         Button buttonCheckout = (Button) findViewById(R.id.buttoncheckout);
+        Button demo = findViewById(R.id.demo);
+
+        demo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FirebaseDemoActivity.class);
+                startActivity(intent);
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -23,8 +23,6 @@ public class RegisterActivity extends AppCompatActivity {
     Button registerSubmit;
     long userId;
 
-    FirebaseDatabase rootNode;
-    DatabaseReference reff;
 
     private DatabaseReference mDatabase;
 
@@ -60,6 +58,9 @@ public class RegisterActivity extends AppCompatActivity {
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
                 DatabaseReference myRef = database.getReference("Users");
+
+
+
 
                 myRef.addValueEventListener(new ValueEventListener() {
                     @Override

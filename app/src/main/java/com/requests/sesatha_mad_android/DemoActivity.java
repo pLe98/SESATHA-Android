@@ -20,6 +20,7 @@ public class DemoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demo);
 
+
         //navigation bar
 
         mytoolbar = (Toolbar) findViewById(R.id.mytoolbar);
@@ -31,6 +32,7 @@ public class DemoActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //navigation bar
+
 
 
     }
