@@ -64,7 +64,7 @@ public class PaymentActivity extends MainActivity {
     }
 
     public void openEditPayment(){
-        Intent intent = new Intent(this, Payment_Edit_acvtivity.class);
+        Intent intent = new Intent(this, AddPaymentActivity.class);
         startActivity(intent);
 
     }

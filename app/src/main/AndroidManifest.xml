@@ -9,14 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SESATHA_MADAndroid">
-        <activity android:name=".PostItem"></activity>
+        <activity android:name=".DemoActivity"></activity>
+        <activity android:name=".AddPaymentActivity" />
+        <activity android:name=".PostItem" />
         <activity android:name=".RegisterTypeActivity" />
         <activity android:name=".PasswordRestActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".CheckoutActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".Payment_Edit_acvtivity" />
         <activity android:name=".PaymentActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
