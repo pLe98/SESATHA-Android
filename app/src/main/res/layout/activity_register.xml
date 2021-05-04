@@ -26,7 +26,10 @@
             android:layout_height="wrap_content"
             android:paddingTop="15dp"
             app:boxBackgroundColor="@color/white"
-            android:hint="Username">
+            android:hint="Username"
+            app:hintTextColor="@color/bgdark"
+            app:hintTextAppearance="?attr/textAppearanceCaption"
+            app:boxStrokeColor="@color/bgdark">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -41,7 +44,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/regUsername"
             app:boxBackgroundColor="@color/white"
-            android:hint="Email">
+            android:hint="Email"
+            app:hintTextColor="@color/bgdark"
+            app:hintTextAppearance="?attr/textAppearanceCaption"
+            app:boxStrokeColor="@color/bgdark">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -56,7 +62,10 @@
             android:paddingTop="15dp"
             android:layout_below="@+id/regEmail"
             app:boxBackgroundColor="@color/white"
-            android:hint="Contact Number">
+            android:hint="Contact Number"
+            app:hintTextColor="@color/bgdark"
+            app:hintTextAppearance="?attr/textAppearanceCaption"
+            app:boxStrokeColor="@color/bgdark">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -71,7 +80,10 @@
             android:paddingTop="15dp"
             android:layout_below="@id/regPhone"
             app:boxBackgroundColor="@color/white"
-            android:hint="Address">
+            android:hint="Address"
+            app:hintTextColor="@color/bgdark"
+            app:hintTextAppearance="?attr/textAppearanceCaption"
+            app:boxStrokeColor="@color/bgdark">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -87,7 +99,10 @@
             android:layout_below="@+id/regAddress"
             app:boxBackgroundColor="@color/white"
             app:endIconMode="password_toggle"
-            android:hint="Password">
+            android:hint="Password"
+            app:hintTextColor="@color/bgdark"
+            app:hintTextAppearance="?attr/textAppearanceCaption"
+            app:boxStrokeColor="@color/bgdark">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"

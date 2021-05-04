@@ -36,9 +36,15 @@ android:background="@drawable/bg33">
         android:paddingTop="130dp"
         android:layout_height="wrap_content"
         app:boxBackgroundColor="@color/white"
-        android:hint="Email">
+        android:hint="Email"
+        app:hintTextColor="@color/bgdark"
+        app:hintTextAppearance="?attr/textAppearanceCaption"
+        app:boxStrokeColor="@color/bgdark"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
+
+            android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -53,12 +59,16 @@ android:background="@drawable/bg33">
         android:layout_below="@+id/loginEmail"
         app:boxBackgroundColor="@color/white"
         app:endIconMode="password_toggle"
-        android:hint="Password">
+        android:hint="Password"
+        app:hintTextColor="@color/bgdark"
+        app:hintTextAppearance="?attr/textAppearanceCaption"
+        app:boxStrokeColor="@color/bgdark"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -72,7 +82,8 @@ android:background="@drawable/bg33">
         android:paddingBottom="15dp"
         android:layout_below="@+id/loginPassword"
         android:text="Login"
-        android:backgroundTint="@color/mainclr"/>
+        android:backgroundTint="@color/mainclr"
+        />
 
     <LinearLayout
         android:layout_marginTop="15dp"
@@ -103,6 +114,7 @@ android:background="@drawable/bg33">
             android:textColor="@color/bgpink"
             android:layout_weight="0"
             android:layout_marginLeft="30dp"
+
             style="@style/Widget.MaterialComponents.Button.TextButton"
             />
 

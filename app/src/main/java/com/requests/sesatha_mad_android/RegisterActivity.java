@@ -15,13 +15,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.concurrent.TimeUnit;
+
 
 public class RegisterActivity extends AppCompatActivity {
 
     //declaring variables
     TextInputLayout userName, email, phone, address, password;
     Button registerSubmit;
-    long userId;
+
 
 
     private DatabaseReference mDatabase;
@@ -47,36 +49,21 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                String userId = "U" + String.valueOf(TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
                 String dUsername = userName.getEditText().getText().toString().trim();
                 String dEmail = email.getEditText().getText().toString().trim();
                 int dPhone = Integer.parseInt(phone.getEditText().getText().toString().trim());
                 String dAddress = address.getEditText().getText().toString().trim();
                 String dPassword = password.getEditText().getText().toString().trim();
 
-                User user = new User(userType, dUsername, dEmail, dPhone, dAddress, dPassword);
+                User user = new User(userId, userType, dUsername, dEmail, dPhone, dAddress, dPassword);
 
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
                 DatabaseReference myRef = database.getReference("Users");
 
 
-
-
-                myRef.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if(snapshot.exists()){
-                            userId = snapshot.getChildrenCount();
-
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-                myRef.child(String.valueOf(userId+1)).setValue(user);
+                myRef.child(userId).setValue(user);
 
                 Toast.makeText(RegisterActivity.this,
                         "Registration Successful", Toast.LENGTH_SHORT).show();
