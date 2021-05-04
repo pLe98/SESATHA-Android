@@ -9,6 +9,8 @@ import android.os.Bundle;
 
 public class PostItem extends AppCompatActivity {
 
+
+
     DrawerLayout mdrawerLayout;
     ActionBarDrawerToggle mToggle;
     Toolbar mytoolbar;
@@ -17,6 +19,8 @@ public class PostItem extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_item);
+
+
 
         //toolbar
         mytoolbar = (Toolbar) findViewById(R.id.mytoolbar);

@@ -57,103 +57,100 @@
                     android:layout_marginRight="30dp"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="0dp"
-                        android:fontFamily="sans-serif-black"
-                        android:text="Title"
-                        android:textColor="@color/teal_200"
-                        android:textSize="18sp" />
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/editTextTitle"
-                        android:layout_width="267dp"
-                        android:layout_height="47dp"
-                        android:layout_marginTop="4dp"
-                        android:ems="10"
-                        android:hint="Keep it short"
-                        android:inputType="textPersonName" />
-
-                    <TextView
-                        android:id="@+id/textView7"
-                        android:layout_width="wrap_content"
+                        android:layout_width="300dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="28dp"
-                        android:fontFamily="sans-serif-black"
-                        android:text="Category"
-                        android:textColor="@color/teal_200"
-                        android:textSize="18sp" />
+                        android:hint="Title"
+                        app:boxBackgroundColor="@color/white"
+                        app:hintTextColor="@color/bgdark"
+                        app:hintTextAppearance="?attr/textAppearanceCaption"
+                        app:boxStrokeColor="@color/bgdark"
+                        app:helperTextEnabled="true"
+                        app:helperText="Keep it short">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
 
                     <Spinner
                         android:id="@+id/spinner"
                         android:layout_gravity="center_horizontal"
-                        android:layout_width="266dp"
+                        android:layout_width="300dp"
                         android:layout_height="23dp"
                         android:drawSelectorOnTop="true"
                         android:fontFamily="sans-serif-black"
                         android:prompt="@string/spin"
                         android:entries="@array/categories"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="5dp"
                         android:textSize="18sp" />
 
-
-                    <TextView
-                        android:id="@+id/textView5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="28dp"
-                        android:fontFamily="sans-serif-black"
-                        android:text="Description"
-                        android:textColor="@color/teal_200"
-                        android:textSize="18sp" />
-
-                    <EditText
+                    <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/editTextDesc"
-                        android:layout_width="269dp"
-                        android:layout_height="71dp"
-                        android:ems="10"
-                        android:gravity="start|top"
-                        android:layout_marginTop="4dp"
-                        android:hint="Detailed description may bring more sales"
-                        android:inputType="textMultiLine" />
-
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="wrap_content"
+                        android:layout_width="300dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="28dp"
-                        android:fontFamily="sans-serif-black"
-                        android:text="Price (Rs)"
-                        android:textColor="@color/teal_200"
-                        android:textSize="18sp" />
+                        android:hint="Description"
+                        app:boxBackgroundColor="@color/white"
+                        app:hintTextColor="@color/bgdark"
+                        app:hintTextAppearance="?attr/textAppearanceCaption"
+                        app:boxStrokeColor="@color/bgdark"
+                        app:helperTextEnabled="true"
+                        android:inputType="textMultiLine"
+                        app:helperText="Detailed description may bring more sales">
 
-                    <EditText
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                    <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/editTextPrice"
-                        android:layout_width="wrap_content"
+                        android:layout_width="300dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:ems="10"
-                        android:hint="Pick a reasonable price"
-                        android:inputType="number|numberDecimal" />
+                        android:hint="Price"
+                        app:boxBackgroundColor="@color/white"
+                        app:hintTextColor="@color/bgdark"
+                        app:hintTextAppearance="?attr/textAppearanceCaption"
+                        app:boxStrokeColor="@color/bgdark"
+                        app:helperTextEnabled="true"
+                        app:helperText="Pick a reasonable price"
+                        app:prefixText="Rs ">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
 
 
                     <RelativeLayout
                         android:layout_marginTop="28dp"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp">
 
 
                         <TextView
                             android:id="@+id/textView6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:fontFamily="sans-serif-black"
                             android:text="Select an image"
-                            android:textColor="@color/teal_200"
-                            android:textSize="18sp" />
+                            android:textColor="@color/bgdark"
+                            android:textSize="16sp"
+                           />
 
                         <ImageView
                             android:id="@+id/imageView"
