@@ -52,12 +52,18 @@ public class PostItem extends AppCompatActivity {
     private Uri imUrI;
     private String pImUrl = null;
     private ProgressBar progressBar;
+
+    //Other variables for objects
     Item item;
+    GlobalClass globalVariables;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_item);
+
+        //Get global class object
+        globalVariables = (GlobalClass) getApplicationContext();
 
         //toolbar
         mytoolbar = (Toolbar) findViewById(R.id.mytoolbar);
@@ -102,8 +108,7 @@ public class PostItem extends AppCompatActivity {
                             uploadImage(imUrI);
                             submiBtn.setEnabled(false);
                             Log.d("Item",pCat);
-                            item = new Item(pTitle, pCat, pDesc, pPrice, "dfsd3fdf1");
-
+                            item = new Item(pTitle, pCat, pDesc, pPrice, globalVariables.getUserId());
 
                         }else{
                             Toast.makeText(PostItem.this, "Please select an image", Toast.LENGTH_SHORT).show();

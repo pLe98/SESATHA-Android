@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     ActionBarDrawerToggle mToggle;
     Toolbar mytoolbar;
     private Button button;
-
+    GlobalClass globalVariables;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +27,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //navigation bar
+        //Retrieve Global Application Class
+        globalVariables = (GlobalClass) getApplicationContext();
 
+        //Set username & userId in global class
+        globalVariables.setUsername("Userxxx");
+        globalVariables.setUserId("Seller456");
+
+        //navigation bar
         mytoolbar = (Toolbar) findViewById(R.id.mytoolbar);
         setSupportActionBar(mytoolbar);
         mdrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);

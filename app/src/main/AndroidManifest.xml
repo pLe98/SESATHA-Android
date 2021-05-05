@@ -3,6 +3,7 @@
     package="com.requests.sesatha_mad_android">
 
     <application
+        android:name="com.requests.sesatha_mad_android.GlobalClass"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
