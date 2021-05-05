@@ -29,12 +29,12 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-
+import com.iceteck.silicompressorr.SiliCompressor;
+import java.io.File;
 import java.util.UUID;
 
+
 public class PostItem extends AppCompatActivity {
-
-
 
     DrawerLayout mdrawerLayout;
     ActionBarDrawerToggle mToggle;
@@ -49,12 +49,13 @@ public class PostItem extends AppCompatActivity {
     private TextInputLayout title,description,price;
     private Spinner CatSelector;
     private ImageView imView;
-    private Uri imUrI;
+    Uri imUrI;
     private String pImUrl = null;
     private ProgressBar progressBar;
 
     //Other variables for objects
     Item item;
+    Uri cImUrI;
     GlobalClass globalVariables;
 
     @Override
@@ -81,7 +82,6 @@ public class PostItem extends AppCompatActivity {
         dbRef = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
         storageRef = FirebaseStorage.getInstance().getReference();
 
-
         //Set elements to objects
         submiBtn = findViewById(R.id.btnPost);
         title = findViewById(R.id.editTextTitle);
@@ -107,9 +107,7 @@ public class PostItem extends AppCompatActivity {
                         if(imUrI != null){
                             uploadImage(imUrI);
                             submiBtn.setEnabled(false);
-                            Log.d("Item",pCat);
                             item = new Item(pTitle, pCat, pDesc, pPrice, globalVariables.getUserId());
-
                         }else{
                             Toast.makeText(PostItem.this, "Please select an image", Toast.LENGTH_SHORT).show();
                         }
@@ -121,6 +119,7 @@ public class PostItem extends AppCompatActivity {
         }
         );
 
+        //Image view on click callback method
         imView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -144,7 +143,19 @@ public class PostItem extends AppCompatActivity {
     private void uploadImage(Uri imUrI){
         progressBar.setVisibility(View.VISIBLE);
         StorageReference imFile = storageRef.child("item_images/"+UUID.randomUUID().toString()+"."+getExtension(imUrI));
-        imFile.putFile(imUrI).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+
+        //File comFile = null;
+        try {
+            //File oFile = new File(Environment.getExternalStorageDirectory().getAbsolutePath());
+            String cFilePath = SiliCompressor.with(PostItem.this).compress(imUrI.toString(), new File(this.getCacheDir(), "temp"));
+            cImUrI = Uri.parse(cFilePath);
+            Log.d("Item","Image compressed.........");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        //upload to firebase storage asynchronously
+        imFile.putFile(cImUrI).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 Log.d("Item","Image uploaded successfully !!!");
@@ -153,12 +164,13 @@ public class PostItem extends AppCompatActivity {
                     public void onSuccess(Uri uri) {
                         pImUrl = uri.toString();
                         if(pImUrl != null){
-                            Log.d("Item","Image url found : "+ uri.toString());
+                            Log.d("Item","Image url : "+ uri.toString());
                             item.setImUrl(pImUrl);
                             dbRef.child("items").child(UUID.randomUUID().toString()).setValue(item);
                             progressBar.setVisibility(View.INVISIBLE);
-                            Toast.makeText(PostItem.this, "Item is submitted for approval !", Toast.LENGTH_LONG).show();
-                            finish();
+                            PostItem.this.getContentResolver().delete(cImUrI,null,null);    //Delete compressed file after uploading
+                            Toast.makeText(PostItem.this, "Item submitted for approval !", Toast.LENGTH_LONG).show();
+                            finish(); //return to previous activity
                         }
                     }
                 });
@@ -174,12 +186,14 @@ public class PostItem extends AppCompatActivity {
             public void onFailure(@NonNull Exception e) {
                 progressBar.setVisibility(View.INVISIBLE);
                 submiBtn.setEnabled(true);
+                PostItem.this.getContentResolver().delete(cImUrI,null,null);    //Delete compressed image after
                 Toast.makeText(PostItem.this, "Image uploading failed!", Toast.LENGTH_SHORT).show();
                 Log.d("Item","Image uploading failed !!!");
             }
         });
     }
 
+    //get image file extension
     private String getExtension(Uri imUrI){
         ContentResolver cr = getContentResolver();
         MimeTypeMap mime = MimeTypeMap.getSingleton();
