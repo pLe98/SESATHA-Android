@@ -1,6 +1,6 @@
 plugins {
     id 'com.android.application'
-    //id 'com.google.gms.google-services'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -8,7 +8,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.requests.sesathap"
+        applicationId "com.requests.sesatha_mad_android"
         minSdkVersion 26
         targetSdkVersion 30
         versionCode 1

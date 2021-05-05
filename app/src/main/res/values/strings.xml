@@ -9,4 +9,7 @@
     <string name="checkout">Order Confirmation</string>
     <string name="spin">Select category</string>
 
+    <!-- checkout activity -->
+    <string name="change">Change</string>
+
 </resources>

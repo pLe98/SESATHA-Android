@@ -5,10 +5,10 @@ public class User {
     private String userID;
     private String userType;
     private String username;
-    private String uEmail;
-    private int uPhone;
-    private String uAddress;
-    private String uPassword;
+    private String email;
+    private int phone;
+    private String address;
+    private String password;
 
     public User() {
     }
@@ -17,10 +17,10 @@ public class User {
         this.userID = userID;
         this.userType = userType;
         this.username = username;
-        this.uEmail = uEmail;
-        this.uPhone = uPhone;
-        this.uAddress = uAddress;
-        this.uPassword = uPassword;
+        this.email = uEmail;
+        this.phone = uPhone;
+        this.address = uAddress;
+        this.password = uPassword;
     }
 
     public String getUserID() {
@@ -47,35 +47,35 @@ public class User {
         this.username = username;
     }
 
-    public String getuEmail() {
-        return uEmail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setuEmail(String uEmail) {
-        this.uEmail = uEmail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public int getuPhone() {
-        return uPhone;
+    public int getPhone() {
+        return phone;
     }
 
-    public void setuPhone(int uPhone) {
-        this.uPhone = uPhone;
+    public void setPhone(int phone) {
+        this.phone = phone;
     }
 
-    public String getuAddress() {
-        return uAddress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setuAddress(String uAddress) {
-        this.uAddress = uAddress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getuPassword() {
-        return uPassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setuPassword(String uPassword) {
-        this.uPassword = uPassword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

@@ -72,7 +72,8 @@ public class MainActivity extends AppCompatActivity {
         buttonCheckout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openCheckout();
+                Intent intent = new Intent(MainActivity.this, CheckoutActivity.class);
+                startActivity(intent);
 
             }
         });
