@@ -9,7 +9,7 @@
     android:background="@drawable/bg30">
 
     <RelativeLayout
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="60dp"
         android:paddingTop="30dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
@@ -51,7 +51,8 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -69,18 +70,55 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="phone"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/regAddress"
+            android:id="@+id/regAddress1"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:paddingTop="15dp"
             android:layout_below="@id/regPhone"
             app:boxBackgroundColor="@color/white"
-            android:hint="Address"
+            android:hint="Address Line 1"
+            app:hintTextColor="@color/bgdark"
+            app:hintTextAppearance="?attr/textAppearanceCaption"
+            app:boxStrokeColor="@color/bgdark">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/regAddress2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:layout_below="@id/regAddress1"
+            app:boxBackgroundColor="@color/white"
+            android:hint="Address Line 2"
+            app:hintTextColor="@color/bgdark"
+            app:hintTextAppearance="?attr/textAppearanceCaption"
+            app:boxStrokeColor="@color/bgdark">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/regAddress3"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:layout_below="@id/regAddress2"
+            app:boxBackgroundColor="@color/white"
+            android:hint="Address Line 3"
             app:hintTextColor="@color/bgdark"
             app:hintTextAppearance="?attr/textAppearanceCaption"
             app:boxStrokeColor="@color/bgdark">
@@ -96,7 +134,7 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:paddingTop="15dp"
-            android:layout_below="@+id/regAddress"
+            android:layout_below="@+id/regAddress3"
             app:boxBackgroundColor="@color/white"
             app:endIconMode="password_toggle"
             android:hint="Password"

@@ -4,23 +4,25 @@ public class User {
 
     private String userID;
     private String userType;
-    private String username;
+    private String userName;
     private String email;
     private int phone;
-    private String address;
+    private String address1, address2, address3;
     private String password;
 
     public User() {
     }
 
-    public User(String userID, String userType, String username, String uEmail, int uPhone, String uAddress, String uPassword) {
+    public User(String userID, String userType, String userName, String email, int phone, String address1, String address2, String address3, String password) {
         this.userID = userID;
         this.userType = userType;
-        this.username = username;
-        this.email = uEmail;
-        this.phone = uPhone;
-        this.address = uAddress;
-        this.password = uPassword;
+        this.userName = userName;
+        this.email = email;
+        this.phone = phone;
+        this.address1 = address1;
+        this.address2 = address2;
+        this.address3 = address3;
+        this.password = password;
     }
 
     public String getUserID() {
@@ -40,11 +42,11 @@ public class User {
     }
 
     public String getUsername() {
-        return username;
+        return userName;
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.userName = username;
     }
 
     public String getEmail() {
@@ -63,12 +65,28 @@ public class User {
         this.phone = phone;
     }
 
-    public String getAddress() {
-        return address;
+    public String getAddress1() {
+        return address1;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAddress1(String address1) {
+        this.address1 = address1;
+    }
+
+    public String getAddress2() {
+        return address2;
+    }
+
+    public void setAddress2(String address2) {
+        this.address2 = address2;
+    }
+
+    public String getAddress3() {
+        return address3;
+    }
+
+    public void setAddress3(String address3) {
+        this.address3 = address3;
     }
 
     public String getPassword() {

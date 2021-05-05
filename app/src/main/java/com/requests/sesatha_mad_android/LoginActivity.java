@@ -1,5 +1,6 @@
 package com.requests.sesatha_mad_android;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,8 +8,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
     private TextInputLayout enteredEmail, enteredPassword;
@@ -52,6 +60,66 @@ public class LoginActivity extends AppCompatActivity {
 
     public void loginUser(){
 
+        String inputEmail = enteredEmail.getEditText().getText().toString().trim();
+        String inputPassword = enteredPassword.getEditText().getText().toString().trim();
+
+        DatabaseReference reff = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/")
+                .getReference("Users");
+        Query checkEmail = reff.orderByChild("email").equalTo(inputEmail);
+
+        checkEmail.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if(snapshot.exists()){
+                    enteredEmail.setError(null);
+                    enteredEmail.setErrorEnabled(false);
+                    String pwFromDb = snapshot.child(inputEmail).child("password").getValue(String.class);
+
+                    if(pwFromDb.equals(inputPassword)){
+
+                        enteredPassword.setError(null);
+                        enteredPassword.setErrorEnabled(false);
+
+                        String DBuserID = snapshot.child(inputEmail).child("userID").getValue(String.class);
+                        String DBuserName = snapshot.child(inputEmail).child("username").getValue(String.class);
+                        String DBemail = snapshot.child(inputEmail).child("email").getValue(String.class);
+                        String DBuserType = snapshot.child(inputEmail).child("userType").getValue(String.class);
+                        String DBphone = snapshot.child(inputEmail).child("phone").getValue(String.class);
+                        String DBaddress1 = snapshot.child(inputEmail).child("address1").getValue(String.class);
+                        String DBaddress2 = snapshot.child(inputEmail).child("address2").getValue(String.class);
+                        String DBaddress3 = snapshot.child(inputEmail).child("address3").getValue(String.class);
+
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        intent.putExtra("userID", DBuserID);
+                        intent.putExtra("userName", DBuserName);
+                        intent.putExtra("userType", DBuserType);
+                        intent.putExtra("email", DBemail);
+                        intent.putExtra("phone", DBphone);
+                        intent.putExtra("address1", DBaddress1);
+                        intent.putExtra("address2", DBaddress2);
+                        intent.putExtra("address3", DBaddress3);
+                        startActivity(intent);
+
+                        Toast.makeText(LoginActivity.this,
+                                "Login Successful", Toast.LENGTH_SHORT).show();
+
+                    }else{
+                        enteredPassword.setError("Invalid Password");
+                        enteredPassword.requestFocus();
+                    }
+                }else {
+                    enteredEmail.setError("Invalid User Email");
+                    enteredEmail.requestFocus();
+                    enteredPassword.requestFocus();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
     }
 }

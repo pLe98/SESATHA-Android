@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 public class RegisterActivity extends AppCompatActivity {
 
     //declaring variables
-    TextInputLayout userName, email, phone, address, password;
+    TextInputLayout userName, email, phone, address1, address2,address3,password;
     Button registerSubmit;
 
 
@@ -41,7 +41,9 @@ public class RegisterActivity extends AppCompatActivity {
         userName =  findViewById(R.id.regUsername);
         email =  findViewById(R.id.regEmail);
         phone = findViewById(R.id.regPhone);
-        address = findViewById(R.id.regAddress);
+        address1 = findViewById(R.id.regAddress1);
+        address2 = findViewById(R.id.regAddress2);
+        address3 = findViewById(R.id.regAddress3);
         password = findViewById(R.id.regPassword);
         registerSubmit = (Button) findViewById(R.id.btnPost);
 
@@ -53,10 +55,12 @@ public class RegisterActivity extends AppCompatActivity {
                 String dUsername = userName.getEditText().getText().toString().trim();
                 String dEmail = email.getEditText().getText().toString().trim();
                 int dPhone = Integer.parseInt(phone.getEditText().getText().toString().trim());
-                String dAddress = address.getEditText().getText().toString().trim();
+                String dAddress1 = address1.getEditText().getText().toString().trim();
+                String dAddress2 = address2.getEditText().getText().toString().trim();
+                String dAddress3= address3.getEditText().getText().toString().trim();
                 String dPassword = password.getEditText().getText().toString().trim();
 
-                User user = new User(userId, userType, dUsername, dEmail, dPhone, dAddress, dPassword);
+                User user = new User(userId, userType, dUsername, dEmail, dPhone, dAddress1, dAddress2,dAddress3,dPassword);
 
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
