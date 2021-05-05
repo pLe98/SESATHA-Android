@@ -28,4 +28,18 @@ public class Item {
         SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd hh:mma");
         this.last_modified = df.format(Calendar.getInstance().getTime());
     }
+
+    public Item(String title, String category, String description, float price, String userId) {
+        this.title = title;
+        this.category = category;
+        this.description = description;
+        this.price = price;
+        this.userId = userId;
+        this.approved = approved;
+        this.last_modified = last_modified;
+    }
+
+    public void setImUrl(String imUrl) {
+        this.imUrl = imUrl;
+    }
 }
