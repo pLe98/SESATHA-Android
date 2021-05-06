@@ -5,6 +5,7 @@ import android.app.Application;
 public class GlobalClass extends Application {
     private String username;
     private String userId;
+    private User user;
 
     public String getUsername() {
         return username;
@@ -20,5 +21,13 @@ public class GlobalClass extends Application {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

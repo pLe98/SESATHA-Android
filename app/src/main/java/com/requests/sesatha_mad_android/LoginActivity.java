@@ -5,11 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,6 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 public class LoginActivity extends AppCompatActivity {
     private TextInputLayout enteredEmail, enteredPassword;
     private Button login, forgotPw, register;
+    GlobalClass globalVariables;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +37,13 @@ public class LoginActivity extends AppCompatActivity {
         register = (Button) findViewById(R.id.register);
         forgotPw = (Button) findViewById(R.id.forgotPw);
 
+        //Get global class object
+        globalVariables = (GlobalClass) getApplicationContext();
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loginUser();
-
             }
         });
         register.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +67,48 @@ public class LoginActivity extends AppCompatActivity {
 
         String inputEmail = enteredEmail.getEditText().getText().toString().trim();
         String inputPassword = enteredPassword.getEditText().getText().toString().trim();
+        DatabaseReference db = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
+        db.child("Users").orderByChild("email").equalTo(inputEmail).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if(!task.isSuccessful()){
+                    Log.e("login", "Error getting user data", task.getException());
+                }else{
+                    Log.e("login", "Retrieved user data");
 
+                    if (task.getResult().hasChildren()) {
+                        Log.e("login", task.getResult().getValue().toString());
+                        Log.e("login", task.getResult().getChildren().iterator().next().getValue().toString());
+                        User usr = task.getResult().getChildren().iterator().next().getValue(User.class);
+
+                        //Verify user credentials
+                        if(usr.getPassword().equals(inputPassword)){
+                            globalVariables.setUser(usr); //after setting this user object is accessible from all activities
+                            Log.e("login", "Successfully logged in !");
+                            Toast.makeText(LoginActivity.this,
+                                    "Login Successful", Toast.LENGTH_SHORT).show();
+                            Log.e("login", "User : "+ globalVariables.getUser().getUserName()); //example usage of globalvariables
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(intent);
+                        }else{
+                            Log.e("login", "Incorrect password !");
+                            enteredPassword.setError("Invalid Email/Password");
+                            enteredPassword.requestFocus();
+                        }
+                    } else {
+                        Log.e("login", "Email not found !");
+                        enteredPassword.setError("Invalid Email/Password");
+                        enteredEmail.requestFocus();
+                        enteredPassword.requestFocus();
+                    }
+                    enteredPassword.getEditText().getText().clear();
+
+                }
+            }
+        });
+
+
+        /*
         DatabaseReference reff = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/")
                 .getReference("Users");
         Query checkEmail = reff.orderByChild("email").equalTo(inputEmail);
@@ -119,7 +165,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-        });
+        });*/
 
     }
 }

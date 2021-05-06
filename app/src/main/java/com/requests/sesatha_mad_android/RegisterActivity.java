@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -68,7 +69,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
                 myRef.child(userId).setValue(user);
-
+                Log.e("login", "User registered !");
                 Toast.makeText(RegisterActivity.this,
                         "Registration Successful", Toast.LENGTH_SHORT).show();
             }

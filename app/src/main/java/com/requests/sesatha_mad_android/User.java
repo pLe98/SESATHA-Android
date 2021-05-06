@@ -41,13 +41,13 @@ public class User {
         this.userType = userType;
     }
 
-    public String getUsername() {
+    /*public String getUsername() {
         return userName;
     }
 
     public void setUsername(String username) {
         this.userName = username;
-    }
+    }*/
 
     public String getEmail() {
         return email;
@@ -55,6 +55,14 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public int getPhone() {
