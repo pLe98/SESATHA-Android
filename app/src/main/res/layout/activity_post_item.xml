@@ -34,6 +34,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+
+
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -112,7 +114,6 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
 
-
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/editTextPrice"
                         android:layout_width="300dp"
@@ -129,7 +130,7 @@
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            />
+                            android:inputType="number|numberDecimal" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -154,9 +155,9 @@
 
                         <ImageView
                             android:id="@+id/imageView"
-                            android:layout_width="70dp"
-                            android:layout_height="52dp"
-                            android:layout_marginLeft="30dp"
+                            android:layout_width="87dp"
+                            android:layout_height="67dp"
+                            android:layout_marginLeft="35dp"
                             android:layout_toRightOf="@id/textView6"
                             app:srcCompat="@drawable/ic_outline_add_photo_alternate_24" />
 
@@ -169,7 +170,7 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="50dp"
+                        android:layout_marginTop="30dp"
                         android:layout_marginBottom="48dp"
                         android:backgroundTint="@color/mainclr"
                         android:paddingTop="10dp"
@@ -179,6 +180,14 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:visibility="invisible"
+                android:layout_centerInParent="true"
+                android:elevation="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </RelativeLayout>
 
     </LinearLayout>
