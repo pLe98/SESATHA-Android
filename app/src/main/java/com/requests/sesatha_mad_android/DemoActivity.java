@@ -33,17 +33,17 @@ public class DemoActivity extends AppCompatActivity {
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //navigation bar
+
 
 
 
     }
 
-
+    //navigation bar
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        if (mToggle.onOptionsItemSelected(item)) {
+        if(mToggle.onOptionsItemSelected(item)){
             return true;
         }
         return super.onOptionsItemSelected(item);
