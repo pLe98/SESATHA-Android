@@ -2,17 +2,18 @@ package com.requests.sesatha_mad_android;
 
 public class Card {
 
-    private String cardHolder, cardNo, cMonth, cYear, ccv;
+    private String cardHolder, cardNo, cMonth, cYear, ccv, userID;
 
     public Card() {
     }
 
-    public Card(String cardHolder, String cardNo, String cMonth, String cYear, String ccv) {
+    public Card(String cardHolder, String cardNo, String cMonth, String cYear, String ccv, String userID) {
         this.cardHolder = cardHolder;
         this.cardNo = cardNo;
         this.cMonth = cMonth;
         this.cYear = cYear;
         this.ccv = ccv;
+        this.userID = userID;
     }
 
     public String getCardHolder() {
@@ -53,5 +54,13 @@ public class Card {
 
     public void setCcv(String ccv) {
         this.ccv = ccv;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 }

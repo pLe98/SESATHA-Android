@@ -29,6 +29,9 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
+
+        <!-- ###################  delivery details ########################-->
+
         <androidx.cardview.widget.CardView
             android:layout_weight="0"
             android:layout_gravity="center_horizontal"
@@ -129,9 +132,10 @@
 
             </RelativeLayout>
 
-
-
         </androidx.cardview.widget.CardView>
+
+
+        <!-- ###################  payment  ########################-->
 
         <androidx.cardview.widget.CardView
             android:layout_weight="0"
@@ -188,27 +192,18 @@
                     android:layout_below="@+id/ch_cardNo"
                     android:layout_toRightOf="@+id/cardImg"
                     android:textSize="18sp"
-                    android:text="Month"/>
+                    android:text="EXP : "/>
                 <TextView
-                    android:id="@+id/ch_year"
+                    android:id="@+id/ch_exp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="6dp"
                     android:layout_marginTop="5dp"
                     android:layout_below="@+id/ch_cardNo"
                     android:layout_toRightOf="@+id/ch_month"
                     android:textSize="18sp"
                     android:text="Year"/>
-                <TextView
-                    android:id="@+id/ch_ccv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_below="@+id/ch_month"
-                    android:layout_toRightOf="@+id/cardImg"
-                    android:textSize="18sp"
-                    android:text="CCV"/>
+
                 <Button
                     android:id="@+id/chgCard"
                     android:layout_width="wrap_content"
@@ -227,6 +222,9 @@
 
 
         </androidx.cardview.widget.CardView>
+
+
+        <!-- ###################order summary########################-->
 
         <androidx.cardview.widget.CardView
             android:layout_weight="0"
@@ -364,7 +362,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="200dp"
+            android:layout_gravity="bottom"
             android:background="@drawable/roundedcorner_top">
 
             <TextView

@@ -18,6 +18,8 @@ public class AddPaymentActivity extends AppCompatActivity {
 
     private TextInputLayout enCardholder, enCardno, enMonth, enYear, enCcv;
     Button addCard;
+    GlobalClass globalVariables;
+    private String userID;
 
     DrawerLayout mdrawerLayout;
     ActionBarDrawerToggle mToggle;
@@ -40,6 +42,10 @@ public class AddPaymentActivity extends AppCompatActivity {
 
         //navigation bar
 
+        //user details from global variable
+        globalVariables = (GlobalClass) getApplicationContext();
+        userID = globalVariables.getUser().getUserID();
+
         //getting input values
         enCardholder = findViewById(R.id.et_cardholder);
         enCardno = findViewById(R.id.et_cardno);
@@ -52,24 +58,101 @@ public class AddPaymentActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String cardHolder = enCardholder.getEditText().getText().toString().trim();
-                String cardNo = enCardno.getEditText().getText().toString().trim();
-                String month = enMonth.getEditText().getText().toString().trim();
-                String cYear = enYear.getEditText().getText().toString().trim();
-                String ccv = enCcv.getEditText().getText().toString().trim();
-
-                Card card = new Card(cardHolder, cardNo, month, cYear, ccv);
-
-                FirebaseDatabase database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
-                DatabaseReference myRef = database.getReference("Card");
-
-                myRef.child(cardNo).setValue(card);
-
-                Toast.makeText(AddPaymentActivity.this,
-                        "Card Details Added Successfully", Toast.LENGTH_SHORT).show();
+                addCard();
             }
         });
 
 
     }
-}
+
+    public void addCard(){
+
+        //assign user entered data into variables
+        String cardHolder = enCardholder.getEditText().getText().toString().trim();
+        String cardNo = enCardno.getEditText().getText().toString().trim();
+        String month = enMonth.getEditText().getText().toString().trim();
+        String cYear = enYear.getEditText().getText().toString().trim();
+        String ccv = enCcv.getEditText().getText().toString().trim();
+
+        //validate card holder
+        if(cardHolder.isEmpty()){
+            enCardholder.setError("Card Holder's Name is Required");
+            enCardholder.requestFocus();
+        }else{
+            enCardholder.setError(null);
+            enCardholder.setErrorEnabled(false);
+
+            //validate card number
+            if(cardNo.isEmpty()){
+                enCardno.setError("Card Number is Required");
+                enCardno.requestFocus();
+            }else if(cardNo.length() < 15){
+                enCardno.setError("Enter Valid Card Number");
+                enCardno.requestFocus();
+            }else{
+                enCardno.setError(null);
+                enCardno.setErrorEnabled(false);
+
+                //validate month
+                if(month.isEmpty()){
+                    enMonth.setError("Month is Required");
+                    enMonth.requestFocus();
+                }else if(Integer.parseInt(month) > 12){
+                    enMonth.setError("Invalid Month");
+                    enMonth.requestFocus();
+                }else{
+                    enMonth.setError(null);
+                    enMonth.setErrorEnabled(false);
+
+                    //validate year
+                    if(cYear.isEmpty()){
+                        enYear.setError("Year is Required");
+                        enYear.requestFocus();
+                    }else if(Integer.parseInt(cYear) < 21){
+                        enYear.setError("Invalid Year");
+                        enYear.requestFocus();
+                    }else if(cYear.length() != 2){
+                        enCcv.setError("Invalid Year");
+                        enCcv.requestFocus();
+                    }else{
+                        enYear.setError(null);
+                        enYear.setErrorEnabled(false);
+
+                        //validate ccv
+                        if(ccv.isEmpty()){
+                            enCcv.setError("CCV is Required");
+                            enCcv.requestFocus();
+                        }else if(ccv.length() != 3){
+                            enCcv.setError("Invalid CCV");
+                            enCcv.requestFocus();
+                        }else{
+                            enCcv.setError(null);
+                            enCcv.setErrorEnabled(false);
+
+                            //assign user entered data into a card object
+                            Card card = new Card( cardHolder, cardNo, month, cYear, ccv, userID);
+
+                            //getting firebase instance
+                            FirebaseDatabase database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
+                            DatabaseReference myRef = database.getReference("Card");
+
+                            //save card objec in firebase
+                            myRef.child(userID).setValue(card);
+
+                            //clearing data fields
+                            enCardholder.getEditText().getText().clear();
+                            enCardno.getEditText().getText().clear();
+                            enMonth.getEditText().getText().clear();
+                            enYear.getEditText().getText().clear();
+                            enCcv.getEditText().getText().clear();
+
+                            //success message
+                            Toast.makeText(AddPaymentActivity.this,
+                                    "Card Details Added Successfully", Toast.LENGTH_SHORT).show();
+                        }
+                        }
+                    }
+                }
+            }
+        }
+    }
