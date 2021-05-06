@@ -72,6 +72,9 @@ public class FirebaseDemoActivity extends AppCompatActivity {
                 myRef.setValue(value);
             }
         });
+
+
+
     }
 
     @Override

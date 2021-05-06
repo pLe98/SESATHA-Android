@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout mdrawerLayout;
     ActionBarDrawerToggle mToggle;
     Toolbar mytoolbar;
+
     private Button button;
     GlobalClass globalVariables;
 
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         Button buttonReg = (Button) findViewById(R.id.buttonreg);
         Button buttonCheckout = (Button) findViewById(R.id.buttoncheckout);
         Button demo = findViewById(R.id.demo);
+        Button buttonItemDes = (Button) findViewById(R.id.itemDes);
 
         demo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +81,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, CheckoutActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        buttonItemDes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ItemDescriptionActivity.class);
                 startActivity(intent);
 
             }
