@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="9dp"
+    app:cardElevation="6dp"
+    app:cardMaxElevation="6dp"
+    android:layout_marginHorizontal="10dp"
+    app:cardPreventCornerOverlap="true"
+
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:id="@+id/citem_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Title " />
+        <TextView
+            android:id="@+id/citem_itemno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="item no"
+            android:layout_toRightOf="@+id/citem_title"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-medium"/>
+
+        <TextView
+            android:id="@+id/citem_shipping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:text="shipping"
+            android:layout_below="@+id/citem_title"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-medium"/>
+
+        <TextView
+            android:id="@+id/citem_unitprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="18dp"
+            android:text="unit price"
+            android:layout_below="@+id/citem_shipping"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-medium"/>
+
+        <TextView
+            android:id="@+id/citem_qty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="5dp"
+            android:text="qty"
+            android:layout_below="@+id/citem_title"
+            android:layout_alignParentEnd="true"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-medium"/>
+
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

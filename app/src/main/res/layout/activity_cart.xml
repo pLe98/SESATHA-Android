@@ -9,6 +9,14 @@
     android:background="@drawable/bg30"
     tools:context=".CartActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cart_recycler"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
     <RelativeLayout
         android:gravity="center_horizontal"
         android:layout_width="match_parent"
@@ -136,13 +144,7 @@
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/cart_recycler"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp" >
 
-    </androidx.recyclerview.widget.RecyclerView>
 
 
 </LinearLayout>
