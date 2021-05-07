@@ -39,7 +39,7 @@
                 android:layout_marginTop="18dp"
                 android:textColor="@color/black"
                 android:layout_marginBottom="16dp"
-                android:textSize="16sp"
+                android:textSize="17sp"
                 android:fontFamily="sans-serif-medium"
                 android:text="TextView " />
 
@@ -52,6 +52,7 @@
                     android:id="@+id/item_priceTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="16sp"
                     android:layout_weight="1"
                     android:text="TextView" />
 
@@ -61,6 +62,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="serif"
+                    android:textSize="16sp"
+                    android:textAlignment="textEnd"
+                    android:layout_marginEnd="14dp"
                     android:text="TextView" />
             </LinearLayout>
         </LinearLayout>
