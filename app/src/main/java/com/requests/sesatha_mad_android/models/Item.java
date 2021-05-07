@@ -1,11 +1,11 @@
 package com.requests.sesatha_mad_android.models;
 
-import java.text.DateFormat;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
-public class Item {
+
+public class Item implements Serializable {
     private String title;
     private String category;
     private String description;

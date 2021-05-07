@@ -60,9 +60,6 @@ public class myItemsAdapter extends FirebaseRecyclerAdapter<Item, myItemsAdapter
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(holder.itemView.getContext(), ItemDescriptionActivity.class);
-                //intent.putExtra("data",model.getCategory());
-                //startActivity(intent);
                 listener.onItemClick(model,position);
             }
         });
@@ -88,9 +85,9 @@ public class myItemsAdapter extends FirebaseRecyclerAdapter<Item, myItemsAdapter
             status = itemView.findViewById(R.id.item_statusTextView);
         }
 
-
-
     }
+
+    //use this function to set the click event method in an activity
     public void setItemClickListener(ItemClickListener listener){
         this.listener = listener;
     }

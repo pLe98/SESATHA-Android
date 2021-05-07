@@ -8,7 +8,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -62,6 +64,9 @@ public class MyItemsActivity extends AppCompatActivity {
             @Override
             public void onItemClick(Item model, int position) {
                 Toast.makeText(MyItemsActivity.this, model.getTitle(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MyItemsActivity.this, ItemDescriptionActivity.class);
+                intent.putExtra("data", model);
+                startActivity(intent);
             }
         });
 
