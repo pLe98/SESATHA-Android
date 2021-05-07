@@ -65,18 +65,20 @@
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:hint="Title"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="45"
                         app:boxBackgroundColor="@color/white"
-                        app:hintTextColor="@color/bgdark"
-                        app:hintTextAppearance="?attr/textAppearanceCaption"
                         app:boxStrokeColor="@color/bgdark"
+                        app:helperText="Keep it short"
                         app:helperTextEnabled="true"
-                        android:maxLength="70"
-                        app:helperText="Keep it short(Max 70 chars)">
+                        app:hintTextAppearance="?attr/textAppearanceCaption"
+                        app:hintTextColor="@color/bgdark">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            />
+                            android:maxLength="45"
+
+                            android:layout_height="wrap_content" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
