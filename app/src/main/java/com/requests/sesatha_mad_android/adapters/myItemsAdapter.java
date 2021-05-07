@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.requests.sesatha_mad_android.Item;
@@ -39,7 +40,13 @@ public class myItemsAdapter extends FirebaseRecyclerAdapter<Item, myItemsAdapter
             holder.status.setText("Pending");
             holder.status.setTextColor(Color.RED);
         }
-
+        Glide.with(holder.itemView.getContext())
+                .load(model.getImUrl()) // image url
+                //.placeholder(R.drawable.placeholder) // any placeholder to load at start
+                //.error(R.drawable.imagenotfound)  // any image in case of error
+                .override(100, 97) // resizing
+                .centerCrop()
+                .into(holder.image);  // imageview object
     }
 
     @NonNull
