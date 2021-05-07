@@ -1,4 +1,4 @@
-package com.requests.sesatha_mad_android;
+package com.requests.sesatha_mad_android.models;
 
 public class Card {
 

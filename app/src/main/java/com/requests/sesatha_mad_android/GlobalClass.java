@@ -2,6 +2,8 @@ package com.requests.sesatha_mad_android;
 
 import android.app.Application;
 
+import com.requests.sesatha_mad_android.models.User;
+
 public class GlobalClass extends Application {
     private String username;
     private String userId;
