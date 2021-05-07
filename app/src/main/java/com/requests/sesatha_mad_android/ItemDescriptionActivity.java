@@ -17,6 +17,10 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.requests.sesatha_mad_android.models.Cart;
+import android.widget.TextView;
+
+import com.google.android.material.textfield.TextInputLayout;
+import com.requests.sesatha_mad_android.models.Item;
 
 public class ItemDescriptionActivity extends AppCompatActivity {
 
@@ -46,6 +50,7 @@ public class ItemDescriptionActivity extends AppCompatActivity {
         globalVariables = (GlobalClass) getApplicationContext();
         userID = globalVariables.getUser().getUserID();
 
+        Item model= (Item) getIntent().getSerializableExtra("Data");
         mytoolbar = (Toolbar) findViewById(R.id.mytoolbar);
         setSupportActionBar(mytoolbar);
         mdrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
