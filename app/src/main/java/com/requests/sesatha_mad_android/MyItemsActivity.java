@@ -63,7 +63,7 @@ public class MyItemsActivity extends AppCompatActivity {
         adapter.setItemClickListener(new ItemClickListener() {
             @Override
             public void onItemClick(Item model, int position) {
-                Toast.makeText(MyItemsActivity.this, model.getTitle(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MyItemsActivity.this, model.getTitle(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MyItemsActivity.this, ItemDescriptionActivity.class);
                 intent.putExtra("Data", model);
                 startActivity(intent);

@@ -49,8 +49,8 @@ public class ItemDescriptionActivity extends AppCompatActivity {
 
         globalVariables = (GlobalClass) getApplicationContext();
         userID = globalVariables.getUser().getUserID();
+        Item model= (Item) getIntent().getSerializableExtra("Data");  //Item object from recycler view
 
-        Item model= (Item) getIntent().getSerializableExtra("Data");
         mytoolbar = (Toolbar) findViewById(R.id.mytoolbar);
         setSupportActionBar(mytoolbar);
         mdrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
@@ -64,7 +64,7 @@ public class ItemDescriptionActivity extends AppCompatActivity {
         qtyTv = findViewById(R.id.itd_qty);
         shippingTv = findViewById(R.id.itd_shipping);
         sellerNameTv = findViewById(R.id.itd_sellerName);
-        locationTv = findViewById(R.id.itd_sellerName);
+        locationTv = findViewById(R.id.itd_sellerlocation);
         plus = findViewById(R.id.itd_addbtn);
         minus = findViewById(R.id.itd_removebtn);
         addToCart = findViewById(R.id.itd_addtocart);
