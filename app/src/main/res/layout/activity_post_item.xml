@@ -70,7 +70,8 @@
                         app:hintTextAppearance="?attr/textAppearanceCaption"
                         app:boxStrokeColor="@color/bgdark"
                         app:helperTextEnabled="true"
-                        app:helperText="Keep it short">
+                        android:maxLength="70"
+                        app:helperText="Keep it short(Max 70 chars)">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"

@@ -27,6 +27,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    sourceSets {
+        main {
+            java {
+                srcDirs 'src\\main\\java', 'src\\main\\java\\adapters'
+            }
+        }
+    }
 }
 
 dependencies {
@@ -48,4 +55,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.iceteck.silicompressorr:silicompressor:2.2.4'
     implementation 'androidx.exifinterface:exifinterface:1.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    // Glide v4 uses this new annotation processor -- see https://bumptech.github.io/glide/doc/generatedapi.html
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation 'com.firebaseui:firebase-ui-database:7.1.1'
 }
