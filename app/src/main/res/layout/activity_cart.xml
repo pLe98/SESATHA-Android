@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/bg30"
+    tools:context=".CartActivity">
+
+    <RelativeLayout
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_alignParentBottom="true"
+            app:cardCornerRadius="12dp"
+            android:elevation="12dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal" >
+                <LinearLayout
+                    android:id="@+id/crt_subtotallayout"
+                    android:layout_width="340dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/subtotal"
+                        android:textSize="18sp"
+                        />
+                    <TextView
+                        android:id="@+id/cart_subtotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="140dp"
+                        android:text="1530.00"
+                        android:textSize="18sp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/crt_shippinglayout"
+                    android:layout_below="@+id/crt_subtotallayout"
+                    android:layout_width="340dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="5dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shipping"
+                        android:textSize="18sp"
+                        />
+                    <TextView
+                        android:id="@+id/cart_shipping"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="140dp"
+                        android:text="  230.00"
+                        android:textSize="18sp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/crt_totallayout"
+                    android:layout_below="@+id/crt_shippinglayout"
+                    android:layout_width="340dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total"
+                        android:textStyle="bold"
+                        android:textSize="26sp"
+                        />
+                    <TextView
+                        android:id="@+id/cart_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="120dp"
+                        android:textStyle="bold"
+                        android:text="1760.00"
+                        android:textSize="26sp"
+                        android:layout_marginBottom="10dp"
+                        />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/crt_clear"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginLeft="15dp"
+                    android:backgroundTint="@color/white"
+                    app:icon="@drawable/ic_delete"
+                    app:iconTint="@color/bgpink"
+                    app:iconSize="40dp"
+                    android:layout_below="@+id/crt_totallayout"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+                <Button
+                    android:id="@+id/crt_checkout"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:backgroundTint="@color/bgpink"
+                    android:layout_marginBottom="20dp"
+                    android:padding="10dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:layout_below="@+id/crt_totallayout"
+                    android:layout_toRightOf="@+id/crt_clear"
+                   android:text="Checkout"/>
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cart_recycler"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+</LinearLayout>

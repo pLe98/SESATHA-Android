@@ -114,6 +114,16 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+
+        ((Button) findViewById(R.id.cart)).setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, CartActivity.class);
+                        startActivity(intent);
+                    }
+                }
+        );
     }
 
     public void openPayment(){

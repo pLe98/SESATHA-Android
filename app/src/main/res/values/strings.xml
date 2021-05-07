@@ -11,6 +11,9 @@
 
     <!-- checkout activity -->
     <string name="change">Change</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="shipping">Shipping</string>
+    <string name="total">Total</string>
 
 
     <!-- Item description activity -->
