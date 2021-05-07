@@ -43,8 +43,8 @@ public class myItemsAdapter extends FirebaseRecyclerAdapter<Item, myItemsAdapter
         }
         Glide.with(holder.itemView.getContext())
                 .load(model.getImUrl()) // image url
-                //.placeholder(R.drawable.placeholder) // any placeholder to load at start
-                //.error(R.drawable.imagenotfound)  // any image in case of error
+                .placeholder(R.drawable.image_default) // any placeholder to load at start
+                .error(R.drawable.image_broken)  // any image in case of error
                 .override(100, 97) // resizing
                 .transform(new CenterCrop(),new RoundedCorners(9))
                 //.centerCrop()
