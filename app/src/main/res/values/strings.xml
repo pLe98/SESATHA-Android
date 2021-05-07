@@ -12,4 +12,7 @@
     <!-- checkout activity -->
     <string name="change">Change</string>
 
+    <!-- My Items activity -->
+    <string name="myItemsStr">My Listings</string>
+
 </resources>

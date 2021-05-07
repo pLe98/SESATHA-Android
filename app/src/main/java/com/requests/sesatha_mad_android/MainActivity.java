@@ -93,6 +93,16 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+
+        ((Button) findViewById(R.id.btnViewItems)).setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, MyItemsActivity.class);
+                        startActivity(intent);
+                    }
+                }
+        );
     }
 
     public void openPayment(){
