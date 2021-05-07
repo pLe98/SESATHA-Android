@@ -32,8 +32,8 @@ public class myItemsAdapter extends FirebaseRecyclerAdapter<Item, myItemsAdapter
     protected void onBindViewHolder(@NonNull myItemsAdapter.itemsViewHolder holder, int position, @NonNull Item model) {
         //Log.d("MyItems",model.getTitle());
         holder.title.setText(model.getTitle());
-        holder.price.setText("Rs "+String.valueOf(model.getPrice()));
-        if(model.approved){
+        holder.price.setText("Rs "+String.format("%.2f",model.getPrice()));
+        if(model.isApproved()){
             holder.status.setText("Accepted");
             holder.status.setTextColor(Color.GREEN);
         }else{

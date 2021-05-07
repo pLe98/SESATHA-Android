@@ -6,14 +6,14 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Item {
-    public String title;
-    public String category;
-    public String description;
-    public float price;
-    public String imUrl;
-    public String userId;
-    public boolean approved;
-    public String last_modified;
+    private String title;
+    private String category;
+    private String description;
+    private float price;
+    private String imUrl;
+    private String userId;
+    private boolean approved;
+    private String last_modified;
 
     public Item(){}
 
