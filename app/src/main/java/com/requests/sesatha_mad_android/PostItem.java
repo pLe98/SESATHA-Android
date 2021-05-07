@@ -31,6 +31,8 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.iceteck.silicompressorr.SiliCompressor;
+import com.requests.sesatha_mad_android.models.Item;
+
 import java.io.File;
 import java.util.UUID;
 

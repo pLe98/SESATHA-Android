@@ -1,7 +1,6 @@
 package com.requests.sesatha_mad_android.adapters;
 
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +11,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.requests.sesatha_mad_android.Item;
+import com.requests.sesatha_mad_android.models.Item;
 import com.requests.sesatha_mad_android.R;
 
 public class myItemsAdapter extends FirebaseRecyclerAdapter<Item, myItemsAdapter.itemsViewHolder> {
@@ -45,7 +46,8 @@ public class myItemsAdapter extends FirebaseRecyclerAdapter<Item, myItemsAdapter
                 //.placeholder(R.drawable.placeholder) // any placeholder to load at start
                 //.error(R.drawable.imagenotfound)  // any image in case of error
                 .override(100, 97) // resizing
-                .centerCrop()
+                .transform(new CenterCrop(),new RoundedCorners(9))
+                //.centerCrop()
                 .into(holder.image);  // imageview object
     }
 

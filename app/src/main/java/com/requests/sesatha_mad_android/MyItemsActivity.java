@@ -12,10 +12,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.requests.sesatha_mad_android.adapters.myItemsAdapter;
+import com.requests.sesatha_mad_android.models.Item;
 
 public class MyItemsActivity extends AppCompatActivity {
 

@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.requests.sesatha_mad_android.models.Card;
 
 public class AddPaymentActivity extends AppCompatActivity {
 
