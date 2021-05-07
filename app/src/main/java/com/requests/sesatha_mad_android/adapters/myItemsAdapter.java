@@ -1,9 +1,11 @@
 package com.requests.sesatha_mad_android.adapters;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,8 +17,11 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.requests.sesatha_mad_android.ItemDescriptionActivity;
+import com.requests.sesatha_mad_android.interfaces.ItemClickListener;
 import com.requests.sesatha_mad_android.models.Item;
 import com.requests.sesatha_mad_android.R;
+
 
 public class myItemsAdapter extends FirebaseRecyclerAdapter<Item, myItemsAdapter.itemsViewHolder> {
     /**
@@ -25,6 +30,8 @@ public class myItemsAdapter extends FirebaseRecyclerAdapter<Item, myItemsAdapter
      *
      * @param options
      */
+    private ItemClickListener listener;
+
     public myItemsAdapter(@NonNull FirebaseRecyclerOptions<Item> options) {
         super(options);
     }
@@ -49,6 +56,16 @@ public class myItemsAdapter extends FirebaseRecyclerAdapter<Item, myItemsAdapter
                 .transform(new CenterCrop(),new RoundedCorners(9))
                 //.centerCrop()
                 .into(holder.image);  // imageview object
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(holder.itemView.getContext(), ItemDescriptionActivity.class);
+                //intent.putExtra("data",model.getCategory());
+                //startActivity(intent);
+                listener.onItemClick(model,position);
+            }
+        });
     }
 
     @NonNull
@@ -61,6 +78,7 @@ public class myItemsAdapter extends FirebaseRecyclerAdapter<Item, myItemsAdapter
     class itemsViewHolder extends RecyclerView.ViewHolder{
         TextView title,price,status;
         ImageView image;
+
         public itemsViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -69,5 +87,11 @@ public class myItemsAdapter extends FirebaseRecyclerAdapter<Item, myItemsAdapter
             image = itemView.findViewById(R.id.itemImageView);
             status = itemView.findViewById(R.id.item_statusTextView);
         }
+
+
+
+    }
+    public void setItemClickListener(ItemClickListener listener){
+        this.listener = listener;
     }
 }

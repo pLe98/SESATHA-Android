@@ -10,11 +10,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.requests.sesatha_mad_android.adapters.myItemsAdapter;
+import com.requests.sesatha_mad_android.interfaces.ItemClickListener;
 import com.requests.sesatha_mad_android.models.Item;
 
 public class MyItemsActivity extends AppCompatActivity {
@@ -55,6 +57,13 @@ public class MyItemsActivity extends AppCompatActivity {
 
         //initialize adapter
         adapter = new myItemsAdapter(data);
+
+        adapter.setItemClickListener(new ItemClickListener() {
+            @Override
+            public void onItemClick(Item model, int position) {
+                Toast.makeText(MyItemsActivity.this, model.getTitle(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
         //Connect adapter with the Recycler view
         recyView.setAdapter(adapter);
