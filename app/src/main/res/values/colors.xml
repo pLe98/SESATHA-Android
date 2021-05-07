@@ -14,5 +14,6 @@
     <color name="bgdark">#2e3449</color>
     <color name="bgpink">#e23161</color>
     <color name="bglight">#e8eefa</color>
+    <color name="white_transparent">#1affffff</color>
 
 </resources>

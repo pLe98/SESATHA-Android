@@ -13,7 +13,7 @@ tools:context=".DemoActivity" >
 
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -33,25 +33,7 @@ tools:context=".DemoActivity" >
     </com.google.android.material.appbar.AppBarLayout>
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <!-- code starts here -->
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- code ends here -->
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </LinearLayout>

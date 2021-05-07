@@ -12,6 +12,11 @@
     <!-- checkout activity -->
     <string name="change">Change</string>
 
+
+    <!-- Item description activity -->
+    <string name="description">Description</string>
+    <string name="addcart">Add to Cart</string>
+
     <!-- My Items activity -->
     <string name="myItemsStr">My Listings</string>
 

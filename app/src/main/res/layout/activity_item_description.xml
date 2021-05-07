@@ -12,9 +12,11 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/itd_toolbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:elevation="0dp"
@@ -38,6 +40,222 @@
                 tools:layout_editor_absoluteY="0dp" />
 
         </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <ImageView
+                android:id="@+id/itemImg"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:scaleType="fitXY"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/item_image"
+                android:layout_marginBottom="25dp"/>
+
+
+            <TextView
+                android:id="@+id/itd_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_below="@+id/itemImg"
+                android:textStyle="bold"
+                android:elevation="200dp"
+                android:textSize="40sp"
+                android:text="Title"/>
+
+
+            <ImageView
+                android:id="@+id/itd_storeImg"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/itd_title"
+                android:src="@drawable/ic_store"
+                android:scaleType="fitXY"/>
+
+            <TextView
+                android:id="@+id/itd_sellerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/itd_title"
+                android:layout_toRightOf="@+id/itd_storeImg"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="40dp"
+                android:textSize="20sp"
+                android:text="Seller Name"/>
+
+            <TextView
+                android:id="@+id/itd_sellerlocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_below="@id/itd_sellerName"
+                android:layout_toRightOf="@+id/itd_storeImg"
+                android:layout_marginRight="40dp"
+                android:textSize="18sp"
+                android:text="Location"/>
+
+            <TextView
+                android:id="@+id/itd_shippingtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/itd_title"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="30dp"
+                android:textSize="15sp"
+                android:text="Shipping "/>
+            <TextView
+                android:id="@+id/itd_shipping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/itd_shippingtxt"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                android:textSize="18sp"
+                android:text="150.00"/>
+
+            <TextView
+                android:id="@+id/itd_lkr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="30dp"
+                android:layout_below="@+id/itd_sellerlocation"
+                android:elevation="200dp"
+                android:textSize="13sp"
+                android:text="LKR"/>
+
+            <TextView
+                android:id="@+id/itd_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@+id/itd_sellerlocation"
+                android:layout_toRightOf="@+id/itd_lkr"
+                android:textStyle="bold"
+                android:elevation="200dp"
+                android:textSize="30sp"
+                android:text="1250.00"/>
+
+            <Button
+                android:id="@+id/itd_addbtn"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/itd_sellerlocation"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/bgpink"
+                android:textStyle="bold"
+                android:textSize="40dp"
+                android:text="+"
+                style="@style/Widget.MaterialComponents.Button.TextButton"/>
+            <Button
+                android:id="@+id/itd_removebtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_toLeftOf="@+id/itd_addbtn"
+                android:layout_marginRight="50dp"
+                android:layout_below="@+id/itd_sellerlocation"
+                android:textColor="@color/bgpink"
+                android:textStyle="bold"
+                android:textSize="40dp"
+                android:text="-"
+                style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/outlinedTextField"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="7dp"
+                android:layout_below="@+id/itd_sellerlocation"
+                android:layout_toLeftOf="@+id/itd_addbtn"
+                android:hint=" 1"
+                android:textColorHint="@color/bgdark"
+                android:textAlignment="center"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_centerHorizontal="true"
+                android:layout_width="360dp"
+                android:layout_height="150dp"
+                android:layout_below="@+id/outlinedTextField"
+                android:elevation="5dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/transwhite_roundedcorner"
+                >
+            <RelativeLayout
+                android:paddingTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/itd_descritionImg"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_description"
+                    android:scaleType="fitXY"/>
+
+                <TextView
+                    android:id="@+id/itd_descritionTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/itd_descritionImg"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="@string/description"/>
+
+                <TextView
+                    android:id="@+id/itd_descrition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/itd_descritionImg"
+                    android:layout_below="@+id/itd_descritionTitle"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:textSize="15sp"
+                    android:text="sdfa dfasd fasd fasdf asdf asdf asdf asdf asdf asdf asf asdf as df asd fas df asdf as dfa sdf as df asdf as df asdf a sdf asdf as df asd fas df asdf asd f"/>
+
+
+            </RelativeLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:textAllCaps="false"
+                android:text="@string/addcart"
+                android:backgroundTint="@color/bgpink"
+                android:textColor="@color/white"
+                android:textSize="22sp"/>
+
+        </RelativeLayout>
+
+
+
 
     </LinearLayout>
 
