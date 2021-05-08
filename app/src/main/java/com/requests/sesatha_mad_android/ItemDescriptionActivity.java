@@ -88,6 +88,7 @@ public class ItemDescriptionActivity extends AppCompatActivity {
             }
         });
 
+        //plus function
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
