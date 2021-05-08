@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AllItemsActivity.class);
-                intent.putExtra("Category","Jewel");
+                intent.putExtra("Category","Home & living");
                 startActivity(intent);
             }
         });

@@ -31,10 +31,13 @@ public class AllItemsActivity extends AppCompatActivity {
     allItemsAdapter adapter;
     Query db;
 
+    String category;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_items);
+        category = getIntent().getStringExtra("Category");
 
         //navigation bar
         mytoolbar = (Toolbar) findViewById(R.id.mytoolbar);
@@ -49,7 +52,8 @@ public class AllItemsActivity extends AppCompatActivity {
         mToggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.grey));
 
         //Get firebase instance
-        db = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("items");
+        db = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("items")
+                .orderByChild("category").equalTo(category);
 
         //initialize recycler view
         recyView = findViewById(R.id.AllListingsRecycler);
