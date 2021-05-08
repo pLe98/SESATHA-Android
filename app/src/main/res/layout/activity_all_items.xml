@@ -39,11 +39,11 @@ android:id="@+id/drawerLayout">
         android:orientation="vertical">
 
         <SearchView
-            android:layout_width="350dp"
-            android:layout_height="50dp"
+            android:layout_width="345dp"
+            android:layout_height="49dp"
             android:id="@+id/search_view"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/bg_white_rounded"
             android:clickable="true"
             android:layout_gravity="center"
@@ -53,10 +53,10 @@ android:id="@+id/drawerLayout">
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/MyListingsRecycler"
+            android:id="@+id/AllListingsRecycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="40dp" >
+            android:layout_marginTop="35dp" >
 
         </androidx.recyclerview.widget.RecyclerView>
 

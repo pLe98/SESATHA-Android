@@ -126,6 +126,15 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+
+        ((Button)findViewById(R.id.btnAllListings)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AllItemsActivity.class);
+                intent.putExtra("Category","Jewel");
+                startActivity(intent);
+            }
+        });
     }
 
     public void openPayment(){
