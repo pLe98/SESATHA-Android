@@ -222,9 +222,13 @@ public class CheckoutActivity extends AppCompatActivity {
                     Log.e("checkout", "order");
 
                     //getting cart items relevant to the userID
-                    isubtotal  = dataSnapshots.child("unitPrice").getValue(Float.class) * dataSnapshots.child("qty").getValue(Integer.class);
+                    isubtotal = getSubTotal(dataSnapshots.child("unitPrice").getValue(Float.class) , dataSnapshots.child("qty").getValue(Integer.class));
+                    //isubtotal  = dataSnapshots.child("unitPrice").getValue(Float.class) * dataSnapshots.child("qty").getValue(Integer.class);
                     ishipping  = dataSnapshots.child("shipping").getValue(Float.class);
-                    itotal = isubtotal + ishipping;
+
+                    itotal = getTotal(isubtotal, ishipping);
+                    //itotal = isubtotal + ishipping;
+
                     inoOfItems = dataSnapshots.child("qty").getValue(Integer.class);
                     iitemNo = dataSnapshots.child("itemNo").getValue(String.class);
                     ititle = dataSnapshots.child("title").getValue(String.class);
@@ -271,5 +275,13 @@ public class CheckoutActivity extends AppCompatActivity {
     public void clearCart(){
         //delete cart items relevant to user id
         database.getReference("Cart").child(userid).removeValue();
+    }
+
+    protected float getTotal(float x, float y){
+        return (x + y);
+    }
+
+    protected float getSubTotal(float x, int y){
+        return (x * y);
     }
 }
