@@ -43,6 +43,14 @@ public class CheckoutActivity extends AppCompatActivity {
         setSupportActionBar(mytoolbar);
         getSupportActionBar().setTitle("Order Confirmation");
 
+        //getting cart details from extras
+        Bundle bundle = getIntent().getExtras();
+        subtotal = bundle.getFloat("subtotal");
+        total = bundle.getFloat("total");
+        shipping = bundle.getFloat("shipping");
+        noOfItems = bundle.getInt("noOfTItems");
+        Log.d("checkout", "subtotal");
+
         //xml values
         nametv = findViewById(R.id.ch_name);
         add1tv = findViewById(R.id.ch_address1);
@@ -75,6 +83,8 @@ public class CheckoutActivity extends AppCompatActivity {
         showCardDetails();
         //display user data
         showUserDetails();
+        //show checkout details
+        showCheckout();
 
         //open edit profile activity
         addressChange.setOnClickListener(new View.OnClickListener() {
@@ -147,5 +157,13 @@ public class CheckoutActivity extends AppCompatActivity {
         add3tv.setText(globalVariables.getUser().getAddress3());
         phonetv.setText(String.valueOf(globalVariables.getUser().getPhone()));
 
+    }
+
+    public void showCheckout(){
+
+        subTotaltv.setText(String.valueOf(subtotal));
+        totaltv.setText(String.valueOf(total));
+        shippingtv.setText(String.valueOf(shipping));
+        noItemstv.setText(String.valueOf(noOfItems));
     }
 }
