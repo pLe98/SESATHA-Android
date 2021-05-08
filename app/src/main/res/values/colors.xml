@@ -12,9 +12,10 @@
 
 
     <color name="bgdark">#2e3449</color>
-    <color name="bgpink">#e23161</color>
+    <color name="bgpink">#AA2737</color>
     <color name="bglight">#e8eefa</color>
     <color name="white_transparent">#1affffff</color>
     <color name="grey">#E4D7D7</color>
+    <color name="editBtnColor">#041753</color>
 
 </resources>

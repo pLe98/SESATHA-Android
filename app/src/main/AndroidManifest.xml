@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SESATHA_MADAndroid">
-        <activity android:name=".MyItemDetailsActivity"></activity>
+        <activity android:name=".MyItemEditActivity"></activity>
+        <activity android:name=".MyItemDetailsActivity" />
         <activity android:name=".CartActivity" />
         <activity android:name=".MyItemsActivity" />
         <activity android:name=".DemoActivity" />

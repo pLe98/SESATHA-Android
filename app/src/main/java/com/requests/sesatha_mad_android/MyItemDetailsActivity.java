@@ -39,7 +39,7 @@ public class MyItemDetailsActivity extends AppCompatActivity {
 
 
     //Variables for elements
-    TextView titleTv, unitPriceTv, description, category;
+    TextView titleTv, unitPriceTv, description, category, lastModified;
     Button deleteBtn, editBtn;
     ImageView image;
 
@@ -68,6 +68,7 @@ public class MyItemDetailsActivity extends AppCompatActivity {
         unitPriceTv = findViewById(R.id.itd_price);
         description = findViewById(R.id.itd_description);
         category = findViewById(R.id.itd_category);
+        lastModified = findViewById(R.id.itd_lastmodified);
 
         deleteBtn = findViewById(R.id.itd_deleteBtn);
         editBtn = findViewById(R.id.itd_editBtn);
@@ -79,6 +80,7 @@ public class MyItemDetailsActivity extends AppCompatActivity {
         unitPriceTv.setText(String.format("%.2f",model.getPrice()));
         description.setText(model.getDescription());
         category.setText(model.getCategory());
+        lastModified.setText("Modified : "+model.getLast_modified());
         Glide.with(MyItemDetailsActivity.this)
                 .load(model.getImUrl())
                 .placeholder(R.drawable.image_default) // any placeholder to load at start

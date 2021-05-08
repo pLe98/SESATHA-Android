@@ -54,7 +54,7 @@
                     android:scaleType="fitXY"
                     android:layout_centerHorizontal="true"
                     android:src="@drawable/item_image"
-                    android:layout_marginBottom="25dp"/>
+                    android:layout_marginBottom="21dp"/>
 
 
                 <TextView
@@ -65,7 +65,8 @@
                     android:layout_below="@+id/itemImg"
                     android:textStyle="bold"
                     android:elevation="200dp"
-                    android:textSize="38sp"
+                    android:textSize="36sp"
+                    android:textColor="@color/bgdark"
                     android:text="Title"/>
 
                 <TextView
@@ -89,7 +90,7 @@
                     android:layout_toRightOf="@+id/itd_lkr"
                     android:elevation="200dp"
                     android:text="1250.00"
-                    android:textSize="29sp"
+                    android:textSize="27sp"
                     android:textStyle="bold" />
                 <TextView
                     android:id="@+id/itd_category"
@@ -110,6 +111,7 @@
                     android:layout_height="150dp"
                     android:layout_below="@+id/itd_category"
                     android:elevation="5dp"
+                    android:orientation="vertical"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/transwhite_roundedcorner"
                     >
@@ -150,6 +152,19 @@
                     </RelativeLayout>
 
                 </LinearLayout>
+                <TextView
+                    android:id="@+id/itd_lastmodified"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/item_description"
+                    android:layout_marginHorizontal="30dp"
+                    android:textAlignment="textEnd"
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentRight="true"
+                    android:text="1250.00"
+                    android:textSize="12sp"
+
+                    />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -184,7 +199,7 @@
                         android:layout_weight="1"
                         android:textAllCaps="false"
                         android:text="@string/editBtnText"
-                        android:backgroundTint="@color/bgpink"
+                        android:backgroundTint="@color/editBtnColor"
                         android:textColor="@color/white"
                         android:textSize="16sp"/>
 

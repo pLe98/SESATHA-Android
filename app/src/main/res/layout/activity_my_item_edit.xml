@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MyItemEditActivity"
+android:background="@drawable/bg30"
+android:id="@+id/drawerLayout">
+
+<LinearLayout
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/mytoolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/bgdark"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:elevation="0dp"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textViewHeadingMyItems"
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+
+            android:layout_above="@+id/card_add_item"
+            android:layout_marginBottom="-17dp"
+            android:fontFamily="sans-serif-black"
+            android:paddingTop="15dp"
+            android:text="@string/updateItemsStr"
+            android:textAlignment="center"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="32sp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_add_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="25dp"
+
+            android:layout_marginBottom="18dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="35dp"
+                android:orientation="vertical">
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/editTextTitle"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Title"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="45"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxStrokeColor="@color/bgdark"
+                    android:textColorHint="@color/black"
+                    app:helperText="Keep it short"
+                    app:helperTextEnabled="true"
+                    android:layout_marginBottom="10dp"
+                    app:hintTextAppearance="?attr/textAppearanceCaption"
+                    app:hintTextColor="@color/bgdark">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:maxLength="45"
+
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="300dp"
+                    android:layout_height="23dp"
+                    android:drawSelectorOnTop="true"
+                    android:fontFamily="sans-serif-black"
+                    android:prompt="@string/spin"
+                    android:entries="@array/categories"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/editTextDesc"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Description"
+                    app:boxBackgroundColor="@color/white"
+                    app:hintTextColor="@color/bgdark"
+                    android:textColorHint="@color/black"
+                    app:hintTextAppearance="?attr/textAppearanceCaption"
+                    app:boxStrokeColor="@color/bgdark"
+                    app:helperTextEnabled="true"
+                    android:layout_marginBottom="10dp"
+                    android:inputType="textMultiLine"
+                    app:helperText="A detailed description may bring more sales">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/editTextPrice"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Price"
+                    app:boxBackgroundColor="@color/white"
+                    app:hintTextColor="@color/bgdark"
+                    app:hintTextAppearance="?attr/textAppearanceCaption"
+                    app:boxStrokeColor="@color/bgdark"
+                    android:textColorHint="@color/black"
+                    app:helperTextEnabled="true"
+                    android:layout_marginBottom="10dp"
+                    app:helperText="Pick a reasonable price"
+                    app:prefixText="Rs ">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLength="7"
+                        android:inputType="number|numberDecimal" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <RelativeLayout
+                    android:layout_marginTop="28dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp">
+
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Select an image"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="87dp"
+                        android:layout_height="67dp"
+                        android:layout_marginLeft="42dp"
+                        android:layout_toRightOf="@id/textView6"
+                        app:srcCompat="@drawable/ic_outline_add_photo_alternate_24" />
+
+                </RelativeLayout>
+
+
+
+                <Button
+                    android:id="@+id/btnPost"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="48dp"
+                    android:backgroundTint="@color/mainclr"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/item_updateBtn" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:visibility="invisible"
+            android:layout_centerInParent="true"
+            android:elevation="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+</LinearLayout>
+
+
+<com.google.android.material.navigation.NavigationView
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    app:menu="@menu/side_navigation_menu"
+    android:layout_gravity="start"
+    app:headerLayout="@layout/sidenavi_header"
+    >
+
+</com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>

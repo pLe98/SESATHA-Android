@@ -152,6 +152,7 @@
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:maxLength="7"
                             android:inputType="number|numberDecimal" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -196,7 +197,7 @@
                         android:backgroundTint="@color/mainclr"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
-                        android:text="Submit" />
+                        android:text="@string/item_postBtn" />
 
                 </LinearLayout>
 
