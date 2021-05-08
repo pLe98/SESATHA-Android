@@ -107,6 +107,7 @@ public class ItemDescriptionActivity extends AppCompatActivity {
                 FirebaseDatabase database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
                 DatabaseReference myRef = database.getReference("Cart");
 
+                //declare a new cart
                 Cart cart = new Cart(vitemNo, vtitle, vqty, vunitPrice, vshipping);
 
                 myRef.child(userID).child(vitemNo).setValue(cart);
