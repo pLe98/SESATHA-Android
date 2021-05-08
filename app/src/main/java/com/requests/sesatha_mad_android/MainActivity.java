@@ -126,6 +126,16 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+
+        ((Button) findViewById(R.id.category)).setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
+                        startActivity(intent);
+                    }
+                }
+        );
     }
 
     public void openPayment(){
