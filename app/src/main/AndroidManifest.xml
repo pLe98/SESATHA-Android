@@ -15,6 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SESATHA_MADAndroid">
+        <activity android:name=".CategoryActivity"></activity>
+        <activity
+            android:name=".MyItemEditActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".AllItemsActivity"></activity>
         <activity android:name=".SplashActivity">
             <intent-filter>
@@ -23,9 +27,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MyItemEditActivity"
-            android:screenOrientation="portrait" />
         <activity android:name=".MyItemDetailsActivity" />
         <activity android:name=".CartActivity" />
         <activity android:name=".MyItemsActivity" />

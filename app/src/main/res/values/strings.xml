@@ -25,6 +25,7 @@
     <string name="myItemsStr">My Listings</string>
     <string name="createItemsStr">List a Product</string>
     <string name="updateItemsStr">Update Listing</string>
+    <string name="category">Categories</string>
 
     <!-- payment -->
     <string name="transid">Transaction ID </string>
