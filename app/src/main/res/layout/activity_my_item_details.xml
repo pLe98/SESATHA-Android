@@ -99,7 +99,7 @@
                     android:layout_below="@id/itd_price"
                     android:layout_marginHorizontal="42dp"
                     android:textAlignment="textEnd"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="0dp"
                     android:layout_alignParentRight="true"
                     android:text="1250.00"
                     android:textSize="18sp"
@@ -107,12 +107,12 @@
                 <LinearLayout
                     android:id="@+id/item_description"
                     android:layout_centerHorizontal="true"
-                    android:layout_width="360dp"
-                    android:layout_height="150dp"
+                    android:layout_width="3dp"
+                    android:layout_height="120dp"
                     android:layout_below="@+id/itd_category"
                     android:elevation="5dp"
                     android:orientation="vertical"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="7dp"
                     android:background="@drawable/transwhite_roundedcorner"
                     >
                     <RelativeLayout
