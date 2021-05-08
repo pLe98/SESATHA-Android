@@ -97,11 +97,12 @@ public class ItemDescriptionActivity extends AppCompatActivity {
             }
         });
 
+        //add cart function
         addToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-
+                //calling to firebase databse
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
                 DatabaseReference myRef = database.getReference("Cart");
