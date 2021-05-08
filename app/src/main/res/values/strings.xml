@@ -20,10 +20,16 @@
     <string name="description">Description</string>
     <string name="addcart">Add to Cart</string>
 
+
     <!-- Activity headings -->
     <string name="myItemsStr">My Listings</string>
     <string name="createItemsStr">List a Product</string>
     <string name="updateItemsStr">Update Listing</string>
+
+    <!-- payment -->
+    <string name="transid">Transaction ID </string>
+    <string name="transdate">Date </string>
+    <string name="amount">Amount</string>
 
     <string name="editBtnText">Edit</string>
     <string name="deleteBtnText">Remove</string>

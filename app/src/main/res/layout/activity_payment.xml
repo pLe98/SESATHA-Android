@@ -88,94 +88,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/roundedcorner_top"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:layout_gravity="bottom">
 
-            <TextView
-                android:id="@+id/TVtransaction"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="30dp"
-                android:textStyle="bold"
-                android:text="Transaction History"
-                android:textSize="30dp"
-                android:gravity="center_horizontal"/>
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
 
-            <TextView
-                android:id="@+id/TVtrans1_date"
-                android:layout_below="@+id/TVtransaction"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="30dp"
-                android:textSize="20dp"
-                android:text="Date : 12-02-2020"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/transaction_recycler"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp" >
 
-            <TextView
-                android:id="@+id/TVtrans1_amount"
-                android:layout_below="@+id/TVtrans1_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:textSize="25dp"
-                android:text="LKR 2000.00"/>
+                </androidx.recyclerview.widget.RecyclerView>
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/TVtrans2_date"
-                android:layout_below="@+id/TVtrans1_amount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="30dp"
-                android:textSize="20dp"
-                android:text="Date : 12-02-2020"/>
-
-            <TextView
-                android:id="@+id/TVtrans2_amount"
-                android:layout_below="@+id/TVtrans2_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:textSize="25dp"
-                android:text="LKR 2000.00"/>
-
-            <TextView
-                android:id="@+id/TVtrans3_date"
-                android:layout_below="@+id/TVtrans2_amount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="30dp"
-                android:textSize="20dp"
-                android:text="Date : 12-02-2020"/>
-
-            <TextView
-                android:id="@+id/TVtrans3_amount"
-                android:layout_below="@+id/TVtrans3_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:textSize="25dp"
-                android:text="LKR 2000.00"/>
-
-            <TextView
-                android:id="@+id/TVtrans4_date"
-                android:layout_below="@+id/TVtrans3_amount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="30dp"
-                android:textSize="20dp"
-                android:text="Date : 12-02-2020"/>
-
-            <TextView
-                android:id="@+id/TVtrans4_amount"
-                android:layout_below="@+id/TVtrans4_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:paddingBottom="20dp"
-                android:textSize="25dp"
-                android:text="LKR 2000.00"/>
 
 
 
