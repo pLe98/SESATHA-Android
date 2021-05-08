@@ -56,19 +56,16 @@ public class FirebaseDemoActivity extends AppCompatActivity {
 
         //onclick listner for buton
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        button.setOnClickListener(v -> {
 
-                //editText to string
-                String value = valueET.getEditableText().toString().trim();
+            //editText to string
+            String value = valueET.getEditableText().toString().trim();
 
-                //firebase send data
-                myDatabase = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
-                myRef = myDatabase.getReference("test");
+            //firebase send data
+            myDatabase = FirebaseDatabase.getInstance("https://sesathap-23ea5-default-rtdb.firebaseio.com/");
+            myRef = myDatabase.getReference("newww");
 
-                myRef.setValue(value);
-            }
+            myRef.setValue(value);
         });
 
 

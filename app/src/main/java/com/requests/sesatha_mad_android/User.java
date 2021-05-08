@@ -1,5 +1,8 @@
 package com.requests.sesatha_mad_android;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class User {
 
     private String userID;

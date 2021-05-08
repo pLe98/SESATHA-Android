@@ -4,11 +4,12 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
 public class DemoActivity extends AppCompatActivity {
-
+    private RecyclerView mfirestoreList;
     //navigation bar variables
     DrawerLayout mdrawerLayout;
     ActionBarDrawerToggle mToggle;
@@ -32,6 +33,7 @@ public class DemoActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //navigation bar
+
 
 
 

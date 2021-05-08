@@ -8,5 +8,6 @@
     <string name="payment">Payment</string>
     <string name="checkout">Order Confirmation</string>
     <string name="spin">Select category</string>
+    <string name="ProductName1">Product Name</string>
 
 </resources>

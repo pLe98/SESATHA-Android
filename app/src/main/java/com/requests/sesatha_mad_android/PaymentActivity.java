@@ -42,13 +42,7 @@ public class PaymentActivity extends MainActivity {
         //payment activity
         editbt = (Button) findViewById(R.id.card_edit);
 
-        editbt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openEditPayment();
-
-            }
-        });
+        editbt.setOnClickListener(v -> openEditPayment());
 
 
 

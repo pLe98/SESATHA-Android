@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+     User user = new User();
 
     DrawerLayout mdrawerLayout;
     ActionBarDrawerToggle mToggle;
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         demo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, FirebaseDemoActivity.class);
+                Intent intent = new Intent(MainActivity.this, RecycleList.class);
                 startActivity(intent);
             }
         });
