@@ -80,7 +80,7 @@ public class PostItem extends AppCompatActivity {
         mdrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        
+
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         mToggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.grey));
 
