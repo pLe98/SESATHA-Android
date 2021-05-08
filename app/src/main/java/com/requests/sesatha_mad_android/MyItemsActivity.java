@@ -46,6 +46,9 @@ public class MyItemsActivity extends AppCompatActivity {
         mdrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //Customize action bar
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        mToggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.grey));
 
         //Get firebase instance
         db = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("items").limitToFirst(10);

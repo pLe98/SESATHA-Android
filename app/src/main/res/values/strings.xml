@@ -20,7 +20,7 @@
     <string name="description">Description</string>
     <string name="addcart">Add to Cart</string>
 
-    <!-- My Items activity -->
+    <!-- Activity headings -->
     <string name="myItemsStr">My Listings</string>
-
+    <string name="createItemsStr">List a Product</string>
 </resources>

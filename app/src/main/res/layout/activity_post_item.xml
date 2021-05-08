@@ -34,9 +34,22 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <TextView
+                android:id="@+id/textViewHeadingMyItems"
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
 
+                android:layout_above="@+id/card_add_item"
+                android:layout_marginBottom="-17dp"
+                android:fontFamily="sans-serif-black"
+                android:paddingTop="15dp"
+                android:text="@string/createItemsStr"
+                android:textAlignment="center"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="32sp" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_add_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
@@ -56,7 +69,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="40dp"
-                    android:layout_marginRight="30dp"
+                    android:layout_marginRight="35dp"
                     android:orientation="vertical">
 
 
@@ -69,8 +82,10 @@
                         app:counterMaxLength="45"
                         app:boxBackgroundColor="@color/white"
                         app:boxStrokeColor="@color/bgdark"
+                        android:textColorHint="@color/black"
                         app:helperText="Keep it short"
                         app:helperTextEnabled="true"
+                        android:layout_marginBottom="10dp"
                         app:hintTextAppearance="?attr/textAppearanceCaption"
                         app:hintTextColor="@color/bgdark">
 
@@ -92,8 +107,8 @@
                         android:prompt="@string/spin"
                         android:entries="@array/categories"
                         android:layout_marginTop="20dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="10dp"
                         android:textSize="18sp" />
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -103,11 +118,13 @@
                         android:hint="Description"
                         app:boxBackgroundColor="@color/white"
                         app:hintTextColor="@color/bgdark"
+                        android:textColorHint="@color/black"
                         app:hintTextAppearance="?attr/textAppearanceCaption"
                         app:boxStrokeColor="@color/bgdark"
                         app:helperTextEnabled="true"
+                        android:layout_marginBottom="10dp"
                         android:inputType="textMultiLine"
-                        app:helperText="Detailed description may bring more sales">
+                        app:helperText="A detailed description may bring more sales">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
@@ -126,7 +143,9 @@
                         app:hintTextColor="@color/bgdark"
                         app:hintTextAppearance="?attr/textAppearanceCaption"
                         app:boxStrokeColor="@color/bgdark"
+                        android:textColorHint="@color/black"
                         app:helperTextEnabled="true"
+                        android:layout_marginBottom="10dp"
                         app:helperText="Pick a reasonable price"
                         app:prefixText="Rs ">
 
@@ -150,17 +169,16 @@
                             android:id="@+id/textView6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-black"
                             android:text="Select an image"
-                            android:textColor="@color/bgdark"
-                            android:textSize="16sp"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"
                            />
 
                         <ImageView
                             android:id="@+id/imageView"
                             android:layout_width="87dp"
                             android:layout_height="67dp"
-                            android:layout_marginLeft="35dp"
+                            android:layout_marginLeft="42dp"
                             android:layout_toRightOf="@id/textView6"
                             app:srcCompat="@drawable/ic_outline_add_photo_alternate_24" />
 
