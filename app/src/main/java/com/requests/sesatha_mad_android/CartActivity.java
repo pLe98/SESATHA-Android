@@ -106,6 +106,13 @@ public class CartActivity extends AppCompatActivity {
             }
         });
 
+        clearbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clearCart();
+            }
+        });
+
     }
 
     @Override
@@ -131,7 +138,13 @@ public class CartActivity extends AppCompatActivity {
     }
 
     public void clearCart(){
+        //
+        FirebaseDatabase myDatabase = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
+        DatabaseReference myRef = myDatabase.getReference("Cart");
+        myRef.child(userID).removeValue();
 
+        Toast.makeText(CartActivity.this,
+                "Cart Cleared", Toast.LENGTH_SHORT).show();
     }
 
 }

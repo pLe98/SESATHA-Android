@@ -20,6 +20,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.requests.sesatha_mad_android.models.Order;
 import com.requests.sesatha_mad_android.models.Cart;
+import com.requests.sesatha_mad_android.models.Transaction;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -33,7 +34,7 @@ public class CheckoutActivity extends AppCompatActivity {
 
     //firebase instances
     FirebaseDatabase database;
-    DatabaseReference dbRef;
+    DatabaseReference dbRef, dbRef2;
 
     //checkout activity
     private Button addressChange, paymentChange, purchase;
@@ -49,6 +50,8 @@ public class CheckoutActivity extends AppCompatActivity {
     private Float subtotal, shipping, total;
     private int noOfItems;
 
+    private String transactionID;
+
     //variables for individual cart items
     private String iitemNo, ititle, istatus;
     private Float isubtotal, ishipping, itotal;
@@ -59,6 +62,13 @@ public class CheckoutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
+        //user details
+        globalVariables = (GlobalClass) getApplicationContext();
+        userid = globalVariables.getUser().getUserID();
+
+        DateFormat dateFormat1 = new SimpleDateFormat("ddMMyyyy");
+        Date date = new Date();
+        String oDate = dateFormat1.format(date);
 
         mytoolbar = (Toolbar) findViewById(R.id.mytoolbar);
         setSupportActionBar(mytoolbar);
@@ -70,7 +80,7 @@ public class CheckoutActivity extends AppCompatActivity {
         total = bundle.getFloat("total");
         shipping = bundle.getFloat("shipping");
         noOfItems = bundle.getInt("noOfTItems");
-        Log.d("checkout", "subtotal");
+        transactionID = userid + oDate;
 
         //xml values
         nametv = findViewById(R.id.ch_name);
@@ -90,16 +100,14 @@ public class CheckoutActivity extends AppCompatActivity {
 
         totaltv2 = findViewById(R.id.ch_totalFinal);
 
-
-        //user details
-        globalVariables = (GlobalClass) getApplicationContext();
-        userid = globalVariables.getUser().getUserID();
-
         //button actions
         addressChange = findViewById(R.id.chgAddress);
         paymentChange = findViewById(R.id.chgCard);
         purchase = findViewById(R.id.puchasebtn);
 
+        //firebase instances
+        database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
+        dbRef = database.getReference("Orders");
 
 
         //display
@@ -132,6 +140,8 @@ public class CheckoutActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d("checkout", "0");
                 placeOrder();
+                saveTransaction();
+                clearCart();
             }
         });
     }
@@ -225,11 +235,9 @@ public class CheckoutActivity extends AppCompatActivity {
                     Order order = new Order(orderID, iitemNo, userid, ititle,  orderDate, inoOfItems, isubtotal, ishipping, itotal, istatus);
 
                     //save order object in firebase database
-                    database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
                     dbRef = database.getReference("Orders");
                     dbRef.child(iitemNo).setValue(order);
 
-                    resetValues();
                     Log.e("checkout", "itemNo"+ iitemNo);
                 }
 
@@ -246,16 +254,22 @@ public class CheckoutActivity extends AppCompatActivity {
     }
 
     public void saveTransaction(){
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+        Date date = new Date();
+        String orderDate = dateFormat.format(date);
 
+        //create Transaction object
+        //Transaction(String transactionID, String orderDate, String amount)
+        Transaction transaction = new Transaction(transactionID,orderDate, total);
+
+        //save transaction object in firebase database
+        dbRef = database.getReference("Transaction");
+        dbRef.child(userid).child(transactionID).setValue(transaction);
 
     }
 
-    public void resetValues(){
-        iitemNo = null;
-        itotal= null;
-        isubtotal = null;
-        ishipping = null;
-        ititle =null;
-        inoOfItems = 0;
+    public void clearCart(){
+        //delete cart items relevant to user id
+        database.getReference("Cart").child(userid).removeValue();
     }
 }

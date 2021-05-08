@@ -5,6 +5,8 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -22,9 +25,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.requests.sesatha_mad_android.models.Card;
+import com.requests.sesatha_mad_android.adapters.transactionAdapter;
+import com.requests.sesatha_mad_android.models.Transaction;
 
 public class PaymentActivity extends MainActivity {
+
+    //transaction recycler view
+    private RecyclerView recViewTransaction;
+    transactionAdapter adapter;
+    Query transDb;
 
     DrawerLayout mdrawerLayout;
     ActionBarDrawerToggle mToggle;
@@ -62,6 +71,16 @@ public class PaymentActivity extends MainActivity {
         //assign varibles
         tvNo = findViewById(R.id.card_number);
 
+        transDb = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("Transaction").child(userid);
+        recViewTransaction = findViewById(R.id.transaction_recycler);
+        recViewTransaction.setLayoutManager(new LinearLayoutManager(this));
+
+        //Recycleer view
+        FirebaseRecyclerOptions<Transaction> data = new FirebaseRecyclerOptions.Builder<Transaction>().setQuery(transDb, Transaction.class).build();
+        adapter = new transactionAdapter(data);
+        recViewTransaction.setAdapter(adapter);
+
+
         showCardNo();
 
         //getCardDetails();
@@ -73,12 +92,23 @@ public class PaymentActivity extends MainActivity {
             @Override
             public void onClick(View v) {
                 openEditPayment();
-
             }
         });
 
 
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        adapter.stopListening();
     }
 
     @Override
@@ -95,7 +125,7 @@ public class PaymentActivity extends MainActivity {
         startActivity(intent);
 
     }
-
+/*
     public void getCardDetails(){
         DatabaseReference db = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
         db.child("Card").orderByChild("userID").equalTo(userid).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
@@ -117,7 +147,7 @@ public class PaymentActivity extends MainActivity {
             }
         });
 
-    }
+    }*/
 
     public void showCardNo(){
         DatabaseReference db = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
@@ -139,12 +169,12 @@ public class PaymentActivity extends MainActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                Log.e("card details", "card not found");
             }
         });
-
-
     }
+
+
 
 
 }
