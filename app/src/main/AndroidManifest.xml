@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SESATHA_MADAndroid">
-        <activity android:name=".MyItemEditActivity"></activity>
+        <activity android:name=".MyItemEditActivity" android:screenOrientation="portrait"/>
         <activity android:name=".MyItemDetailsActivity" />
         <activity android:name=".CartActivity" />
         <activity android:name=".MyItemsActivity" />
@@ -31,7 +31,8 @@
         <activity android:name=".CheckoutActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".PaymentActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
