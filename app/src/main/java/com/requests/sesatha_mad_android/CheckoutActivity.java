@@ -10,28 +10,49 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.requests.sesatha_mad_android.models.Order;
+import com.requests.sesatha_mad_android.models.Cart;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class CheckoutActivity extends AppCompatActivity {
 
     //toolbar
     Toolbar mytoolbar;
 
+    //firebase instances
+    FirebaseDatabase database;
+    DatabaseReference dbRef;
+
     //checkout activity
     private Button addressChange, paymentChange, purchase;
     private TextView nametv, add1tv, add2tv, add3tv, phonetv, cardnotv, cardExptv,  subTotaltv, noItemstv, shippingtv, totaltv, totaltv2 ;
+    Query orderDb;
 
 
     //card details
     GlobalClass globalVariables;
     private String userid, cardno, cmonth, cyear;
+
+    //variables for extras
     private Float subtotal, shipping, total;
     private int noOfItems;
+
+    //variables for individual cart items
+    private String iitemNo, ititle, istatus;
+    private Float isubtotal, ishipping, itotal;
+    private int inoOfItems;
 
 
     @Override
@@ -79,6 +100,8 @@ public class CheckoutActivity extends AppCompatActivity {
         paymentChange = findViewById(R.id.chgCard);
         purchase = findViewById(R.id.puchasebtn);
 
+
+
         //display
         showCardDetails();
         //display user data
@@ -102,12 +125,13 @@ public class CheckoutActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        Log.d("checkout", "-1");
         //place order
-        addressChange.setOnClickListener(new View.OnClickListener() {
+        purchase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //
+                Log.d("checkout", "0");
+                placeOrder();
             }
         });
     }
@@ -165,5 +189,73 @@ public class CheckoutActivity extends AppCompatActivity {
         totaltv.setText(String.valueOf(total));
         shippingtv.setText(String.valueOf(shipping));
         noItemstv.setText(String.valueOf(noOfItems));
+    }
+
+    public void placeOrder(){
+        //getting order instance
+        orderDb = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("Cart").child(userid);
+
+        String orderID = "O" + String.valueOf(TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
+
+        //getting date
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+        Date date = new Date();
+        String orderDate = dateFormat.format(date);
+
+        //setting default order status
+        istatus = "Order Placed";
+
+        orderDb.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshots : snapshot.getChildren()){
+                    Log.e("checkout", "order");
+
+                    //getting cart items relevant to the userID
+                    isubtotal  = dataSnapshots.child("unitPrice").getValue(Float.class) * dataSnapshots.child("qty").getValue(Integer.class);
+                    ishipping  = dataSnapshots.child("shipping").getValue(Float.class);
+                    itotal = isubtotal + ishipping;
+                    inoOfItems = dataSnapshots.child("qty").getValue(Integer.class);
+                    iitemNo = dataSnapshots.child("itemNo").getValue(String.class);
+                    ititle = dataSnapshots.child("title").getValue(String.class);
+                    Log.e("checkout", "itemNo"+ iitemNo);
+
+                    //saving cart items in order object
+                    // Order(String orderID, String itemNo, String userID, String title, String orderDate, int noOfItems, float netAmount, float shipping, float total, String status)
+                    Order order = new Order(orderID, iitemNo, userid, ititle,  orderDate, inoOfItems, isubtotal, ishipping, itotal, istatus);
+
+                    //save order object in firebase database
+                    database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
+                    dbRef = database.getReference("Orders");
+                    dbRef.child(iitemNo).setValue(order);
+
+                    resetValues();
+                    Log.e("checkout", "itemNo"+ iitemNo);
+                }
+
+                Toast.makeText(CheckoutActivity.this,
+                        "Order was placed successfully", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    public void saveTransaction(){
+
+
+    }
+
+    public void resetValues(){
+        iitemNo = null;
+        itotal= null;
+        isubtotal = null;
+        ishipping = null;
+        ititle =null;
+        inoOfItems = 0;
     }
 }
