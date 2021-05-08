@@ -112,6 +112,7 @@ public class ItemDescriptionActivity extends AppCompatActivity {
 
                 myRef.child(userID).child(vitemNo).setValue(cart);
 
+                //create toast message
                 Toast.makeText(ItemDescriptionActivity.this,
                         "Item Added to the Cart Successfully ", Toast.LENGTH_SHORT).show();
             }
