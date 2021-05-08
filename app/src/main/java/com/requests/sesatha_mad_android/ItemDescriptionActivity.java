@@ -36,7 +36,7 @@ public class ItemDescriptionActivity extends AppCompatActivity {
     private int vqty = 1;
     private float vunitPrice = (float) 500.00, vshipping = (float) 150.00;
 
-    //xml values
+    //xml values added
     TextView titleTv, unitPriceTv, shippingTv, sellerNameTv, locationTv, qtyTv;
     Button addToCart, plus, minus;
     //private TextInputLayout  qtyTv;
