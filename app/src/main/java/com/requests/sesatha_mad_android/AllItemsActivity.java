@@ -68,7 +68,7 @@ public class AllItemsActivity extends AppCompatActivity {
             @Override
             public void onItemClick(Item model, int position) {
                 //Toast.makeText(MyItemsActivity.this, model.getTitle(), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(AllItemsActivity.this, MyItemDetailsActivity.class);
+                Intent intent = new Intent(AllItemsActivity.this, ItemDescriptionActivity.class);
                 intent.putExtra("Data", model);
                 startActivity(intent);
             }
