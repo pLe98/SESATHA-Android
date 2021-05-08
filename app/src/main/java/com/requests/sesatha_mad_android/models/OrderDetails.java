@@ -19,8 +19,7 @@ public class OrderDetails {
         return productName;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getQuantity() { return quantity;
     }
 
     public int getAmount() {

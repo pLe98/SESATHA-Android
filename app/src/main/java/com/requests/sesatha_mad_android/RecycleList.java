@@ -28,7 +28,7 @@ public class RecycleList extends AppCompatActivity {
         setContentView(R.layout.activity_order_view);
 
         recyclerView= findViewById(R.id.Recycle);
-        databaseReference= FirebaseDatabase.getInstance().getReference("orderDetails");
+        databaseReference= FirebaseDatabase.getInstance().getReference().child("Orders");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
