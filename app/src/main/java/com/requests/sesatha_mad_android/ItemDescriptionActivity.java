@@ -47,6 +47,8 @@ public class ItemDescriptionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_description);
 
+        //inertialize ids
+
         globalVariables = (GlobalClass) getApplicationContext();
         userID = globalVariables.getUser().getUserID();
         Item model= (Item) getIntent().getSerializableExtra("Data");  //Item object from recycler view
