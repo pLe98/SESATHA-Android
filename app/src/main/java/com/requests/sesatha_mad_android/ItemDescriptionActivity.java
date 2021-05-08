@@ -102,7 +102,7 @@ public class ItemDescriptionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //calling to firebase databse
+                //calling to firebase database
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
                 DatabaseReference myRef = database.getReference("Cart");
