@@ -23,4 +23,7 @@
     <!-- Activity headings -->
     <string name="myItemsStr">My Listings</string>
     <string name="createItemsStr">List a Product</string>
+
+    <string name="editBtnText">Edit</string>
+    <string name="deleteBtnText">Remove</string>
 </resources>
