@@ -48,8 +48,9 @@
                 >
                 <ImageView
                     android:id="@+id/itemImg"
-                    android:layout_width="300dp"
-                    android:layout_height="300dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="320dp"
+                    android:layout_height="294dp"
                     android:scaleType="fitXY"
                     android:layout_centerHorizontal="true"
                     android:src="@drawable/item_image"

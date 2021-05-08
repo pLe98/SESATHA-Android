@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -55,6 +56,7 @@ public class myItemsAdapter extends FirebaseRecyclerAdapter<Item, myItemsAdapter
                 .override(100, 97) // resizing
                 .transform(new CenterCrop(),new RoundedCorners(9))
                 //.centerCrop()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(holder.image);  // imageview object
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

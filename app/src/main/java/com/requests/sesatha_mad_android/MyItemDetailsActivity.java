@@ -12,9 +12,13 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CenterInside;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -37,6 +41,7 @@ public class MyItemDetailsActivity extends AppCompatActivity {
     //Variables for elements
     TextView titleTv, unitPriceTv, description, category;
     Button deleteBtn, editBtn;
+    ImageView image;
 
 
     @Override
@@ -67,10 +72,20 @@ public class MyItemDetailsActivity extends AppCompatActivity {
         deleteBtn = findViewById(R.id.itd_deleteBtn);
         editBtn = findViewById(R.id.itd_editBtn);
 
+        image = findViewById(R.id.itemImg);
+
+        //Set values
         titleTv.setText(model.getTitle());
         unitPriceTv.setText(String.format("%.2f",model.getPrice()));
         description.setText(model.getDescription());
         category.setText(model.getCategory());
+        Glide.with(MyItemDetailsActivity.this)
+                .load(model.getImUrl())
+                .placeholder(R.drawable.image_default) // any placeholder to load at start
+                .error(R.drawable.image_broken)
+                .transform(new CenterInside(),new RoundedCorners(45))
+                //.circleCrop()
+                .into(image);
 
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
