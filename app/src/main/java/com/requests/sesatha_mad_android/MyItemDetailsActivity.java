@@ -16,8 +16,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.requests.sesatha_mad_android.models.Cart;
 import com.requests.sesatha_mad_android.models.Item;
 
@@ -71,33 +75,47 @@ public class MyItemDetailsActivity extends AppCompatActivity {
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 new MaterialAlertDialogBuilder(MyItemDetailsActivity.this,R.style.AlertDialogThemeCustom)
                         .setTitle("Are you sure want to remove this item ?")
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 Log.d("Item","Deleting item.....");
+                                FirebaseDatabase database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
+                                Query myRef = database.getReference("items").orderByChild("id").equalTo(model.getId());
+                                myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        for(DataSnapshot itemSnap: snapshot.getChildren()){
+                                            itemSnap.getRef().removeValue();
+                                        }
+                                        Toast.makeText(MyItemDetailsActivity.this, "Item removed !", Toast.LENGTH_SHORT).show();
+                                        finish();
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+                                        Log.e("Item", "DB Error. Failed to delete !", error.toException());
+                                    }
+                                });
                             }
                         })
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Log.d("Item","Editing item.....");
                             }
                         })
                         .show();
-                FirebaseDatabase database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
-                DatabaseReference myRef = database.getReference("Cart");
+            }
+        });
 
-                //Cart cart = new Cart(vitemNo, vtitle, vqty, vunitPrice, vshipping);
-
-                //myRef.child(userID).child(vitemNo).setValue(cart);
-
+        editBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
             }
         });
+
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

@@ -3,9 +3,11 @@ package com.requests.sesatha_mad_android.models;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.UUID;
 
 
 public class Item implements Serializable {
+    private String id;
     private String title;
     private String category;
     private String description;
@@ -17,7 +19,9 @@ public class Item implements Serializable {
 
     public Item(){}
 
+
     public Item(String title, String category, String description, float price, String imUrl, String userId) {
+        this.id = UUID.randomUUID().toString();
         this.title = title;
         this.category = category;
         this.description = description;
@@ -30,6 +34,7 @@ public class Item implements Serializable {
     }
 
     public Item(String title, String category, String description, float price, String userId) {
+        this.id = UUID.randomUUID().toString();
         this.title = title;
         this.category = category;
         this.description = description;
@@ -102,5 +107,13 @@ public class Item implements Serializable {
 
     public void setImUrl(String imUrl) {
         this.imUrl = imUrl;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

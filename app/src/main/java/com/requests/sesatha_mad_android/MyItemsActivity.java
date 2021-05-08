@@ -51,7 +51,7 @@ public class MyItemsActivity extends AppCompatActivity {
         mToggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.grey));
 
         //Get firebase instance
-        db = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("items").limitToFirst(10);
+        db = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("items");
 
         //initialize recycler view
         recyView = findViewById(R.id.MyListingsRecycler);

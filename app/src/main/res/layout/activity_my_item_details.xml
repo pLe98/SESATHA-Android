@@ -64,7 +64,7 @@
                     android:layout_below="@+id/itemImg"
                     android:textStyle="bold"
                     android:elevation="200dp"
-                    android:textSize="40sp"
+                    android:textSize="38sp"
                     android:text="Title"/>
 
                 <TextView
@@ -88,7 +88,7 @@
                     android:layout_toRightOf="@+id/itd_lkr"
                     android:elevation="200dp"
                     android:text="1250.00"
-                    android:textSize="30sp"
+                    android:textSize="29sp"
                     android:textStyle="bold" />
                 <TextView
                     android:id="@+id/itd_category"
