@@ -10,9 +10,13 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CenterInside;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -37,8 +41,9 @@ public class ItemDescriptionActivity extends AppCompatActivity {
     private float vunitPrice = (float) 500.00, vshipping = (float) 150.00;
 
     //xml values
-    TextView titleTv, unitPriceTv, shippingTv, sellerNameTv, locationTv, qtyTv;
+    TextView titleTv, unitPriceTv, shippingTv, sellerNameTv, locationTv, qtyTv,description;
     Button addToCart, plus, minus;
+    ImageView image;
     //private TextInputLayout  qtyTv;
 
 
@@ -51,6 +56,7 @@ public class ItemDescriptionActivity extends AppCompatActivity {
         userID = globalVariables.getUser().getUserID();
         Item model= (Item) getIntent().getSerializableExtra("Data");  //Item object from recycler view
 
+        //Drawer
         mytoolbar = (Toolbar) findViewById(R.id.mytoolbar);
         setSupportActionBar(mytoolbar);
         mdrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
@@ -58,6 +64,10 @@ public class ItemDescriptionActivity extends AppCompatActivity {
         mdrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //Customize action bar
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        mToggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.grey));
 
         titleTv = findViewById(R.id.itd_title);
         unitPriceTv = findViewById(R.id.itd_price);
@@ -68,11 +78,20 @@ public class ItemDescriptionActivity extends AppCompatActivity {
         plus = findViewById(R.id.itd_addbtn);
         minus = findViewById(R.id.itd_removebtn);
         addToCart = findViewById(R.id.itd_addtocart);
+        description = findViewById(R.id.itd_descrition);
+        image = findViewById(R.id.itemImg);
 
-        titleTv.setText(vtitle);
-        unitPriceTv.setText(String.valueOf(vunitPrice));
+        titleTv.setText(model.getTitle());
+        unitPriceTv.setText(String.format("%.2f",model.getPrice()));
         qtyTv.setText(String.valueOf(vqty));
         shippingTv.setText(String.valueOf(vshipping));
+        description.setText(model.getDescription());
+        Glide.with(ItemDescriptionActivity.this)
+                .load(model.getImUrl())
+                .placeholder(R.drawable.image_default) // any placeholder to load at start
+                .error(R.drawable.image_broken)
+                .transform(new CenterInside(),new RoundedCorners(45))
+                .into(image);
 
         minus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,6 +126,7 @@ public class ItemDescriptionActivity extends AppCompatActivity {
 
                 Toast.makeText(ItemDescriptionActivity.this,
                         "Item Added to the Cart Successfully ", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
 

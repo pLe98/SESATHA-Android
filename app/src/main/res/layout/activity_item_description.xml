@@ -53,7 +53,7 @@
                 android:scaleType="fitXY"
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/item_image"
-                android:layout_marginBottom="25dp"/>
+                android:layout_marginBottom="15dp"/>
 
 
             <TextView
@@ -64,7 +64,8 @@
                 android:layout_below="@+id/itemImg"
                 android:textStyle="bold"
                 android:elevation="200dp"
-                android:textSize="40sp"
+                android:textSize="35sp"
+                android:layout_marginBottom="5dp"
                 android:text="Title"/>
 
 
@@ -85,10 +86,10 @@
                 android:layout_marginStart="6dp"
                 android:layout_below="@+id/itd_title"
                 android:layout_toRightOf="@+id/itd_storeImg"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="4dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="3dp"
                 android:layout_marginRight="40dp"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:text="Test Seller"/>
 
             <TextView
@@ -192,7 +193,7 @@
 
             <LinearLayout
                 android:layout_centerHorizontal="true"
-                android:layout_width="350dp"
+                android:layout_width="320dp"
                 android:layout_height="120dp"
                 android:layout_below="@+id/itd_qty"
                 android:elevation="5dp"
