@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         demo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RecycleList.class );
+                Intent intent = new Intent(MainActivity.this, FirebaseDemoActivity.class);
                 startActivity(intent);
             }
         });

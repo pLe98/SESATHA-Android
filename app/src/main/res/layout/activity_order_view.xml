@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg30"
     android:id="@+id/drawerLayout"
-
     tools:context=".DemoActivity" >
     <!-- change  tools:context=".DemoActivity"  -->
 
