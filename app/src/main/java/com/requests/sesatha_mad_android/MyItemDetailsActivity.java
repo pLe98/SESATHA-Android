@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -35,7 +36,6 @@ public class MyItemDetailsActivity extends AppCompatActivity {
     DrawerLayout mdrawerLayout;
     ActionBarDrawerToggle mToggle;
     Toolbar mytoolbar;
-
 
 
     //Variables for elements
@@ -129,7 +129,9 @@ public class MyItemDetailsActivity extends AppCompatActivity {
         editBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MyItemDetailsActivity.this,MyItemEditActivity.class);
+                intent.putExtra("Data",model);
+                startActivity(intent);
             }
         });
 

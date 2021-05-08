@@ -45,6 +45,17 @@ public class Item implements Serializable {
         this.last_modified = df.format(Calendar.getInstance().getTime());
     }
 
+    public void updateItem(String title, String category, String description, float price,String id) {
+        this.id = id;
+        this.title = title;
+        this.category = category;
+        this.description = description;
+        this.price = price;
+        this.approved = false;
+        SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd hh:mma");
+        this.last_modified = df.format(Calendar.getInstance().getTime());
+    }
+
     public String getTitle() {
         return title;
     }
@@ -107,6 +118,8 @@ public class Item implements Serializable {
 
     public void setImUrl(String imUrl) {
         this.imUrl = imUrl;
+        SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd hh:mma");
+        this.last_modified = df.format(Calendar.getInstance().getTime());
     }
 
     public String getId() {
