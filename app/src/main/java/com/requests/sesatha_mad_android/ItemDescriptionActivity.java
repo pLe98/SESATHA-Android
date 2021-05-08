@@ -121,6 +121,8 @@ public class ItemDescriptionActivity extends AppCompatActivity {
 
     }
     @Override
+
+    // add validation for the dropbox
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         if(mToggle.onOptionsItemSelected(item)){
