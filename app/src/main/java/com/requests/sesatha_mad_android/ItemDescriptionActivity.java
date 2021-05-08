@@ -122,7 +122,7 @@ public class ItemDescriptionActivity extends AppCompatActivity {
     }
     @Override
 
-    // add validation for the dropbox
+    // add validation for the dropdownbox
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         if(mToggle.onOptionsItemSelected(item)){
