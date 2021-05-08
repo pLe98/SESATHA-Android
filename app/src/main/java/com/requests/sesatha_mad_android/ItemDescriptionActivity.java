@@ -48,7 +48,6 @@ public class ItemDescriptionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_item_description);
 
         //inertialize ids
-
         globalVariables = (GlobalClass) getApplicationContext();
         userID = globalVariables.getUser().getUserID();
         Item model= (Item) getIntent().getSerializableExtra("Data");  //Item object from recycler view
@@ -76,6 +75,7 @@ public class ItemDescriptionActivity extends AppCompatActivity {
         qtyTv.setText(String.valueOf(vqty));
         shippingTv.setText(String.valueOf(vshipping));
 
+        //minus function
         minus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
