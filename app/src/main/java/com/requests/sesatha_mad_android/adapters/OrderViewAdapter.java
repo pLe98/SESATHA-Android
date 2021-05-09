@@ -10,16 +10,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.requests.sesatha_mad_android.R;
+import com.requests.sesatha_mad_android.RecycleListView;
 import com.requests.sesatha_mad_android.models.OrderDetails;
 import java.util.ArrayList;
 public class OrderViewAdapter extends RecyclerView.Adapter<OrderViewAdapter.MyViewHolder> {
 
+
     Context context;
     ArrayList <OrderDetails> arrayList;
 
-    public OrderViewAdapter(Context context, ArrayList<OrderDetails> arrayList) {
+    public OrderViewAdapter(Context context, ArrayList<OrderDetails> arrayList ) {
         this.context = context;
         this.arrayList = arrayList;
+
+
     }
 
     @NonNull
@@ -30,7 +34,7 @@ public class OrderViewAdapter extends RecyclerView.Adapter<OrderViewAdapter.MyVi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position)   {
         OrderDetails orderDetails = arrayList.get(position);
         holder.productname.setText(orderDetails.getTitle());
         holder.quantitiy.setText(String.valueOf(orderDetails.getNoOfItems()));
@@ -44,7 +48,11 @@ public class OrderViewAdapter extends RecyclerView.Adapter<OrderViewAdapter.MyVi
         return arrayList.size();
     }
 
-    public static class MyViewHolder extends  RecyclerView.ViewHolder {
+    public interface OnNoteListener {
+        void onClick(View v, int posistion);
+    }
+
+    public class MyViewHolder extends  RecyclerView.ViewHolder  {
 
         TextView productname, quantitiy , total;
         public MyViewHolder(@NonNull View itemView) {
@@ -53,9 +61,11 @@ public class OrderViewAdapter extends RecyclerView.Adapter<OrderViewAdapter.MyVi
             productname =itemView.findViewById(R.id.product);
             quantitiy= itemView.findViewById(R.id.quantity1);
             total =itemView.findViewById(R.id.price);
+
+        }
+
         }
     }
-    public interface OnNoteListener{
-        void OnNoteListener(int posistion);
-    }
-}
+
+
+

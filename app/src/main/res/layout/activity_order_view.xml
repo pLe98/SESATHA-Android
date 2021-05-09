@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg30"
-    android:id="@+id/drawerLayout"
-    tools:context=".OrderView" >
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    app:cardCornerRadius="9dp"
+    app:cardElevation="6dp"
+    app:cardMaxElevation="6dp"
+    android:layout_marginHorizontal="10dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
     <!-- change  tools:context=".DemoActivity"  -->
 
 
@@ -16,13 +20,16 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
                     >
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="125dp"
-                        android:background="@color/purple_200"
-                        android:padding="10dp">
+                        android:padding="10dp"
+
+
+                        >
 
                         <TextView
                             android:id="@+id/product"
@@ -31,8 +38,8 @@
                             android:layout_marginLeft="10dp"
                             android:text="Ambrella"
                             android:layout_marginTop="0dp"
-                            android:textColor="#ffff"
-                            android:textSize="35dp"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
                             android:textStyle="bold" />
 
 
@@ -58,7 +65,7 @@
                             android:textSize="20dp"
                             android:textStyle="bold"
                             android:text="5"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
 
                             />
                         <TextView
@@ -70,31 +77,36 @@
                             android:textSize="20dp"
                             android:textStyle="bold"
                             android:text="Total Price ="
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
 
                             />
 
                         <TextView
                             android:id="@+id/price"
-                            android:layout_width="match_parent"
+                            android:layout_width="94dp"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/quantity"
                             android:layout_marginLeft="10dp"
                             android:layout_toRightOf="@id/totPrice"
                             android:text="5000.00"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:textSize="20dp"
                             android:textStyle="bold"
 
                             />
+
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="75dp"
-                            android:src="@drawable/ic_launcher_background"
-                            android:layout_alignParentRight="true"
                             android:id="@+id/iamge"
-                            android:layout_margin="10dp"
-                            />
+                            android:layout_width="92dp"
+                            android:layout_height="67dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="10dp"
+                            android:src="@drawable/ic_launcher_background" />
 
                     </RelativeLayout>
 
@@ -108,4 +120,4 @@
 
 
 
-</androidx.drawerlayout.widget.DrawerLayout>
+</androidx.cardview.widget.CardView>

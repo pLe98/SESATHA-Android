@@ -66,12 +66,12 @@ public class MyItemDetailsActivity extends AppCompatActivity {
 
         titleTv = findViewById(R.id.itd_title);
         unitPriceTv = findViewById(R.id.itd_price);
-        description = findViewById(R.id.itd_description);
-        category = findViewById(R.id.itd_category);
-        lastModified = findViewById(R.id.itd_lastmodified);
+        //description = findViewById(R.id.itd_description);
+       // category = findViewById(R.id.itd_category);
+      //  lastModified = findViewById(R.id.itd_lastmodified);
 
         deleteBtn = findViewById(R.id.itd_deleteBtn);
-        editBtn = findViewById(R.id.itd_editBtn);
+        //editBtn = findViewById(R.id.itd_editBtn);
 
         image = findViewById(R.id.itemImg);
 

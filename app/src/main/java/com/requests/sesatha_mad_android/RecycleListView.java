@@ -19,7 +19,7 @@ import com.requests.sesatha_mad_android.models.OrderDetails;
 
 import java.util.ArrayList;
 
-public class RecycleListView extends AppCompatActivity implements OrderViewAdapter.OnNoteListener {
+public class RecycleListView extends AppCompatActivity {
 
     RecyclerView recyclerView;
     DatabaseReference databaseReference;
@@ -31,13 +31,9 @@ public class RecycleListView extends AppCompatActivity implements OrderViewAdapt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycle_list_view);
 
-        databaseReference = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Orders");
-
-//        databaseReference= FirebaseDatabase.getInstance().getReference("Orders");
-        Log.d("RLV", "DB ref = "+databaseReference);
+        databaseReference = FirebaseDatabase.getInstance().getReference("Orders");
         list = new ArrayList<>();
        recyclerView= findViewById(R.id.Recycle);// Initializ Recle view
-        Log.d("RLV", "RV = "+recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -66,10 +62,7 @@ public class RecycleListView extends AppCompatActivity implements OrderViewAdapt
 
     }
 
-    @Override
-    public void OnNoteListener(int posistion) {
-        Intent intent =new Intent(this,CartActivity.class);
-        startActivity(intent);
 
-    }
+
+    
 }
