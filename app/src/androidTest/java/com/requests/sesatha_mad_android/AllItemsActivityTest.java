@@ -1,6 +1,5 @@
 package com.requests.sesatha_mad_android;
 
-import android.content.Intent;
 import android.view.View;
 
 import androidx.test.rule.ActivityTestRule;
