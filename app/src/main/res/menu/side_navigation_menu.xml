@@ -22,7 +22,7 @@
 
     <group android:checkableBehavior="none"
         android:id="@+id/nav_grp2"/>
-        
+
         <item android:id="@+id/nav_myItems"
             android:title="My Items"
             android:icon="@mipmap/outline_store_black_36"/>

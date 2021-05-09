@@ -51,15 +51,35 @@
                 android:text="@string/myItemsStr" />
 
 
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/MyListingsRecycler"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="40dp" >
+                android:layout_height="match_parent">
 
-            </androidx.recyclerview.widget.RecyclerView>
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_add"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="end|bottom"
+                    android:layout_margin="19dp"
+                    app:fabCustomSize="62dp"
+                    android:scaleType="center"
+                    app:maxImageSize="38dp"
+                    android:background="@android:color/transparent"
+                    android:backgroundTint="@color/bgpink"
+                    android:src="@drawable/ic_sharp_add_24"
+                    app:tint="@color/white"
+                    app:rippleColor="@color/white" />
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/MyListingsRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="40dp" >
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </RelativeLayout>
         </LinearLayout>
 
 

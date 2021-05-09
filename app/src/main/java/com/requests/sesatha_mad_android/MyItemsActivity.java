@@ -13,9 +13,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
@@ -35,6 +37,7 @@ public class MyItemsActivity extends AppCompatActivity implements NavigationView
     myItemsAdapter adapter;
     Query db;
 
+    FloatingActionButton addBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,11 +65,22 @@ public class MyItemsActivity extends AppCompatActivity implements NavigationView
         recyView = findViewById(R.id.MyListingsRecycler);
         recyView.setLayoutManager(new LinearLayoutManager(this));
 
+        //add btn
+        addBtn = findViewById(R.id.btn_add);
+
         //Firebase Query
         FirebaseRecyclerOptions<Item> data= new FirebaseRecyclerOptions.Builder<Item>().setQuery(db,Item.class).build();
 
         //initialize adapter
         adapter = new myItemsAdapter(data);
+
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MyItemsActivity.this, PostItem.class);
+                startActivity(intent);
+            }
+        });
 
         adapter.setItemClickListener(new ItemClickListener() {
             @Override
