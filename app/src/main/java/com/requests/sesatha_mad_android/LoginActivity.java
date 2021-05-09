@@ -89,6 +89,7 @@ public class LoginActivity extends AppCompatActivity {
                             Log.e("login", "User : "+ globalVariables.getUser().getUserName()); //example usage of globalvariables
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
+                            finish();
                         }else{
                             Log.e("login", "Incorrect password !");
                             enteredPassword.setError("Invalid Email/Password");
