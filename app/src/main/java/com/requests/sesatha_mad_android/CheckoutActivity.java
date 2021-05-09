@@ -66,7 +66,7 @@ public class CheckoutActivity extends AppCompatActivity {
         globalVariables = (GlobalClass) getApplicationContext();
         userid = globalVariables.getUser().getUserID();
 
-        DateFormat dateFormat1 = new SimpleDateFormat("ddMMyyyy");
+        DateFormat dateFormat1 = new SimpleDateFormat("ddMMyyyyHHmmss");
         Date date = new Date();
         String oDate = dateFormat1.format(date);
 
@@ -158,12 +158,10 @@ public class CheckoutActivity extends AppCompatActivity {
                     cardno = "XXXX XXXX XXXX "+cardNum.substring(cardNum.length()-4);
                     cmonth = snapshot.child(userid).child("cMonth").getValue().toString();
                     cyear = snapshot.child(userid).child("cYear").getValue().toString();
-                    //ccv = snapshot.child(userid).child("ccv").getValue().toString();
 
                     //assign into text views
                     cardnotv.setText(cardno);
                     cardExptv.setText(cmonth + " / " + cyear);
-                    //cardCCVtv.setText(ccv);
 
                 }else{
                     Log.e("card details", "no card");
@@ -259,7 +257,6 @@ public class CheckoutActivity extends AppCompatActivity {
         String orderDate = dateFormat.format(date);
 
         //create Transaction object
-        //Transaction(String transactionID, String orderDate, String amount)
         Transaction transaction = new Transaction(transactionID,orderDate, total);
 
         //save transaction object in firebase database

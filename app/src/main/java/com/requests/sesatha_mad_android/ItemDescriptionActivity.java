@@ -36,9 +36,9 @@ public class ItemDescriptionActivity extends AppCompatActivity {
     private String userID;
     GlobalClass globalVariables;
 
-    private String vtitle = "Necklace", vitemNo = "24943";
+    private String vtitle , vitemNo;
     private int vqty = 1;
-    private float vunitPrice = (float) 500.00, vshipping = (float) 150.00;
+    private float vunitPrice, vshipping = (float) 150.00;
 
     //xml values
     TextView titleTv, unitPriceTv, shippingTv, sellerNameTv, locationTv, qtyTv,description;
@@ -120,6 +120,10 @@ public class ItemDescriptionActivity extends AppCompatActivity {
                 FirebaseDatabase database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
                 DatabaseReference myRef = database.getReference("Cart");
 
+                vitemNo = model.getId();
+                vtitle = model.getTitle();
+                vunitPrice = model.getPrice();
+                
                 Cart cart = new Cart(vitemNo, vtitle, vqty, vunitPrice, vshipping);
 
                 myRef.child(userID).child(vitemNo).setValue(cart);

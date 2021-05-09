@@ -31,6 +31,7 @@
     <string name="transid">Transaction ID </string>
     <string name="transdate">Date </string>
     <string name="amount">Amount</string>
+    <string name="transhistory">Transaction History</string>
 
     <string name="editBtnText">Edit</string>
     <string name="deleteBtnText">Remove</string>

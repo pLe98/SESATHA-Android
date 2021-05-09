@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -43,12 +44,13 @@ public class PaymentActivity extends MainActivity implements NavigationView.OnNa
     NavigationView navView;
 
     //payment activity
-    Button editbt;
+    Button editbt,deletebtn;
 
     //card details
     GlobalClass globalVariables;
     String userid, name, cardno, cmonth, cyear, ccv;
     TextView tvName, tvNo, tvMonth, tvYear, tvCcv;
+    FirebaseDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,11 +97,19 @@ public class PaymentActivity extends MainActivity implements NavigationView.OnNa
 
         //payment activity
         editbt = (Button) findViewById(R.id.card_edit);
+        deletebtn = (Button) findViewById(R.id.card_delete);
 
         editbt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openEditPayment();
+            }
+        });
+
+        deletebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteCard();
             }
         });
 
@@ -131,6 +141,17 @@ public class PaymentActivity extends MainActivity implements NavigationView.OnNa
     public void openEditPayment(){
         Intent intent = new Intent(this, AddPaymentActivity.class);
         startActivity(intent);
+
+    }
+
+    public void deleteCard(){
+        database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
+        database.getReference("Card").child(userid).removeValue();
+
+        showCardNo();
+
+        Toast.makeText(PaymentActivity.this,
+                "Card Details Removed", Toast.LENGTH_SHORT).show();
 
     }
 /*
