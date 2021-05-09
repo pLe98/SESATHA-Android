@@ -43,7 +43,7 @@ public class AddPaymentActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         mToggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.grey));
 
-        
+
 
         //user details from global variable
         globalVariables = (GlobalClass) getApplicationContext();

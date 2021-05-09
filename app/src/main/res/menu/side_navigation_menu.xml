@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:checkableBehavior="none">
+    <group android:checkableBehavior="none"
+        android:id="@+id/nav_grp1">
         <item android:id="@+id/nav_home"
             android:title="Home"
             android:icon="@drawable/ic_baseline_home_24"/>
@@ -18,12 +19,21 @@
             android:title="Payments"
             android:icon="@mipmap/outline_account_balance_wallet_black_18"/>
 
+
+    <group android:checkableBehavior="none"
+        android:id="@+id/nav_grp2"/>
+        
+        <item android:id="@+id/nav_myItems"
+            android:title="My Items"
+            android:icon="@mipmap/outline_store_black_36"/>
+    </group>
+
+    <group android:checkableBehavior="none"
+        android:id="@+id/nav_grp3">
+
         <item android:id="@+id/nav_help"
             android:title="Help"
             android:icon="@mipmap/outline_help_outline_black_18"/>
-    </group>
-
-    <group android:checkableBehavior="none">
 
         <item android:id="@+id/nav_profile"
             android:title="Settings"
@@ -34,9 +44,7 @@
             android:title="Logout"
             android:icon="@mipmap/outline_logout_black_18"/>
 
-        <item android:id="@+id/nav_myItems"
-            android:title="My Items"
-            android:icon="@mipmap/outline_store_black_36"/>
+
     </group>
 
 </menu>
