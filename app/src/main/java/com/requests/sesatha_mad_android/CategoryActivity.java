@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
@@ -13,13 +14,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class CategoryActivity extends AppCompatActivity {
+import com.google.android.material.navigation.NavigationView;
+
+public class CategoryActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     //navigation bar variables
     DrawerLayout mdrawerLayout;
     ActionBarDrawerToggle mToggle;
     Toolbar mytoolbar;
+    NavigationView navView;
 
     TextView userGreet;
     ImageButton all,art,jewel,home,crafts,shoes;
@@ -38,6 +43,9 @@ public class CategoryActivity extends AppCompatActivity {
         mdrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        navView =(NavigationView)findViewById(R.id.activity_main_nav_view);
+        navView.setNavigationItemSelectedListener(CategoryActivity.this);
+
 
         //Customize action bar
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -133,6 +141,7 @@ public class CategoryActivity extends AppCompatActivity {
             default:
                 return "";
         }
+
     }
 
     //navigation bar
@@ -145,5 +154,20 @@ public class CategoryActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Log.d("Menu",String.valueOf(item.getItemId()));
+        Toast.makeText(this, "Workingggg", Toast.LENGTH_LONG).show();
+        mdrawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
 
+    @Override
+    public void onBackPressed() {
+        if(mdrawerLayout.isDrawerOpen(GravityCompat.START)){
+            mdrawerLayout.closeDrawer(GravityCompat.START);
+        }else{
+            super.onBackPressed();
+        }
+    }
 }

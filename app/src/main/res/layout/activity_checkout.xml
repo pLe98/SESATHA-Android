@@ -415,6 +415,15 @@
 
     </LinearLayout>
 
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:id="@+id/activity_main_nav_view"
+        android:layout_height="match_parent"
+        app:menu="@menu/side_navigation_menu"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/sidenavi_header"
+        >
 
+    </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>
