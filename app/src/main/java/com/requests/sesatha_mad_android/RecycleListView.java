@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
+import android.util.Log;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -15,7 +17,7 @@ import com.requests.sesatha_mad_android.models.OrderDetails;
 
 import java.util.ArrayList;
 
-public class RecycleList extends AppCompatActivity {
+public class RecycleListView extends AppCompatActivity {
 
     RecyclerView recyclerView;
     DatabaseReference databaseReference;
@@ -25,14 +27,20 @@ public class RecycleList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order_view);
+        setContentView(R.layout.activity_recycle_list_view);
 
-        recyclerView= findViewById(R.id.Recycle);
-        databaseReference= FirebaseDatabase.getInstance().getReference().child("Orders");
+        databaseReference = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Orders");
+
+//        databaseReference= FirebaseDatabase.getInstance().getReference("Orders");
+        Log.d("RLV", "DB ref = "+databaseReference);
+        list = new ArrayList<>();
+       recyclerView= findViewById(R.id.Recycle);// Initializ Recle view
+        Log.d("RLV", "RV = "+recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        list = new ArrayList<>();
+
+
         myAdapter = new OrderViewAdapter(this,list);
         recyclerView.setAdapter(myAdapter);
 

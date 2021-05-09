@@ -31,10 +31,10 @@ public class OrderViewAdapter extends RecyclerView.Adapter<OrderViewAdapter.MyVi
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        OrderDetails OrderDetails = arrayList.get(position);
-        holder.productname.setText(OrderDetails.getProductName());
-        holder.quantitiy.setText(OrderDetails.getProductName());
-        holder.total.setText(OrderDetails.getAmount());
+        OrderDetails orderDetails = arrayList.get(position);
+        holder.productname.setText(orderDetails.getTitle());
+        holder.quantitiy.setText(String.valueOf(orderDetails.getNoOfItems()));
+        holder.total.setText(String.valueOf(orderDetails.getNetAmount()));
 
     }
 
@@ -51,8 +51,8 @@ public class OrderViewAdapter extends RecyclerView.Adapter<OrderViewAdapter.MyVi
             super(itemView);
 
             productname =itemView.findViewById(R.id.product);
-            quantitiy= itemView.findViewById(R.id.quantity);
-            total =itemView.findViewById(R.id.totPrice);
+            quantitiy= itemView.findViewById(R.id.quantity1);
+            total =itemView.findViewById(R.id.price);
         }
     }
 }

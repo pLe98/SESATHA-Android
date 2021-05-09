@@ -63,6 +63,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //RECYCLE View
+        Button Text11 = findViewById(R.id.text11);
+        Text11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RecycleListView.class);
+                startActivity(intent);
+
+            }
+        });
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,13 +90,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        buttonCheckout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CheckoutActivity.class);
-                startActivity(intent);
+        buttonCheckout.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, CheckoutActivity.class);
+            startActivity(intent);
 
-            }
         });
 
         buttonItemDes.setOnClickListener(new View.OnClickListener() {
