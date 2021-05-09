@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,6 +20,7 @@ import android.widget.TextView;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,7 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.requests.sesatha_mad_android.adapters.transactionAdapter;
 import com.requests.sesatha_mad_android.models.Transaction;
 
-public class PaymentActivity extends MainActivity {
+public class PaymentActivity extends MainActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     //transaction recycler view
     private RecyclerView recViewTransaction;
@@ -38,6 +40,7 @@ public class PaymentActivity extends MainActivity {
     DrawerLayout mdrawerLayout;
     ActionBarDrawerToggle mToggle;
     Toolbar mytoolbar;
+    NavigationView navView;
 
     //payment activity
     Button editbt;
@@ -63,6 +66,11 @@ public class PaymentActivity extends MainActivity {
         mdrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //Customize action bar
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        mToggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.grey));
+        navView =(NavigationView)findViewById(R.id.activity_main_nav_view);
+        navView.setNavigationItemSelectedListener(this);
 
         //user details from global variable
         globalVariables = (GlobalClass) getApplicationContext();
@@ -174,7 +182,47 @@ public class PaymentActivity extends MainActivity {
         });
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Intent intent;
+        switch(item.getItemId()){
+            case R.id.nav_home:
+                intent = new Intent(this,CategoryActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_cart:
+                intent = new Intent(this,CartActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_logout:
+                intent = new Intent(this,LoginActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_myItems:
+                intent = new Intent(this,MyItemsActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_payment:
+                intent = new Intent(this,PaymentActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_orders:
+                intent = new Intent(this,MyOrdersActivity.class);
+                startActivity(intent);
+                break;
+        }
+        mdrawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
 
+    @Override
+    public void onBackPressed() {
+        if(mdrawerLayout.isDrawerOpen(GravityCompat.START)){
+            mdrawerLayout.closeDrawer(GravityCompat.START);
+        }else{
+            super.onBackPressed();
+        }
+    }
 
 
 }

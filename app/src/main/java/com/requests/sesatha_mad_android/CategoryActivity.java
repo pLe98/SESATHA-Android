@@ -21,7 +21,7 @@ import com.google.android.material.navigation.NavigationView;
 public class CategoryActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     //navigation bar variables
-    DrawerLayout mdrawerLayout;
+    protected DrawerLayout mdrawerLayout;
     ActionBarDrawerToggle mToggle;
     Toolbar mytoolbar;
     NavigationView navView;
@@ -44,7 +44,7 @@ public class CategoryActivity extends AppCompatActivity implements NavigationVie
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         navView =(NavigationView)findViewById(R.id.activity_main_nav_view);
-        navView.setNavigationItemSelectedListener(CategoryActivity.this);
+        navView.setNavigationItemSelectedListener(this);
 
 
         //Customize action bar
@@ -157,7 +157,29 @@ public class CategoryActivity extends AppCompatActivity implements NavigationVie
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Log.d("Menu",String.valueOf(item.getItemId()));
-        Toast.makeText(this, "Workingggg", Toast.LENGTH_LONG).show();
+        Intent intent;
+        switch(item.getItemId()){
+            case R.id.nav_cart:
+                intent = new Intent(this,CartActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_logout:
+                intent = new Intent(this,LoginActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_myItems:
+                intent = new Intent(this,MyItemsActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_payment:
+                intent = new Intent(this,PaymentActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_orders:
+                intent = new Intent(this,MyOrdersActivity.class);
+                startActivity(intent);
+                break;
+        }
         mdrawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
