@@ -11,6 +11,8 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +21,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -55,6 +58,7 @@ public class PostItem extends AppCompatActivity {
     Uri imUrI;
     private String pImUrl = null;
     private ProgressBar progressBar;
+    private TextView feeTxt;
 
     //Other variables for objects
     Item item;
@@ -96,6 +100,7 @@ public class PostItem extends AppCompatActivity {
         price = findViewById(R.id.editTextPrice);
         imView = findViewById(R.id.imageView);
         progressBar =findViewById(R.id.progressBar);
+        feeTxt = findViewById(R.id.txt_fee);
 
         submiBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -124,6 +129,29 @@ public class PostItem extends AppCompatActivity {
                 }
         }
         );
+
+        price.getEditText().addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String txt = price.getEditText().getText().toString();
+                float fee = (float) 0.00;
+                if (txt.length()>0){
+                    fee= Float.parseFloat(price.getEditText().getText().toString().trim());
+                }
+                feeTxt.setText("Fee : Rs. "+String.format("%.2f",calculateFee(fee)));
+            }
+        });
+
 
         //Image view on click callback method
         imView.setOnClickListener(new View.OnClickListener(){
@@ -213,5 +241,10 @@ public class PostItem extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private float calculateFee(float value){
+        float fee = (float) (value*0.1);
+        return fee;
     }
 }
