@@ -113,7 +113,7 @@ public class PostItem extends AppCompatActivity {
                         if(imUrI != null){
                             uploadImage(imUrI);
                             submiBtn.setEnabled(false);
-                            item = new Item(pTitle, pCat, pDesc, pPrice, globalVariables.getUserId());
+                            item = new Item(pTitle, pCat, pDesc, pPrice, globalVariables.getUser().getUserID());
                         }else{
                             Toast.makeText(PostItem.this, "Please select an image", Toast.LENGTH_SHORT).show();
                         }

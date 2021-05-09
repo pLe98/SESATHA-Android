@@ -5,10 +5,11 @@ import android.app.Application;
 import com.requests.sesatha_mad_android.models.User;
 
 public class GlobalClass extends Application {
-    private String username;
-    private String userId;
+    //private String username;
+    //private String userId;
     private User user;
 
+    /*
     public String getUsername() {
         return username;
     }
@@ -23,7 +24,7 @@ public class GlobalClass extends Application {
 
     public void setUserId(String userId) {
         this.userId = userId;
-    }
+    }*/
 
     public User getUser() {
         return user;

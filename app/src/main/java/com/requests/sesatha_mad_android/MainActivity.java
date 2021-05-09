@@ -30,12 +30,12 @@ public class MainActivity extends AppCompatActivity {
         //setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
 
-        //Retrieve Global Application Class
+        //Retrieve Global Application Object
         globalVariables = (GlobalClass) getApplicationContext();
 
         //Set username & userId in global class
-        globalVariables.setUsername("Userxxx");
-        globalVariables.setUserId("Seller456");
+        //globalVariables.setUsername("Userxxx");
+        //globalVariables.setUserId("Seller456");
 
         //navigation bar
         mytoolbar = (Toolbar) findViewById(R.id.mytoolbar);
