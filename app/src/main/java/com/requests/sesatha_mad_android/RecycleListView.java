@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -17,7 +19,7 @@ import com.requests.sesatha_mad_android.models.OrderDetails;
 
 import java.util.ArrayList;
 
-public class RecycleListView extends AppCompatActivity {
+public class RecycleListView extends AppCompatActivity implements OrderViewAdapter.OnNoteListener {
 
     RecyclerView recyclerView;
     DatabaseReference databaseReference;
@@ -61,6 +63,13 @@ public class RecycleListView extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    @Override
+    public void OnNoteListener(int posistion) {
+        Intent intent =new Intent(this,CartActivity.class);
+        startActivity(intent);
 
     }
 }

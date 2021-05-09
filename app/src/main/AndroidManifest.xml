@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SESATHA_MADAndroid">
-        <activity android:name=".RecycleListView"></activity>
+        <activity android:name=".OrderDetailsView"></activity>
+        <activity android:name=".RecycleListView" />
         <activity android:name=".OrderView" />
         <activity
             android:name=".MyItemEditActivity"
