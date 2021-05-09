@@ -55,4 +55,7 @@ public class OrderViewAdapter extends RecyclerView.Adapter<OrderViewAdapter.MyVi
             total =itemView.findViewById(R.id.price);
         }
     }
+    public interface OnNoteListener{
+        void OnNoteListener(int posistion);
+    }
 }
