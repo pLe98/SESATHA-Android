@@ -242,7 +242,7 @@ public class MyItemEditActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private int getCatIndex(String cat){
+    public int getCatIndex(String cat){
         if(cat.equals("Art & collectibles")){
             return 1;
         }else if(cat.equals("Jewellery & accessories")){

@@ -42,7 +42,7 @@
                 android:layout_above="@+id/card_add_item"
                 android:layout_marginBottom="-17dp"
                 android:fontFamily="sans-serif-black"
-                android:paddingTop="15dp"
+                android:paddingTop="11dp"
                 android:text="@string/createItemsStr"
                 android:textAlignment="center"
                 android:textColor="@color/cardview_light_background"

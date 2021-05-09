@@ -243,7 +243,7 @@ public class PostItem extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private float calculateFee(float value){
+    public float calculateFee(float value){
         float fee = (float) (value*0.1);
         return fee;
     }
