@@ -70,6 +70,7 @@ public class ItemDescriptionActivity extends AppCompatActivity {
         minus = findViewById(R.id.itd_removebtn);
         addToCart = findViewById(R.id.itd_addtocart);
 
+        //input varibles
         titleTv.setText(vtitle);
         unitPriceTv.setText(String.valueOf(vunitPrice));
         qtyTv.setText(String.valueOf(vqty));
