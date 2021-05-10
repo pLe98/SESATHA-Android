@@ -26,7 +26,7 @@
     <string name="createItemsStr">List a Product</string>
     <string name="updateItemsStr">Update Listing</string>
     <string name="category">Categories</string>
-
+    <string name="pendingItemsStr">Review Items</string>
     <!-- payment -->
     <string name="transid">Transaction ID </string>
     <string name="transdate">Date </string>
@@ -71,4 +71,5 @@
     <string name="delconf">Are You Sure You Want To Remove Card Details?</string>
     <string name="yes">Confirm</string>
     <string name="no">Cancel</string>
+
 </resources>

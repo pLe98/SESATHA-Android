@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SESATHA_MADAndroid">
-        <activity android:name=".MyOrdersActivity"></activity>
+        <activity android:name=".AdminPendingItemsActivity"></activity>
+        <activity android:name=".MyOrdersActivity" />
         <activity android:name=".CategoryActivity" />
         <activity
             android:name=".MyItemEditActivity"
@@ -36,10 +37,10 @@
         <activity android:name=".FirebaseDemoActivity" />
         <activity android:name=".AddPaymentActivity" />
         <activity android:name=".PostItem" />
-        <activity android:name=".RegisterTypeActivity"
+        <activity
+            android:name=".RegisterTypeActivity"
             android:excludeFromRecents="true"
-            android:launchMode="singleTask"
-            />
+            android:launchMode="singleTask" />
         <activity android:name=".PasswordRestActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".ProfileActivity" />
