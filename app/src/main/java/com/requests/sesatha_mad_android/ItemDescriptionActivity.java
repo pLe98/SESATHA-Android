@@ -34,7 +34,7 @@ public class ItemDescriptionActivity extends AppCompatActivity {
 
     private String vtitle = "Necklace", vitemNo = "24943";
     private int vqty = 1;
-    private float vunitPrice = (float) 500.00, vshipping = (float) 150.00;
+    private float vunitPrice = (float) 500.00, vshipping = (float) 150.00;   //sample data
 
     //xml values added
     TextView titleTv, unitPriceTv, shippingTv, sellerNameTv, locationTv, qtyTv;
