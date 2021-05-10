@@ -70,9 +70,9 @@ public class AdminPendingItemsActivity extends AppCompatActivity implements Navi
         adapter.setItemClickListener(new ItemClickListener() {
             @Override
             public void onItemClick(Item model, int position) {
-                //Intent intent = new Intent(MyItemsActivity.this, MyItemDetailsActivity.class);
-                //intent.putExtra("Data", model);
-                //startActivity(intent);
+                Intent intent = new Intent(AdminPendingItemsActivity.this, ReviewItemActivity.class);
+                intent.putExtra("Data", model);
+                startActivity(intent);
             }
         });
 

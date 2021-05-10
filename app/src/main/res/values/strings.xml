@@ -72,4 +72,7 @@
     <string name="yes">Confirm</string>
     <string name="no">Cancel</string>
 
+    <string name="dismissItemBtn">Dismiss</string>
+    <string name="approveItemBtn">Approve</string>
+
 </resources>
