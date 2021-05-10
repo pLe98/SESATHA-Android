@@ -93,6 +93,7 @@ public class ItemDescriptionActivity extends AppCompatActivity {
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //start at 1
                 vqty += 1;
                 qtyTv.setText(String.valueOf(vqty));
             }
