@@ -29,7 +29,7 @@ public class ItemDescriptionActivity extends AppCompatActivity {
     ActionBarDrawerToggle mToggle;
     Toolbar mytoolbar;
 
-    private String userID;
+    private String userID;    // private varibles
     GlobalClass globalVariables;
 
     private String vtitle = "Necklace", vitemNo = "24943";
