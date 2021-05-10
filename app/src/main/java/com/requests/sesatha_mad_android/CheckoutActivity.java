@@ -241,6 +241,10 @@ public class CheckoutActivity extends AppCompatActivity {
 
                 Toast.makeText(CheckoutActivity.this,
                         "Order was placed successfully", Toast.LENGTH_SHORT).show();
+                finish();
+
+                Intent intent = new Intent(CheckoutActivity.this, CategoryActivity.class);
+                startActivity(intent);
             }
 
             @Override
@@ -268,5 +272,11 @@ public class CheckoutActivity extends AppCompatActivity {
     public void clearCart(){
         //delete cart items relevant to user id
         database.getReference("Cart").child(userid).removeValue();
+
+
+
+        Intent intent = new Intent(CheckoutActivity.this, CategoryActivity.class);
+        startActivity(intent);
     }
+
 }

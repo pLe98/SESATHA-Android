@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="15dp"
             app:boxBackgroundColor="@color/white"
-            android:hint="Username"
+            android:hint="@string/username"
             app:hintTextColor="@color/bgdark"
             app:hintTextAppearance="?attr/textAppearanceCaption"
             app:boxStrokeColor="@color/bgdark">
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/regUsername"
             app:boxBackgroundColor="@color/white"
-            android:hint="Email"
+            android:hint="@string/email"
             app:hintTextColor="@color/bgdark"
             app:hintTextAppearance="?attr/textAppearanceCaption"
             app:boxStrokeColor="@color/bgdark">
@@ -63,7 +63,7 @@
             android:paddingTop="15dp"
             android:layout_below="@+id/regEmail"
             app:boxBackgroundColor="@color/white"
-            android:hint="Contact Number"
+            android:hint="@string/phone"
             app:hintTextColor="@color/bgdark"
             app:hintTextAppearance="?attr/textAppearanceCaption"
             app:boxStrokeColor="@color/bgdark">
@@ -82,7 +82,7 @@
             android:paddingTop="15dp"
             android:layout_below="@id/regPhone"
             app:boxBackgroundColor="@color/white"
-            android:hint="Address Line 1"
+            android:hint="@string/address1"
             app:hintTextColor="@color/bgdark"
             app:hintTextAppearance="?attr/textAppearanceCaption"
             app:boxStrokeColor="@color/bgdark">
@@ -100,7 +100,7 @@
             android:paddingTop="15dp"
             android:layout_below="@id/regAddress1"
             app:boxBackgroundColor="@color/white"
-            android:hint="Address Line 2"
+            android:hint="@string/address2"
             app:hintTextColor="@color/bgdark"
             app:hintTextAppearance="?attr/textAppearanceCaption"
             app:boxStrokeColor="@color/bgdark">
@@ -118,7 +118,7 @@
             android:paddingTop="15dp"
             android:layout_below="@id/regAddress2"
             app:boxBackgroundColor="@color/white"
-            android:hint="Address Line 3"
+            android:hint="@string/address3"
             app:hintTextColor="@color/bgdark"
             app:hintTextAppearance="?attr/textAppearanceCaption"
             app:boxStrokeColor="@color/bgdark">
@@ -137,7 +137,26 @@
             android:layout_below="@+id/regAddress3"
             app:boxBackgroundColor="@color/white"
             app:endIconMode="password_toggle"
-            android:hint="Password"
+            android:hint="@string/pass1"
+            app:hintTextColor="@color/bgdark"
+            app:hintTextAppearance="?attr/textAppearanceCaption"
+            app:boxStrokeColor="@color/bgdark">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/regPassword2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:layout_below="@+id/regPassword"
+            app:boxBackgroundColor="@color/white"
+            app:endIconMode="password_toggle"
+            android:hint="@string/pass2"
             app:hintTextColor="@color/bgdark"
             app:hintTextAppearance="?attr/textAppearanceCaption"
             app:boxStrokeColor="@color/bgdark">
@@ -156,7 +175,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:layout_below="@+id/regPassword"
+            android:layout_below="@+id/regPassword2"
             android:layout_marginTop="20dp"
             android:text="Register"
             android:backgroundTint="@color/mainclr"/>

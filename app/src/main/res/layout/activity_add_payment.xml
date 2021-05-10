@@ -30,7 +30,7 @@ tools:context=".AddPaymentActivity">
     </com.google.android.material.appbar.AppBarLayout>
 
     <RelativeLayout
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="40dp"
         android:paddingTop="30dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
@@ -47,7 +47,7 @@ tools:context=".AddPaymentActivity">
             android:layout_marginTop="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Card Details"
+            android:text="@string/carddet"
             android:textStyle="bold"
             android:textSize="40dp"/>
 
@@ -57,7 +57,7 @@ tools:context=".AddPaymentActivity">
             android:paddingTop="130dp"
             android:layout_height="wrap_content"
             app:boxBackgroundColor="@color/white"
-            android:hint="Card Holder's Name"
+            android:hint="@string/cardname"
             app:hintTextColor="@color/bgdark"
             app:hintTextAppearance="?attr/textAppearanceCaption"
             app:boxStrokeColor="@color/bgdark">
@@ -76,7 +76,7 @@ tools:context=".AddPaymentActivity">
             android:paddingTop="35dp"
             android:layout_below="@+id/et_cardholder"
             app:boxBackgroundColor="@color/white"
-            android:hint="Card Number"
+            android:hint="@string/cardno"
             app:hintTextColor="@color/bgdark"
             app:hintTextAppearance="?attr/textAppearanceCaption"
             app:boxStrokeColor="@color/bgdark">
@@ -91,12 +91,12 @@ tools:context=".AddPaymentActivity">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/et_month"
-            android:layout_width="60dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:paddingTop="35dp"
             android:layout_below="@+id/et_cardno"
             app:boxBackgroundColor="@color/white"
-            android:hint="MM"
+            android:hint="@string/cardmon"
             app:hintTextColor="@color/bgdark"
             app:hintTextAppearance="?attr/textAppearanceCaption"
             app:boxStrokeColor="@color/bgdark">
@@ -111,14 +111,14 @@ tools:context=".AddPaymentActivity">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/et_year"
-            android:layout_width="60dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:paddingTop="35dp"
             android:layout_marginLeft="15dp"
             android:layout_below="@+id/et_cardno"
             app:boxBackgroundColor="@color/white"
             android:layout_toRightOf="@+id/et_month"
-            android:hint="YY"
+            android:hint="@string/cardyr"
             app:hintTextColor="@color/bgdark"
             app:hintTextAppearance="?attr/textAppearanceCaption"
             app:boxStrokeColor="@color/bgdark">
@@ -134,14 +134,12 @@ tools:context=".AddPaymentActivity">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/et_ccv"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:paddingTop="35dp"
-            android:layout_marginLeft="15dp"
-            android:layout_below="@+id/et_cardno"
+            android:layout_below="@+id/et_month"
             app:boxBackgroundColor="@color/white"
-            android:layout_alignParentEnd="true"
-            android:hint="CCV"
+            android:hint="@string/cardccv"
             app:hintTextColor="@color/bgdark"
             app:hintTextAppearance="?attr/textAppearanceCaption"
             app:boxStrokeColor="@color/bgdark">
@@ -162,8 +160,8 @@ tools:context=".AddPaymentActivity">
             android:layout_marginTop="40dp"
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
-            android:layout_below="@+id/et_month"
-            android:text="Submit"
+            android:layout_below="@+id/et_ccv"
+            android:text="@string/submit"
             android:backgroundTint="@color/mainclr"/>
 
     </RelativeLayout>

@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/buyerimg"
-        android:text="I am a"
+        android:text="@string/iam"
         android:textAllCaps="false"
         android:textColor="@color/bgpink"
         android:layout_marginTop="15dp"
@@ -51,10 +51,10 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/buyerimg"
         android:layout_below="@+id/buyerim"
-        android:text="Buyer"
+        android:text="@string/buyer"
         android:textAllCaps="false"
         android:textColor="@color/bgpink"
-        android:textSize="40dp"
+        android:textSize="38dp"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         />
 
@@ -88,7 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/sellerimg"
-            android:text="I am a"
+            android:text="@string/iam"
             android:textAllCaps="false"
             android:textColor="@color/bgpink"
             android:layout_marginTop="15dp"
@@ -103,10 +103,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/sellerimg"
-            android:text="Seller"
+            android:text="@string/seller"
             android:textAllCaps="false"
             android:textColor="@color/bgpink"
-            android:textSize="40dp"
+            android:textSize="38dp"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             />
 

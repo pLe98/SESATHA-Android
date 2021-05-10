@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -50,7 +51,9 @@ public class PaymentActivity extends MainActivity implements NavigationView.OnNa
     GlobalClass globalVariables;
     String userid, name, cardno, cmonth, cyear, ccv;
     TextView tvName, tvNo, tvMonth, tvYear, tvCcv;
+
     FirebaseDatabase database;
+    Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +76,12 @@ public class PaymentActivity extends MainActivity implements NavigationView.OnNa
         mToggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.grey));
         navView =(NavigationView)findViewById(R.id.activity_main_nav_view);
         navView.setNavigationItemSelectedListener(this);
+
+        //delete confirmation dialog
+        dialog = new Dialog(PaymentActivity.this);
+        dialog.setContentView(R.layout.delete_conf);
+        dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
+        dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.dialogbg));
 
         //user details from global variable
         globalVariables = (GlobalClass) getApplicationContext();
@@ -145,38 +154,39 @@ public class PaymentActivity extends MainActivity implements NavigationView.OnNa
     }
 
     public void deleteCard(){
-        database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
-        database.getReference("Card").child(userid).removeValue();
 
-        showCardNo();
+        Button delYes = dialog.findViewById(R.id.delyes);
+        Button delNo = dialog.findViewById(R.id.delno);
 
-        Toast.makeText(PaymentActivity.this,
-                "Card Details Removed", Toast.LENGTH_SHORT).show();
+        dialog.show();   //open window
 
-    }
-/*
-    public void getCardDetails(){
-        DatabaseReference db = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
-        db.child("Card").orderByChild("userID").equalTo(userid).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        delYes.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if(task.isSuccessful()){
-                    Log.e("card details", "user id found");
-                    Card crd = task.getResult().getChildren().iterator().next().getValue(Card.class);
-                    name = crd.getCardHolder();
-                    cardno = crd.getCardNo();
-                    cmonth = crd.getcMonth();
-                    cyear = crd.getcYear();
-                    ccv = crd.getCcv();
-                }else{
-                    Log.e("card details", "user id no found");
-                }
+            public void onClick(View v) {
+                database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
+                database.getReference("Card").child(userid).removeValue();
 
+                showCardNo();
+                dialog.dismiss();   //close window
+                Toast.makeText(PaymentActivity.this,
+                        "Card Details Removed", Toast.LENGTH_SHORT).show();
 
             }
         });
 
-    }*/
+        delNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        //showCardNo();
+
+        //Toast.makeText(PaymentActivity.this,
+                //"Card Details Removed", Toast.LENGTH_SHORT).show();
+
+    }
 
     public void showCardNo(){
         DatabaseReference db = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();

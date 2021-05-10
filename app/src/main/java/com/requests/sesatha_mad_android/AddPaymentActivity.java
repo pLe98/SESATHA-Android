@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +15,10 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.requests.sesatha_mad_android.models.Card;
+
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 
 public class AddPaymentActivity extends AppCompatActivity {
 
@@ -62,6 +67,7 @@ public class AddPaymentActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 addCard();
+
             }
         });
 
@@ -69,6 +75,15 @@ public class AddPaymentActivity extends AppCompatActivity {
     }
 
     public void addCard(){
+
+
+
+        //get current date
+        Date date = new Date();
+        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        int currMonth = localDate.getMonthValue();
+        String currYr = String.valueOf(localDate.getYear());
+        int currYear = Integer.parseInt(currYr.substring(currYr.length()-2));
 
         //assign user entered data into variables
         String cardHolder = enCardholder.getEditText().getText().toString().trim();
@@ -90,6 +105,7 @@ public class AddPaymentActivity extends AppCompatActivity {
                 enCardno.setError("Card Number is Required");
                 enCardno.requestFocus();
             }else if(cardNo.length() < 15){
+
                 enCardno.setError("Enter Valid Card Number");
                 enCardno.requestFocus();
             }else{
@@ -98,64 +114,76 @@ public class AddPaymentActivity extends AppCompatActivity {
 
                 //validate month
                 if(month.isEmpty()){
-                    enMonth.setError("Month is Required");
-                    enMonth.requestFocus();
-                }else if(Integer.parseInt(month) > 12){
-                    enMonth.setError("Invalid Month");
+                    enMonth.setError("Required");
                     enMonth.requestFocus();
                 }else{
-                    enMonth.setError(null);
-                    enMonth.setErrorEnabled(false);
-
-                    //validate year
-                    if(cYear.isEmpty()){
-                        enYear.setError("Year is Required");
-                        enYear.requestFocus();
-                    }else if(Integer.parseInt(cYear) < 21){
-                        enYear.setError("Invalid Year");
-                        enYear.requestFocus();
-                    }else if(cYear.length() != 2){
-                        enCcv.setError("Invalid Year");
-                        enCcv.requestFocus();
+                    if(Integer.parseInt(month) > 12){
+                    enMonth.setError("Invalid");
+                    enMonth.requestFocus();
                     }else{
-                        enYear.setError(null);
-                        enYear.setErrorEnabled(false);
+                        enMonth.setError(null);
+                        enMonth.setErrorEnabled(false);
 
-                        //validate ccv
-                        if(ccv.isEmpty()){
-                            enCcv.setError("CCV is Required");
-                            enCcv.requestFocus();
-                        }else if(ccv.length() != 3){
-                            enCcv.setError("Invalid CCV");
-                            enCcv.requestFocus();
-                        }else{
-                            enCcv.setError(null);
-                            enCcv.setErrorEnabled(false);
+                        //validate year
+                        if(cYear.isEmpty()){
+                            enYear.setError("Required");
+                            enYear.requestFocus();
+                        }else {
+                                if(Integer.parseInt(cYear) < currYear){
+                                enYear.setError("Invalid");
+                                enYear.requestFocus();
+                            }
+                            else if((Integer.parseInt(cYear) == currYear) && (Integer.parseInt(month) <= currMonth)){
+                                enYear.setError("Invalid");
+                                enYear.requestFocus();
+                                enMonth.setError("Invalid");
+                                enMonth.requestFocus();
+                            }else if(cYear.length() != 2){
+                                enCcv.setError("Invalid");
+                                enCcv.requestFocus();
+                            }else{
+                                enYear.setError(null);
+                                enYear.setErrorEnabled(false);
 
-                            //assign user entered data into a card object
-                            Card card = new Card( cardHolder, cardNo, month, cYear, ccv, userID);
+                                //validate ccv
+                                if(ccv.isEmpty()){
+                                    enCcv.setError("Required");
+                                    enCcv.requestFocus();
+                                }else if(ccv.length() != 3){
+                                    enCcv.setError("Invalid");
+                                    enCcv.requestFocus();
+                                }else{
+                                    enCcv.setError(null);
+                                    enCcv.setErrorEnabled(false);
 
-                            //getting firebase instance
-                            FirebaseDatabase database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
-                            DatabaseReference myRef = database.getReference("Card");
+                                    //assign user entered data into a card object
+                                    Card card = new Card( cardHolder, cardNo, month, cYear, ccv, userID);
 
-                            //save card objec in firebase
-                            myRef.child(userID).setValue(card);
+                                    //getting firebase instance
+                                    FirebaseDatabase database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
+                                    DatabaseReference myRef = database.getReference("Card");
 
-                            //clearing data fields
-                            enCardholder.getEditText().getText().clear();
-                            enCardno.getEditText().getText().clear();
-                            enMonth.getEditText().getText().clear();
-                            enYear.getEditText().getText().clear();
-                            enCcv.getEditText().getText().clear();
+                                    //save card objec in firebase
+                                    myRef.child(userID).setValue(card);
 
-                            //success message
-                            Toast.makeText(AddPaymentActivity.this,
-                                    "Card Details Added Successfully", Toast.LENGTH_SHORT).show();
-                        }
-                        }
-                    }
-                }
+                                    //clearing data fields
+                                    enCardholder.getEditText().getText().clear();
+                                    enCardno.getEditText().getText().clear();
+                                    enMonth.getEditText().getText().clear();
+                                    enYear.getEditText().getText().clear();
+                                    enCcv.getEditText().getText().clear();
+
+                                    //success message
+                                    Toast.makeText(AddPaymentActivity.this,
+                                            "Card Details Added Successfully", Toast.LENGTH_SHORT).show();
+
+                                    Intent intent = new Intent(AddPaymentActivity.this, PaymentActivity.class);
+                                    startActivity(intent);
+
+                                }
+                            }
+                    }   }
+                }}
             }
         }
     }

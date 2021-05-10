@@ -36,7 +36,39 @@
     <string name="editBtnText">Edit</string>
     <string name="deleteBtnText">Remove</string>
 
+    <!-- add payment -->
+    <string name="inmonth"><font size="10"> Invalid Month</font></string>
+    <string name="inyear"><font size="10"> Invalid Year</font></string>
+    <string name="inccv"><font size="10"> Invalid CCV</font></string>
+    <string name="cardname">Card Holders Name</string>
+    <string name="cardno">Card No</string>
+    <string name="carddet">Card Details</string>
+    <string name="cardmon">MM</string>
+    <string name="cardyr">YY</string>
+    <string name="cardccv">CCV</string>
+    <string name="submit">Submit</string>
+
+
     <!-- Buttons -->
     <string name="item_postBtn">Submit</string>
     <string name="item_updateBtn">Update</string>
+
+    <!-- Register Activity -->
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="phone">Contact Number</string>
+    <string name="address1">Address Line 1</string>
+    <string name="address2">Address Line 2</string>
+    <string name="address3">Address Line 3</string>
+    <string name="pass1">Password</string>
+    <string name="pass2">Confirm Password</string>
+
+    <!-- Register type Activity -->
+    <string name="iam">I am a</string>
+    <string name="buyer">Buyer</string>
+    <string name="seller">Seller</string>
+
+    <string name="delconf">Are You Sure You Want To Remove Card Details?</string>
+    <string name="yes">Confirm</string>
+    <string name="no">Cancel</string>
 </resources>
