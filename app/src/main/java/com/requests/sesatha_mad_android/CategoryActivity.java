@@ -26,6 +26,7 @@ public class CategoryActivity extends AppCompatActivity implements NavigationVie
     Toolbar mytoolbar;
     NavigationView navView;
 
+
     TextView userGreet;
     ImageButton all,art,jewel,home,crafts,shoes;
     GlobalClass globalVariables;
