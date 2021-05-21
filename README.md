@@ -21,7 +21,7 @@
 <p align="center">
     <img src="readmeImages/med.png" alt="Logo" width="250" height="auto">
 
-  <h1 align="center">Sesatha Mobile Application (PVT).Ltd.</h1>
+  <h1 align="center">Sesatha Mobile Application </h1>
 
   <p align="center">
     Project overview and installation instructions
@@ -72,7 +72,7 @@
 
 <!--[![Product Name Screen Shot][product-screenshot]](https://example.com)-->
 
-Pharmac Distributors Co. (PVT) LTD is a pharmaceutical importer and distributor based in Kandy, providing service to hundreds of pharmacies and dispensaries island wide. They legally source pharmaceutical products, store them under proper conditions before distributing them among authorized sellers. Their goal is to become the largest pharmaceutical distributor in the country. However, their operations are vastly affected by the inefficiency of the manual system currently deployed. Therefore, they have decided to implement an automated system to manage all possible functions and directly connect with the customers to provide more efficient service.
+
 
 ### Built With
 
