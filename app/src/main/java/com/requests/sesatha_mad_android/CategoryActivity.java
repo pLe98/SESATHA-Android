@@ -179,6 +179,10 @@ public class CategoryActivity extends AppCompatActivity implements NavigationVie
                 intent = new Intent(this,MyOrdersActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.nav_pendingItems:
+                intent = new Intent(this,AdminPendingItemsActivity.class);
+                startActivity(intent);
+                break;
         }
         mdrawerLayout.closeDrawer(GravityCompat.START);
         return true;

@@ -18,7 +18,7 @@
         <item android:id="@+id/nav_payment"
             android:title="Payments"
             android:icon="@mipmap/outline_account_balance_wallet_black_18"/>
-
+    </group>
 
     <group android:checkableBehavior="none"
         android:id="@+id/nav_grp2"/>
@@ -26,10 +26,18 @@
         <item android:id="@+id/nav_myItems"
             android:title="My Items"
             android:icon="@mipmap/outline_store_black_36"/>
+    <group>
+
+    <group android:checkableBehavior="none"
+        android:id="@+id/nav_grp3"/>
+
+        <item android:id="@+id/nav_pendingItems"
+            android:title="Pending Items"
+            android:icon="@mipmap/outline_fact_check_black_48"/>
     </group>
 
     <group android:checkableBehavior="none"
-        android:id="@+id/nav_grp3">
+        android:id="@+id/nav_grp4">
 
         <item android:id="@+id/nav_help"
             android:title="Help"
@@ -43,8 +51,6 @@
         <item android:id="@+id/nav_logout"
             android:title="Logout"
             android:icon="@mipmap/outline_logout_black_18"/>
-
-
     </group>
 
 </menu>
