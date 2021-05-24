@@ -385,7 +385,7 @@
                 android:textStyle="bold"
                 android:elevation="200dp"
                 android:textSize="30sp"
-                android:text="1250.00"/>
+                android:text="3937.96"/>
 
             <Button
                 android:layout_alignParentEnd="true"

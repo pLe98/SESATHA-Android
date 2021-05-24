@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,7 +38,7 @@ public class CheckoutActivity extends AppCompatActivity {
     DatabaseReference dbRef, dbRef2;
 
     //checkout activity
-    private Button addressChange, paymentChange, purchase;
+    private Button addressChange, paymentChange, purchase, dialg;
     private TextView nametv, add1tv, add2tv, add3tv, phonetv, cardnotv, cardExptv,  subTotaltv, noItemstv, shippingtv, totaltv, totaltv2 ;
     Query orderDb;
 
@@ -57,6 +58,7 @@ public class CheckoutActivity extends AppCompatActivity {
     private Float isubtotal, ishipping, itotal;
     private int inoOfItems;
 
+    Dialog dialog2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +74,7 @@ public class CheckoutActivity extends AppCompatActivity {
 
         mytoolbar = (Toolbar) findViewById(R.id.mytoolbar);
         setSupportActionBar(mytoolbar);
-        getSupportActionBar().setTitle("Order Confirmation");
+        getSupportActionBar().setTitle("");
 
         //getting cart details from extras
         Bundle bundle = getIntent().getExtras();
@@ -104,6 +106,13 @@ public class CheckoutActivity extends AppCompatActivity {
         addressChange = findViewById(R.id.chgAddress);
         paymentChange = findViewById(R.id.chgCard);
         purchase = findViewById(R.id.puchasebtn);
+
+        //delete confirmation dialog
+        dialog2 = new Dialog(CheckoutActivity.this);
+        dialog2.setContentView(R.layout.ordercomplete);
+        dialog2.getWindow().getAttributes().windowAnimations = R.style.animation;
+        dialog2.getWindow().setBackgroundDrawable(getDrawable(R.drawable.dialogbg));
+        dialg = findViewById(R.id.orderclose);
 
         //firebase instances
         database = FirebaseDatabase.getInstance("https://sesathaandroid-default-rtdb.asia-southeast1.firebasedatabase.app/");
@@ -220,9 +229,9 @@ public class CheckoutActivity extends AppCompatActivity {
                     Log.e("checkout", "order");
 
                     //getting cart items relevant to the userID
-                    isubtotal  = dataSnapshots.child("unitPrice").getValue(Float.class) * dataSnapshots.child("qty").getValue(Integer.class);
+                    isubtotal  = getSubTotal(dataSnapshots.child("unitPrice").getValue(Float.class) , dataSnapshots.child("qty").getValue(Integer.class));
                     ishipping  = dataSnapshots.child("shipping").getValue(Float.class);
-                    itotal = isubtotal + ishipping;
+                    itotal = getTotal(ishipping, isubtotal);
                     inoOfItems = dataSnapshots.child("qty").getValue(Integer.class);
                     iitemNo = dataSnapshots.child("itemNo").getValue(String.class);
                     ititle = dataSnapshots.child("title").getValue(String.class);
@@ -238,13 +247,14 @@ public class CheckoutActivity extends AppCompatActivity {
 
                     Log.e("checkout", "itemNo"+ iitemNo);
                 }
+                //dialg = findViewById(R.id.orderclose);
+                //dialog2.show();
+                Log.d("checkout", "dialog");
+                Toast.makeText(CheckoutActivity.this, "Order was placed successfully", Toast.LENGTH_SHORT).show();
 
-                Toast.makeText(CheckoutActivity.this,
-                        "Order was placed successfully", Toast.LENGTH_SHORT).show();
-                finish();
 
-                Intent intent = new Intent(CheckoutActivity.this, CategoryActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(CheckoutActivity.this, CategoryActivity.class);
+                //startActivity(intent);
             }
 
             @Override
@@ -273,10 +283,17 @@ public class CheckoutActivity extends AppCompatActivity {
         //delete cart items relevant to user id
         database.getReference("Cart").child(userid).removeValue();
 
-
-
         Intent intent = new Intent(CheckoutActivity.this, CategoryActivity.class);
         startActivity(intent);
+    }
+
+
+    protected float getTotal(float x, float y){
+        return (x + y);
+    }
+
+    protected float getSubTotal(float x, int y){
+        return (x * y);
     }
 
 }

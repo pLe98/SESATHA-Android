@@ -71,4 +71,9 @@
     <string name="delconf">Are You Sure You Want To Remove Card Details?</string>
     <string name="yes">Confirm</string>
     <string name="no">Cancel</string>
+
+    <!--Profile Activity -->
+    <string name="profile">Update Address</string>
+
+    <string name="checkoutdia">Your Order is Placed Successfully</string>
 </resources>
