@@ -19,7 +19,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-    <img src="readmeImages/med.png" alt="Logo" width="250" height="auto">
+    <img src="app/src/main/res/mipmap-hdpi/ic_launcher.png" alt="Logo" width="100" height="auto">
 
   <h1 align="center">Sesatha Mobile Application </h1>
 
@@ -49,16 +49,8 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
     <li><a href="#usage">Usage</a></li>
-    <!--<li><a href="#roadmap">Roadmap</a></li>-->
-    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#interfaces">Interfaces</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
     <li><a href="#contributors">Contributors</a></li>
@@ -91,23 +83,6 @@ This section shows the list of major frameworks that we have used to  built our 
 
 
 
-<!-- GETTING STARTED -->
-## Getting Started
-
-In order to be fully funtional and uprunning the following should be followed
-
-### Prerequisites
-
-The following applications must be installed
-* Xampp server with php version 8.0
-* MySQL server
-* Latest version of composer installed
-* Node Package Manager(npm)
-<!--
-  ```sh
-  npm install npm@latest -g
-  ```
--->
 ### Compatibility
 
 
@@ -115,33 +90,15 @@ This app has been tested on android platforms above Android Pie(API 28).
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Use this space to show useful examples of how a project is implemented. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
-
-<!-- ROADMAP
-## Roadmap
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
-
- -->
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Clone the project <br>`git clone https://github.com/pLe98/SESATHA-Android`
-2. Create your Feature Branch<br> `git checkout -b feature/AmazingFeature`
-3. Commit your Changes <br>`git commit -m 'Add some AmazingFeature'`
-4. Push to the Branch <br>`git push origin feature/AmazingFeature`
-5. Open a Pull Request
+For more examples, please refer to the [Documentation](https://example.com)_
 
 
 
-<!-- LICENSE -->
+## Interfaces
+
+
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
