@@ -97,6 +97,11 @@ For more examples, please refer to the [Documentation](https://example.com)_
 
 
 ## Interfaces
+<img src="app\src\main\res\interfacess\Screenshot_20210524-163312_SESATHA.jpg" alt="Logo" width="150" height="auto">    <img src="app\src\main\res\interfacess\Screenshot_20210524-155014_SESATHA.jpg" alt="Logo" width="150" height="auto">&nbsp;<img src="app\src\main\res\interfacess\Screenshot_20210524-155200_SESATHA.jpg" alt="Logo" width="150" height="auto">  <img src="app\src\main\res\interfacess\Screenshot_20210524-155415_SESATHA.jpg" alt="Logo" width="150" height="auto"> 
+
+
+
+<img src="app\src\main\res\interfacess\Screenshot_20210524-155311_SESATHA.jpg" alt="Logo" width="150" height="auto">    <img src="app\src\main\res\interfacess\Screenshot_20210524-155348_SESATHA.jpg" alt="Logo" width="150" height="auto">  <img src="app\src\main\res\interfacess\Screenshot_20210524-161039_SESATHA.jpg" alt="Logo" width="150" height="auto">    <img src="app\src\main\res\interfacess\Screenshot_20210524-155502_SESATHA.jpg" alt="Logo" width="150" height="auto">
 
 
 ## License
@@ -116,7 +121,7 @@ Project Link: [https://github.com/salukadev/Pharmac-OMS.git](https://github.com/
 <!-- ACKNOWLEDGEMENTS  -->
 ## Acknowledgements
 
-<p align="center"><a href="https://www.sliit.lk/" target="_blank"><img src="readmeImages/SLIIT_Logo_Crest.png" width="100"></a></p>
+<p align="center" ><a href="https://www.sliit.lk/" target="_blank"><img src="readmeImages/SLIIT_Logo_Crest.png" width="100"></a></p>
 
 This is a project done for the Mobile Application Development module of BSc.(Hons.) Degree in Information Technology in Sri Lanka Institute of Information Technology
 
