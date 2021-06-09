@@ -51,6 +51,10 @@
         <item android:id="@+id/nav_logout"
             android:title="Logout"
             android:icon="@mipmap/outline_logout_black_18"/>
+
+        <item android:id="@+id/nav_sql"
+            android:title="SQL"
+            android:icon="@mipmap/outline_fact_check_black_48"/>
     </group>
 
 </menu>

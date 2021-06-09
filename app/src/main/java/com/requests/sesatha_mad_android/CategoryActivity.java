@@ -183,6 +183,11 @@ public class CategoryActivity extends AppCompatActivity implements NavigationVie
                 intent = new Intent(this,AdminPendingItemsActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.nav_sql:
+                intent = new Intent(this,sql.class);
+                intent.putExtra("Key","SQLite");
+                startActivity(intent);
+                break;
         }
         mdrawerLayout.closeDrawer(GravityCompat.START);
         return true;
